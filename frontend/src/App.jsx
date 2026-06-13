@@ -9,7 +9,7 @@ import AIAutomationPage from './pages/AIAutomationPage';
 import BIPage from './pages/BIPage';
 import ProcurementPage from './pages/ProcurementPage';
 import IntegrationPage from './pages/IntegrationPage';
-import CaseStudyPage from './pages/CaseStudiesPage';
+
 
 import './shared.css';
 
@@ -25,7 +25,6 @@ export default function App() {
         <Route path="/bi" element={<BIPage />} />
         <Route path="/procurement" element={<ProcurementPage />} />
         <Route path="/integration" element={<IntegrationPage />} />
-        <Route path="/case-studies" element={<CaseStudyPage />} />
         <Route path="*" element={<Home />} />
       </Routes>
       <Footer />
