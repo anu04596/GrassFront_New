@@ -1,36 +1,47 @@
-import './Capabilities.css';
+import "./Capabilities.css";
 
 /* ─── Card data ─────────────────────────────────────────────────── */
 const CAPS = [
   {
-    shortTitle: 'ERP Systems',
-    tagline: 'Centralize procurement, inventory, sales, finance, and reporting in one platform.',
-    tags: ['ERP', 'INVENTORY', 'FINANCE'],
-    href: '#capabilities',
+    shortTitle: "ERP Systems",
+    tagline:
+      "Centralize procurement, inventory, sales, finance, and reporting in one platform.",
+    tags: ["ERP", "INVENTORY", "FINANCE"],
+    href: "/erp",
   },
   {
-    shortTitle: 'Custom Software Development',
-    tagline: 'Build applications tailored to your workflows and business requirements.',
-    tags: ['CUSTOM APPS', 'WORKFLOWS'],
-    href: '#capabilities',
+    shortTitle: "Custom Software Development",
+    tagline:
+      "Build applications tailored to your workflows and business requirements.",
+    tags: ["CUSTOM APPS", "WORKFLOWS"],
+    href: "/custom-software",
   },
   {
-    shortTitle: 'AI Automation',
-    tagline: 'Automate repetitive tasks, approvals, reporting, and communication.',
-    tags: ['AI', 'AUTOMATION'],
-    href: '#capabilities',
+    shortTitle: "AI Automation",
+    tagline:
+      "Automate repetitive tasks, approvals, reporting, and communication.",
+    tags: ["AI", "AUTOMATION"],
+    href: "/ai-automation",
   },
   {
-    shortTitle: 'Business Intelligence',
-    tagline: 'Track KPIs, monitor performance, and make decisions with confidence.',
-    tags: ['BI', 'DASHBOARDS', 'KPI'],
-    href: '#capabilities',
+    shortTitle: "Business Intelligence",
+    tagline:
+      "Track KPIs, monitor performance, and make decisions with confidence.",
+    tags: ["BI", "DASHBOARDS", "KPI"],
+    href: "/business-intelligence",
   },
   {
-    shortTitle: 'System Integration',
-    tagline: 'Connect existing software into a single, efficient workflow.',
-    tags: ['INTEGRATION', 'APIS'],
-    href: '#capabilities',
+    shortTitle: "Procurement Management Software",
+    tagline:
+      "Streamline sourcing, supplier collaboration, purchase orders, and procurement workflows.",
+    tags: ["PROCUREMENT", "VENDORS", "PURCHASING"],
+    href: "/procurement",
+  },
+  {
+    shortTitle: "System Integration",
+    tagline: "Connect existing software into a single, efficient workflow.",
+    tags: ["INTEGRATION", "APIS"],
+    href: "/system-integration",
   },
 ];
 
@@ -44,16 +55,18 @@ export default function Capabilities() {
         </div>
 
         <div className="cap-frame">
-          <h2>Solutions That Improve 
+          <h2>
+            Solutions That Improve
             <br />
-            Business Performance</h2>
+            Business Performance
+          </h2>
 
           <div className="cap-grid">
             {CAPS.map((c, i) => (
               <div
                 key={c.shortTitle}
                 className="cap-card"
-                style={{ '--delay': `${i * 0.07}s` }}
+                style={{ "--delay": `${i * 0.07}s` }}
               >
                 {/* ── Title ── */}
                 <h3>{c.shortTitle}</h3>
@@ -66,14 +79,18 @@ export default function Capabilities() {
 
                 {/* ── Tags ── */}
                 <div className="cap-tags">
-                  {c.tags.map(t => (
-                    <span key={t} className="cap-tag">{t}</span>
+                  {c.tags.map((t) => (
+                    <span key={t} className="cap-tag">
+                      {t}
+                    </span>
                   ))}
                 </div>
 
                 {/* ── CTA ── */}
                 <div className="cap-learn">
-                  <a href={c.href} className="learn-link">Learn More →</a>
+                  <a href={c.href} className="learn-link">
+                    Learn More →
+                  </a>
                 </div>
               </div>
             ))}

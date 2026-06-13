@@ -7,7 +7,6 @@ import Industries from '../components/sections/Industries';
 import Projects from '../components/sections/Projects';
 import Testimonials from '../components/sections/Testimonials';
 import Stats from '../components/sections/Stats';
-import Media from '../components/sections/Media';
 import Contact from '../components/sections/Contact';
 import Trusted from '../components/sections/Trusted';
 import Problems from '../components/sections/Problems';
@@ -50,15 +49,14 @@ export default function Home() {
       <Trusted />
       <Problems />
       <About />
-      <Process />
       <Capabilities />
       <Industries />
       <Projects />
-      <Testimonials />
       <Why />
+      <Process />
+      <Testimonials />
       <Stats />
       <FAQ />
-      <Media />
       <Contact />
     </main>
   );

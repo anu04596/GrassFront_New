@@ -3,7 +3,7 @@
    ============================================= */
 
 .stats-section {
-  background: #ffffff;
+  background: var(--white-lilac);
   border-width: 0.8px 0;
   border-style: solid;
   border-color: rgba(31, 0, 255, 0.08);
@@ -58,7 +58,7 @@
 }
 
 /* Divider between columns only */
-.stat-big-card + .stat-big-card {
+.stat-big-card+.stat-big-card {
   border-left: 1px solid rgba(31, 0, 255, 0.1);
 }
 
@@ -108,8 +108,9 @@
 /* ── Tablet ── */
 @media (max-width: 1024px) {
   .stats-section {
-    padding: 80px 0;
+    padding: 60px 0;
   }
+
   .stat-big-num {
     font-size: 52px;
     line-height: 56px;
@@ -119,7 +120,7 @@
 /* ── Mobile ── */
 @media (max-width: 768px) {
   .stats-section {
-    padding: 56px 24px;
+    padding: 40px 0;
   }
 
   .stats-frame {
@@ -145,7 +146,7 @@
     gap: 40px 0;
   }
 
-  .stat-big-card + .stat-big-card {
+  .stat-big-card+.stat-big-card {
     border-left: none;
   }
 
@@ -153,6 +154,7 @@
   .stat-big-card:nth-child(2n) {
     border-left: 1px solid rgba(31, 0, 255, 0.1);
   }
+
   .stat-big-card:nth-child(3),
   .stat-big-card:nth-child(4) {
     border-top: 1px solid rgba(31, 0, 255, 0.1);

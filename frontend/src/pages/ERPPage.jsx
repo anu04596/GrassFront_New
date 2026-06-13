@@ -1,18 +1,34 @@
 import './ServicePage.css';
+import {
+  FaShoppingCart,
+  FaBoxes,
+  FaChartLine,
+  FaWallet,
+  FaChartPie,
+  FaFileExcel,
+  FaProjectDiagram,
+  FaClock,
+  FaEye,
+  FaIndustry,
+  FaUtensils,
+  FaStore,
+  FaTruck,
+  FaBriefcase
+} from 'react-icons/fa';
 
 const MODULES = [
-  { icon: '🏷️', title: 'Procurement Management', desc: 'Manage vendors, quotations, purchase requests, approvals, and purchase orders from one place.' },
-  { icon: '📦', title: 'Inventory Management', desc: 'Track stock movement, warehouse operations, inventory levels, and reorder alerts in real time.' },
-  { icon: '📈', title: 'Sales Management', desc: 'Monitor enquiries, quotations, orders, invoicing, and sales performance through a single dashboard.' },
-  { icon: '💰', title: 'Finance & Expense Tracking', desc: 'Keep track of expenses, approvals, budgets, and financial reporting.' },
-  { icon: '📊', title: 'Business Dashboards', desc: 'View important business numbers without opening multiple reports or spreadsheets.' },
+  { icon: <FaShoppingCart />, title: 'Procurement Management', desc: 'Manage vendors, quotations, purchase requests, approvals, and purchase orders from one place.' },
+  { icon: <FaBoxes />, title: 'Inventory Management', desc: 'Track stock movement, warehouse operations, inventory levels, and reorder alerts in real time.' },
+  { icon: <FaChartLine />, title: 'Sales Management', desc: 'Monitor enquiries, quotations, orders, invoicing, and sales performance through a single dashboard.' },
+  { icon: <FaWallet />, title: 'Finance & Expense Tracking', desc: 'Keep track of expenses, approvals, budgets, and financial reporting.' },
+  { icon: <FaChartPie />, title: 'Business Dashboards', desc: 'View important business numbers without opening multiple reports or spreadsheets.' },
 ];
 
 const PROBLEMS = [
-  { icon: '📋', title: 'Too Much Work Happens in Excel', desc: "Teams spend more time updating data than using it. As businesses grow, spreadsheets lead to mistakes, duplicate work, and reporting issues." },
-  { icon: '🔀', title: 'Teams Are Using Different Software', desc: "When sales, inventory, finance, and operations work on separate systems, data doesn't match, reports take longer, and decision-making slows down." },
-  { icon: '⏳', title: 'Approvals Take Too Long', desc: "Purchase requests and vendor approvals get stuck in emails and WhatsApp groups, creating delays and making it hard to track who approved what." },
-  { icon: '🔍', title: 'No Clear View of Business Performance', desc: "Business owners spend hours collecting information before understanding what's happening. A good ERP gives you real-time visibility without waiting for manual reports." },
+  { icon: <FaFileExcel />, title: 'Too Much Work Happens in Excel', desc: "Teams spend more time updating data than using it. As businesses grow, spreadsheets lead to mistakes, duplicate work, and reporting issues." },
+  { icon: <FaProjectDiagram />, title: 'Teams Are Using Different Software', desc: "When sales, inventory, finance, and operations work on separate systems, data doesn't match, reports take longer, and decision-making slows down." },
+  { icon: <FaClock />, title: 'Approvals Take Too Long', desc: "Purchase requests and vendor approvals get stuck in emails and WhatsApp groups, creating delays and making it hard to track who approved what." },
+  { icon: <FaEye />, title: 'No Clear View of Business Performance', desc: "Business owners spend hours collecting information before understanding what's happening. A good ERP gives you real-time visibility without waiting for manual reports." },
 ];
 
 const STEPS = [
@@ -24,8 +40,54 @@ const STEPS = [
 ];
 
 const INDUSTRIES = [
-  'Manufacturing Companies','Hospitality Businesses','Restaurants & Cafes',
-  'Retail Businesses','Distributors & Wholesalers','Service-Based Companies',
+  {
+    icon: <FaIndustry />,
+    name: 'Manufacturing Companies',
+    items: [
+      'Track raw material receipts against production orders',
+      'Compare supplier lead times for critical components',
+    ],
+    outcome: 'More predictable production planning and fewer line stoppages.',
+  },
+  {
+    icon: <FaUtensils />,
+    name: 'Hospitality Businesses',
+    items: [
+      'Match supplier deliveries to event and banquet schedules',
+      'Track linen, food, and beverage usage across outlets',
+      
+    ],
+    outcome: 'Less waste and fewer supply gaps during peak service.',
+  },
+  {
+    icon: <FaStore />,
+    name: 'Retail Businesses',
+    items: [
+      'Compare purchase orders for promotions and seasonal assortments',
+      'Track stock transfers between stores and warehouses',
+    ],
+    outcome: 'Better in-stock availability during high-demand windows.',
+  },
+  {
+    icon: <FaTruck />,
+    name: 'Distributors & Wholesalers',
+    items: [
+      'Match customer orders to available stock across warehouses',
+      'Track pallet receipts, allocations, and dispatch priorities',
+     
+    ],
+    outcome: 'Stronger order reliability and clearer margin control.',
+  },
+  {
+    icon: <FaBriefcase />,
+    name: 'Service-Based Companies',
+    items: [
+      'Manage purchase requests for field equipment and services',
+      'Track vendor contracts, renewals, and support commitments',
+      
+    ],
+    outcome: 'Faster approvals and clearer cost visibility for services.',
+  },
 ];
 
 const WHY = [
@@ -47,7 +109,7 @@ export default function ERPPage() {
           <h1>ERP Software Built Around <span className="sp-hero__accent">Your Business</span>,<br />Not the Other Way Around.</h1>
           <p>Many growing businesses start with Excel sheets, WhatsApp messages, emails, and multiple tools. As operations grow, information scatters, approvals get delayed, and decisions are made without visibility.</p>
           <div className="sp-hero__actions">
-            <a href="#contact" className="sp-btn sp-btn--primary">Talk to an ERP Expert</a>
+            <a href="/contact" className="sp-btn sp-btn--primary">Talk to an ERP Expert</a>
             <a href="#erp-modules" className="sp-btn sp-btn--ghost">See What We Build →</a>
           </div>
           <div className="sp-hero__stats">
@@ -154,8 +216,17 @@ export default function ERPPage() {
         <div className="sp-inner">
           <div className="section-tag"><span className="section-tag-line"/><span className="section-tag-label">Who We Work With</span></div>
           <div className="sp-section-header"><h2>Industries We Serve</h2><p>Our ERP solutions are designed for businesses across a range of sectors.</p></div>
-          <div className="sp-industries">
-            {INDUSTRIES.map(ind=><div className="sp-industry-pill" key={ind}>{ind}</div>)}
+          <div className="sp-industry-grid">
+            {INDUSTRIES.map(ind => (
+              <div className="sp-industry-card" key={ind.name}>
+                <div className="sp-industry-card__header">
+                  <div className="sp-industry-card__icon">{ind.icon}</div>
+                  <h3>{ind.name}</h3>
+                </div>
+                <ul>{ind.items.map(item => <li key={item}><span className="sp-industry-dot" />{item}</li>)}</ul>
+                {ind.outcome && <p className="sp-industry-card__outcome">{ind.outcome}</p>}
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -165,8 +236,8 @@ export default function ERPPage() {
           <h2>Ready to Simplify Your Operations?</h2>
           <p>If your team is spending too much time on manual processes, disconnected software, or spreadsheet management, it may be time to move to a system built for growth.</p>
           <div className="sp-cta__actions">
-            <a href="#contact" className="sp-btn sp-btn--white">Book a Free Consultation</a>
-            <a href="#contact" className="sp-btn sp-btn--outline-white">Talk to an Expert →</a>
+            <a href="mailto:Info@grassfront.com" className="sp-btn sp-btn--white">Book a Free Consultation</a>
+            <a href="tel:+917014626389" className="sp-btn sp-btn--outline-white">Talk to an Expert →</a>
           </div>
         </div>
       </section>

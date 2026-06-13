@@ -1,40 +1,72 @@
 import { useState } from 'react';
 import './ServicePage.css';
 import './AIAutomationPage.css';
+import {
+  FaCogs,
+  FaRobot,
+  FaChartLine,
+  FaFileInvoice,
+  FaExchangeAlt,
+  FaProjectDiagram,
+
+  FaTasks,
+  FaHourglassHalf,
+  FaClipboardList,
+  FaHeadset,
+  FaLink,
+
+  FaClock,
+  FaCheckCircle,
+  FaRocket,
+  FaHandshake,
+  FaDollarSign,
+  FaEye,
+
+  FaBullseye,
+  FaTools,
+  FaChartBar,
+  FaShieldAlt,
+  FaUtensils,
+  FaIndustry,
+  FaStore,
+  FaTruck,
+  FaBriefcase
+} from "react-icons/fa";
+
 
 const SOLUTIONS = [
   {
-    icon: '⚡',
+    icon: <FaCogs />,
     title: 'Workflow Automation',
     desc: 'Automate purchase approvals, vendor onboarding, employee requests, document reviews, and internal workflows to reduce delays and improve accountability.',
     tags: ['APPROVALS', 'ONBOARDING', 'WORKFLOWS'],
   },
   {
-    icon: '🤖',
+    icon: <FaRobot />,
     title: 'AI Chatbots',
     desc: 'Provide instant 24/7 responses to customer inquiries. AI chatbots answer common questions, capture leads, schedule appointments, and reduce support workload.',
     tags: ['CHATBOT', 'LEAD CAPTURE', '24/7 SUPPORT'],
   },
   {
-    icon: '📊',
+    icon: <FaChartLine />,
     title: 'Automated Reporting',
     desc: 'Stop building reports manually. We create systems that automatically collect data and generate real-time dashboards — sales, procurement, inventory, and KPI tracking.',
     tags: ['DASHBOARDS', 'KPI', 'REAL-TIME'],
   },
   {
-    icon: '📄',
+    icon: <FaFileInvoice />,
     title: 'Document Processing',
     desc: 'AI processes invoices, purchase orders, vendor documents, contracts, and forms — reducing manual data entry and improving accuracy across high-volume operations.',
     tags: ['INVOICES', 'CONTRACTS', 'OCR'],
   },
   {
-    icon: '🔗',
+    icon: <FaExchangeAlt />,
     title: 'Data Synchronization',
     desc: 'Automatically transfer information between systems without manual intervention — ERP to CRM, CRM to accounting, inventory to e-commerce, procurement to finance.',
     tags: ['ERP', 'CRM', 'INTEGRATIONS'],
   },
   {
-    icon: '🔄',
+    icon: <FaProjectDiagram />,
     title: 'Business Process Automation',
     desc: 'Automate entire workflows from start to finish. Reduce manual effort, improve consistency, eliminate bottlenecks, and increase productivity across departments.',
     tags: ['END-TO-END', 'PRODUCTIVITY', 'BPA'],
@@ -42,20 +74,20 @@ const SOLUTIONS = [
 ];
 
 const SIGNS = [
-  { icon: '🔁', title: 'Your Team Repeats the Same Tasks Every Day', desc: 'Employees spend hours updating spreadsheets, sending reminders, or moving information between systems.' },
-  { icon: '⏳', title: 'Approvals Take Too Long', desc: 'Businesses still rely on emails and manual follow-ups for approvals — creating delays, confusion, and lost accountability.' },
-  { icon: '📋', title: 'Reporting Requires Too Much Effort', desc: 'Someone spends hours every week creating reports that could be generated automatically with real-time data.' },
-  { icon: '💬', title: 'Customer Queries Overwhelm Your Team', desc: 'Customers ask similar questions repeatedly. AI chatbots can handle routine inquiries while your team focuses on complex issues.' },
-  { icon: '🔀', title: 'Multiple Systems Don\'t Work Together', desc: 'Data gets stuck between software platforms. Automation connects systems and eliminates repetitive data entry.' },
+  { icon: <FaTasks />, title: 'Your Team Repeats the Same Tasks Every Day', desc: 'Employees spend hours updating spreadsheets, sending reminders, or moving information between systems.' },
+  { icon: <FaHourglassHalf />, title: 'Approvals Take Too Long', desc: 'Businesses still rely on emails and manual follow-ups for approvals — creating delays, confusion, and lost accountability.' },
+  { icon: <FaClipboardList />, title: 'Reporting Requires Too Much Effort', desc: 'Someone spends hours every week creating reports that could be generated automatically with real-time data.' },
+  { icon: <FaHeadset />, title: 'Customer Queries Overwhelm Your Team', desc: 'Customers ask similar questions repeatedly. AI chatbots can handle routine inquiries while your team focuses on complex issues.' },
+  { icon: <FaLink />, title: 'Multiple Systems Don\'t Work Together', desc: 'Data gets stuck between software platforms. Automation connects systems and eliminates repetitive data entry.' },
 ];
 
 const BENEFITS = [
-  { icon: '⏱️', title: 'Save Time', desc: 'Reduce hours spent on repetitive activities. Automation allows employees to focus on more meaningful, high-value work.' },
-  { icon: '✅', title: 'Improve Accuracy', desc: 'Manual processes often lead to mistakes. Automation ensures consistency and significantly reduces human error.' },
-  { icon: '🚀', title: 'Faster Operations', desc: 'Workflows move quicker when approvals, notifications, and updates happen automatically without waiting.' },
-  { icon: '😊', title: 'Better Customer Experience', desc: 'Customers receive faster responses and more consistent service across every touchpoint.' },
-  { icon: '💡', title: 'Lower Operational Costs', desc: 'Automation helps businesses do more without continuously increasing headcount or overhead.' },
-  { icon: '📡', title: 'Improved Visibility', desc: 'Automated systems provide better tracking and reporting across all operations in real time.' },
+  { icon: <FaClock />, title: 'Save Time', desc: 'Reduce hours spent on repetitive activities. Automation allows employees to focus on more meaningful, high-value work.' },
+  { icon: <FaCheckCircle />, title: 'Improve Accuracy', desc: 'Manual processes often lead to mistakes. Automation ensures consistency and significantly reduces human error.' },
+  { icon: <FaRocket />, title: 'Faster Operations', desc: 'Workflows move quicker when approvals, notifications, and updates happen automatically without waiting.' },
+  { icon: <FaHandshake />, title: 'Better Customer Experience', desc: 'Customers receive faster responses and more consistent service across every touchpoint.' },
+  { icon: <FaDollarSign />, title: 'Lower Operational Costs', desc: 'Automation helps businesses do more without continuously increasing headcount or overhead.' },
+  { icon: <FaEye />, title: 'Improved Visibility', desc: 'Automated systems provide better tracking and reporting across all operations in real time.' },
 ];
 
 const USE_CASES = [
@@ -86,11 +118,56 @@ const USE_CASES = [
 ];
 
 const INDUSTRIES = [
-  { name: 'Hospitality & Restaurants', items: ['Vendor Management', 'Procurement Automation', 'Inventory Reporting'] },
-  { name: 'Manufacturing', items: ['Production Workflows', 'Supplier Management', 'Approval Processes'] },
-  { name: 'Retail', items: ['Customer Support Automation', 'Sales Reporting', 'Inventory Visibility'] },
-  { name: 'Distribution & Logistics', items: ['Order Processing', 'Inventory Updates', 'Workflow Automation'] },
-  { name: 'Professional Services', items: ['Client Onboarding', 'Document Management', 'Reporting Automation'] },
+  {
+    icon: <FaUtensils />,
+    name: 'Hospitality & Restaurants',
+    items: [
+      'Automated reservation and order confirmations',
+      'Shift-based inventory alerts for high-volume service',
+      'Guest feedback routing to the right manager',
+    ],
+    outcome: 'Free staff from routine guest follow-up so they can focus on service.',
+  },
+  {
+    icon: <FaIndustry />,
+    name: 'Manufacturing',
+    items: [
+      'Inspection result capture from shop floor devices',
+      'Maintenance reminders when equipment thresholds are reached',
+      'Production order status updates pushed to planning systems',
+    ],
+    outcome: 'Reduce downtime by making status and alerts automatic.',
+  },
+  {
+    icon: <FaStore />,
+    name: 'Retail',
+    items: [
+      'Basket abandonment follow-ups driven by online behaviour',
+      'Price change alerts sent to stores and e-commerce channels',
+      'Backroom replenishment requests triggered by sales velocity',
+    ],
+    outcome: 'Keep merchandising and store teams aligned during busy periods.',
+  },
+  {
+    icon: <FaTruck />,
+    name: 'Distribution & Logistics',
+    items: [
+      'Proof-of-delivery notifications pushed automatically',
+      'Carrier delay alerts routed to customer service',
+      'Return authorization workflows created from shipment exceptions',
+    ],
+    outcome: 'Reduce manual chasing across carriers, warehouses, and customer service.',
+  },
+  {
+    icon: <FaBriefcase />,
+    name: 'Professional Services',
+    items: [
+      'Client onboarding tasks assigned from intake forms',
+      'Proposal follow-up reminders sent automatically',
+      'Invoice review and delivery checks triggered by project milestones',
+    ],
+    outcome: 'Keep service delivery moving without extra administrative effort.',
+  },
 ];
 
 const FAQS = [
@@ -136,9 +213,9 @@ export default function AIAutomationPage() {
     <main className="sp-page">
 
       {/* ── Hero ── */}
-      <section className="sp-hero ai-hero">
+      <section className="sp-hero">
         <div className="sp-hero__inner">
-          {/* <div className="sp-hero__label"><span className="sp-hero__dot" />AI Automation Services</div> */}
+        
           <h1>Stop Repeating Work.<br /><span className="sp-hero__accent">Let Automation Handle It.</span></h1>
           <p>Every business has tasks that consume hours every week but add very little value. Approvals move through emails. Reports are prepared manually. Teams copy data between systems. We fix that.</p>
           <div className="sp-hero__actions">
@@ -146,7 +223,7 @@ export default function AIAutomationPage() {
             <a href="#ai-solutions" className="sp-btn sp-btn--ghost">See Solutions →</a>
           </div>
           <div className="sp-hero__stats">
-            {[['2000+', 'Hours saved through automation'], ['80%', 'Avg. queries automated'], ['40h→4h', 'Reporting time reduced'], ['100%', 'On-time delivery']].map(([n, l]) => (
+            {[['2000+', 'Hours saved'], ['80%', 'Queries automated'], ['40h→4h', 'Reporting time'], ['100%', 'On-time delivery']].map(([n, l]) => (
               <div className="sp-hero__stat" key={n}>
                 <span className="sp-hero__stat-num">{n}</span>
                 <span className="sp-hero__stat-label">{l}</span>
@@ -172,7 +249,7 @@ export default function AIAutomationPage() {
                   <div className={`ai-flow__step ai-flow__step--${step.status}`}>
                     <span className="ai-flow__icon">{step.icon}</span>
                     <span className="ai-flow__label">{step.label}</span>
-                    <span className="ai-flow__badge ai-flow__badge--${step.status}">
+                    <span className="ai-flow__badge">
                       {step.status === 'done' ? '✓' : step.status === 'active' ? '⟳' : '○'}
                     </span>
                   </div>
@@ -331,8 +408,12 @@ export default function AIAutomationPage() {
           <div className="sp-industry-grid">
             {INDUSTRIES.map(ind => (
               <div className="sp-industry-card" key={ind.name}>
-                <h3>{ind.name}</h3>
+                <div className="sp-industry-card__header">
+                  <div className="sp-industry-card__icon">{ind.icon}</div>
+                  <h3>{ind.name}</h3>
+                </div>
                 <ul>{ind.items.map(it => <li key={it}><span className="sp-industry-dot" />{it}</li>)}</ul>
+                {ind.outcome && <p className="sp-industry-card__outcome">{ind.outcome}</p>}
               </div>
             ))}
           </div>
@@ -349,10 +430,10 @@ export default function AIAutomationPage() {
           </div>
           <div className="sp-grid sp-grid--2">
             {[
-              { icon: '🎯', title: 'Practical Automation, Not Just Technology', desc: 'Many businesses hear about AI but struggle to understand where it creates real value. We identify practical automation opportunities that deliver measurable improvements.' },
-              { icon: '🔧', title: 'Solutions Designed Around Your Process', desc: 'Every business operates differently. We build automation solutions that fit your existing workflows rather than forcing major operational changes.' },
-              { icon: '📊', title: 'Business-First Approach', desc: 'We start by understanding your business challenge before recommending technology. No solution is proposed without a clear problem to solve.' },
-              { icon: '🛡', title: 'Long-Term Support', desc: 'Automation requirements evolve as businesses grow. We continue supporting and improving solutions after implementation — not just deploying and leaving.' },
+              { icon: <FaBullseye />, title: 'Practical Automation, Not Just Technology', desc: 'Many businesses hear about AI but struggle to understand where it creates real value. We identify practical automation opportunities that deliver measurable improvements.' },
+              { icon: <FaTools />, title: 'Solutions Designed Around Your Process', desc: 'Every business operates differently. We build automation solutions that fit your existing workflows rather than forcing major operational changes.' },
+              { icon: <FaChartBar />, title: 'Business-First Approach', desc: 'We start by understanding your business challenge before recommending technology. No solution is proposed without a clear problem to solve.' },
+              { icon: <FaShieldAlt />, title: 'Long-Term Support', desc: 'Automation requirements evolve as businesses grow. We continue supporting and improving solutions after implementation — not just deploying and leaving.' },
             ].map(w => (
               <div className="sp-problem-card" key={w.title}>
                 <div className="sp-problem-icon">{w.icon}</div>
@@ -384,8 +465,8 @@ export default function AIAutomationPage() {
           <h2>Ready to Automate Your Business Processes?</h2>
           <p>If your team spends too much time on repetitive tasks, manual reporting, approvals, or customer support, automation can help create a faster and more efficient way of working.</p>
           <div className="sp-cta__actions">
-            <a href="#contact" className="sp-btn sp-btn--white">Book a Free Automation Consultation</a>
-            <a href="#contact" className="sp-btn sp-btn--outline-white">Talk to Our Team →</a>
+            <a href="mailto:Info@grassfront.com" className="sp-btn sp-btn--white">Book a Free Automation Consultation</a>
+            <a href="tel:+917014626389" className="sp-btn sp-btn--outline-white">Talk to Our Team →</a>
           </div>
         </div>
       </section>

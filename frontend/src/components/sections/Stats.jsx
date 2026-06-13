@@ -81,7 +81,7 @@ export default function Stats() {
   return (
     <section className="stats-section" ref={sectionRef}>
       <div className="stats-frame">
-        <span className="stats-eyebrow">Stats & Numbers</span>
+        <span className="section-tag-label">Stats & Numbers</span>
 
         <div className="section-inner">
           <h2>Results that speak for themselves.</h2>
