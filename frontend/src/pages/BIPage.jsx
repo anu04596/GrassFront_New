@@ -53,7 +53,7 @@ const BENEFITS = [
 
 const INDUSTRIES = [
   {
-    icon: <FaUtensils />,
+    icon: <img src="/assets/ind-coffee.png" alt="Hospitality" />,
     name: 'Hospitality & Restaurants',
     items: [
       'Cover and menu mix reporting by outlet',
@@ -63,7 +63,8 @@ const INDUSTRIES = [
     outcome: 'Match purchasing and staffing to actual demand.',
   },
   {
-    icon: <FaIndustry />,
+    icon: <img src="/assets/ind-factory.png" alt="Manufacturing" />,
+
     name: 'Manufacturing',
     items: [
       'Machine uptime and scrap rate dashboards',
@@ -73,7 +74,8 @@ const INDUSTRIES = [
     outcome: 'Make production decisions with current quality and cost data.',
   },
   {
-    icon: <FaShoppingCart />, name: 'Retail',
+    icon: <img src="/assets/ind-cart.png" alt="Retail" />,
+    name: 'Retail',
     items: [
       'Promotion conversion and sell-through reports',
       'SKU velocity across channels',
@@ -82,7 +84,7 @@ const INDUSTRIES = [
     outcome: 'Plan assortments and pricing from real sales performance.',
   },
   {
-    icon: <FaTruck />,
+    icon: <img src="/assets/ind-truck.png" alt="Distribution & Logistics" />,
     name: 'Distribution & Logistics',
     items: [
       'On-time delivery and fulfillment dashboards',
@@ -92,7 +94,7 @@ const INDUSTRIES = [
     outcome: 'Keep logistics and inventory teams aligned on actual progress.',
   },
   {
-    icon: <FaBriefcase />,
+    icon: <img src="/assets/ind-services.jpg" alt="Professional Services" />,
     name: 'Professional Services',
     items: [
       'Utilization and capacity planning dashboards',

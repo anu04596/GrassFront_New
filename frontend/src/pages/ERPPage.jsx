@@ -41,7 +41,7 @@ const STEPS = [
 
 const INDUSTRIES = [
   {
-    icon: <FaIndustry />,
+    icon: <img src="/assets/ind-factory.png" alt="Manufacturing" />,
     name: 'Manufacturing Companies',
     items: [
       'Track raw material receipts against production orders',
@@ -50,7 +50,7 @@ const INDUSTRIES = [
     outcome: 'More predictable production planning and fewer line stoppages.',
   },
   {
-    icon: <FaUtensils />,
+    icon: <img src="/assets/ind-coffee.png" alt="Hospitality" />,
     name: 'Hospitality Businesses',
     items: [
       'Match supplier deliveries to event and banquet schedules',
@@ -60,7 +60,8 @@ const INDUSTRIES = [
     outcome: 'Less waste and fewer supply gaps during peak service.',
   },
   {
-    icon: <FaStore />,
+    icon: <img src="/assets/ind-cart.png" alt="Retail" />,
+
     name: 'Retail Businesses',
     items: [
       'Compare purchase orders for promotions and seasonal assortments',
@@ -69,7 +70,7 @@ const INDUSTRIES = [
     outcome: 'Better in-stock availability during high-demand windows.',
   },
   {
-    icon: <FaTruck />,
+    icon: <img src="/assets/ind-truck.png" alt="Distribution & Logistics" />,
     name: 'Distributors & Wholesalers',
     items: [
       'Match customer orders to available stock across warehouses',
@@ -79,7 +80,7 @@ const INDUSTRIES = [
     outcome: 'Stronger order reliability and clearer margin control.',
   },
   {
-    icon: <FaBriefcase />,
+    icon: <img src="/assets/ind-services.jpg" alt="Professional Services" />,
     name: 'Service-Based Companies',
     items: [
       'Manage purchase requests for field equipment and services',

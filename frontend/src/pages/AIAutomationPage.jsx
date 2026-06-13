@@ -119,7 +119,7 @@ const USE_CASES = [
 
 const INDUSTRIES = [
   {
-    icon: <FaUtensils />,
+    icon: <img src="/assets/ind-coffee.png" alt="Coffee" />,
     name: 'Hospitality & Restaurants',
     items: [
       'Automated reservation and order confirmations',
@@ -129,7 +129,7 @@ const INDUSTRIES = [
     outcome: 'Free staff from routine guest follow-up so they can focus on service.',
   },
   {
-    icon: <FaIndustry />,
+    icon: <img src="/assets/ind-factory.png" alt="Factory" />,
     name: 'Manufacturing',
     items: [
       'Inspection result capture from shop floor devices',
@@ -139,7 +139,7 @@ const INDUSTRIES = [
     outcome: 'Reduce downtime by making status and alerts automatic.',
   },
   {
-    icon: <FaStore />,
+    icon: <img src="/assets/ind-cart.png" alt="Retail" />,
     name: 'Retail',
     items: [
       'Basket abandonment follow-ups driven by online behaviour',
@@ -149,7 +149,7 @@ const INDUSTRIES = [
     outcome: 'Keep merchandising and store teams aligned during busy periods.',
   },
   {
-    icon: <FaTruck />,
+    icon: <img src="/assets/ind-truck.png" alt="Distribution & Logistics" />,
     name: 'Distribution & Logistics',
     items: [
       'Proof-of-delivery notifications pushed automatically',
@@ -159,7 +159,7 @@ const INDUSTRIES = [
     outcome: 'Reduce manual chasing across carriers, warehouses, and customer service.',
   },
   {
-    icon: <FaBriefcase />,
+    icon: <img src="/assets/ind-services.jpg" alt="Professional Services" />,
     name: 'Professional Services',
     items: [
       'Client onboarding tasks assigned from intake forms',

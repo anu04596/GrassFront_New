@@ -1,5 +1,5 @@
 import "./Capabilities.css";
-
+import { Link } from "react-router-dom";
 /* ─── Card data ─────────────────────────────────────────────────── */
 const CAPS = [
   {
@@ -28,7 +28,7 @@ const CAPS = [
     tagline:
       "Track KPIs, monitor performance, and make decisions with confidence.",
     tags: ["BI", "DASHBOARDS", "KPI"],
-    href: "/business-intelligence",
+    href: "/bi",
   },
   {
     shortTitle: "Procurement Management Software",
@@ -41,7 +41,7 @@ const CAPS = [
     shortTitle: "System Integration",
     tagline: "Connect existing software into a single, efficient workflow.",
     tags: ["INTEGRATION", "APIS"],
-    href: "/system-integration",
+    href: "/integration",
   },
 ];
 
@@ -88,9 +88,9 @@ export default function Capabilities() {
 
                 {/* ── CTA ── */}
                 <div className="cap-learn">
-                  <a href={c.href} className="learn-link">
+                  <Link to={c.href} className="learn-link">
                     Learn More →
-                  </a>
+                  </Link>
                 </div>
               </div>
             ))}

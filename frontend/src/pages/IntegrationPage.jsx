@@ -81,7 +81,7 @@ const USE_CASES = [
 
 const INDUSTRIES = [
   {
-    icon: <FaUtensils />,
+    icon: <img src="/assets/ind-coffee.png" alt="Hospitality" />,
     name: 'Hospitality & Restaurants',
     items: [
       'Sync POS, procurement, and kitchen systems for real-time stock updates',
@@ -91,7 +91,7 @@ const INDUSTRIES = [
     outcome: 'Keep guest service, kitchen, and procurement teams coordinated automatically.',
   },
   {
-    icon: <FaIndustry />,
+    icon: <img src="/assets/ind-factory.png" alt="Manufacturing" />,
     name: 'Manufacturing',
     items: [
       'Connect MES with ERP to eliminate manual production handoffs',
@@ -101,7 +101,8 @@ const INDUSTRIES = [
     outcome: 'Reduce manual escalation when work moves between production and support teams.',
   },
   {
-    icon: <FaShoppingCart />, name: 'Retail',
+    icon: <img src="/assets/ind-cart.png" alt="Retail" />,
+    name: 'Retail',
     items: [
       'Sync online orders with in-store inventory and fulfillment',
       'Flow loyalty and CRM data into point-of-sale experiences',
@@ -110,7 +111,7 @@ const INDUSTRIES = [
     outcome: 'Stop retail channels from operating with inconsistent inventory and customer data.',
   },
   {
-    icon: <FaTruck />,
+    icon: <img src="/assets/ind-truck.png" alt="Distribution & Logistics" />,
     name: 'Distribution & Logistics',
     items: [
       'Connect WMS to carriers for live shipment and allocation updates',
@@ -120,7 +121,7 @@ const INDUSTRIES = [
     outcome: 'Keep shipment commitments accurate and reduce manual tracking.',
   },
   {
-    icon: <FaBriefcase />,
+    icon: <img src="/assets/ind-services.jpg" alt="Professional Services" />,
     name: 'Professional Services',
     items: [
       'Push CRM opportunities into project delivery systems',

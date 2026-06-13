@@ -63,7 +63,7 @@ const BENEFITS = [
 
 const INDUSTRIES = [
   {
-    icon: <FaUtensils />,
+    icon: <img src="/assets/ind-coffee.png" alt="Hospitality" />,
     name: 'Hospitality & Restaurants',
     items: [
       'Sync POS order data with inventory and purchasing',
@@ -72,7 +72,7 @@ const INDUSTRIES = [
     outcome: 'Reduce manual handoffs between service, kitchen, and purchasing teams.',
   },
   {
-    icon: <FaIndustry />,
+    icon: <img src="/assets/ind-factory.png" alt="Manufacturing" />,
     name: 'Manufacturing',
     items: [
       
@@ -82,7 +82,8 @@ const INDUSTRIES = [
     outcome: 'Keep production tasks aligned and reduce costly line delays.',
   },
   {
-    icon: <FaStore />,
+    icon: <img src="/assets/ind-cart.png" alt="Retail" />,
+
     name: 'Retail',
     items: [
       'Drive replenishment workflows for inventory transfers and store restock',
@@ -92,7 +93,7 @@ const INDUSTRIES = [
     outcome: 'Keep stores, warehouses, and service teams working from the same plan.',
   },
   {
-    icon: <FaTruck />,
+    icon: <img src="/assets/ind-truck.png" alt="Distribution & Logistics" />,
     name: 'Distribution & Logistics',
     items: [
       'Book shipments, allocation, and dispatch in one workflow',
@@ -102,7 +103,7 @@ const INDUSTRIES = [
     outcome: 'Reduce shipping errors and make order handoffs easier to manage.',
   },
   {
-    icon: <FaBriefcase />,
+    icon:  <img src="/assets/ind-services.jpg" alt="Professional Services" />,
     name: 'Professional Services',
     items: [
      

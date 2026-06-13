@@ -13,10 +13,6 @@ import {
   FaRupeeSign,
   FaSearch,
   FaClock,
-  FaIndustry,
-  FaTruck,
-  FaShoppingCart,
-  FaUtensils
 } from "react-icons/fa";
 
 import {
@@ -46,7 +42,7 @@ const BENEFITS = [
 
 const INDUSTRIES = [
   {
-    icon: <FaUtensils />,
+    icon: <img src="/assets/ind-coffee.png" alt="Hospitality" />,
     name: 'Hospitality & Restaurants',
     items: [
       'Manage food, linen, and beverage orders by outlet and service period',
@@ -56,7 +52,8 @@ const INDUSTRIES = [
     outcome: 'Keep kitchens stocked and service uninterrupted during busy shifts.',
   },
   {
-    icon: <FaIndustry />,
+    icon: <img src="/assets/ind-factory.png" alt="Manufacturing" />,
+
     name: 'Manufacturing',
     items: [
       'Compare supplier on-time delivery and quality performance',
@@ -66,7 +63,7 @@ const INDUSTRIES = [
     outcome: 'Reduce the risk of production stops caused by missing materials.',
   },
   {
-    icon: <FaShoppingCart />,
+    icon: <img src="/assets/ind-cart.png" alt="Retail" />,
     name: 'Retail',
     items: [
       'Plan store replenishment and promotional buys with supplier data',
@@ -76,7 +73,8 @@ const INDUSTRIES = [
     outcome: 'Make sure each location has the right products at the right time.',
   },
   {
-    icon: <FaTruck />,
+    icon: <img src="/assets/ind-truck.png" alt="Distribution & Logistics" />,
+
     name: 'Distribution Businesses',
     items: [
       'Consolidate bulk purchase orders across customer segments',
