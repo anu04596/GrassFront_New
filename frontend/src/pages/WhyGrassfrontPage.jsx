@@ -1,8 +1,19 @@
-import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import './HospitalityRestaurantsPage.css';
-import './TrustPages.css';
+import {
+  Rocket,
+  Zap,
+  BarChart3,
+  MessageSquare,
+  Headphones,
+  CheckCircle,
+  Building2,
+  Factory,
+  ShoppingBag,
+  Truck,
+  Briefcase,
+} from 'lucide-react';
+import './WhyGrassfrontPage.css';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
@@ -10,166 +21,255 @@ const fadeInUp = {
 };
 const stagger = {
   hidden: { opacity: 0 },
-  visible: { opacity: 1, transition: { staggerChildren: 0.09 } }
+  visible: { opacity: 1, transition: { staggerChildren: 0.07 } }
 };
 
-const DIFFERENTIATORS = [
+const DIFFERENCES = [
   {
-    icon: '🎯',
-    title: 'We Start With Your Business, Not Technology',
-    desc: 'Before recommending any solution, we take time to understand how your business operates, existing challenges, current workflows, and growth objectives. This ensures the solution supports your business instead of creating additional complexity.'
+    icon: Rocket,
+    title: "We Start With Your Business, Not Technology",
+    desc: "Before recommending any solution, we understand your goals, challenges, and workflows."
   },
   {
-    icon: '⚡',
-    title: 'Practical Solutions, Not Unnecessary Complexity',
-    desc: 'We believe software should simplify work. Our focus is on creating systems that teams can adopt quickly and use effectively — no unnecessary features, no overcomplicated workflows.'
+    icon: Zap,
+    title: "Practical Solutions, Not Unnecessary Complexity",
+    desc: "We focus on building systems that teams can actually adopt and use effectively."
   },
   {
-    icon: '📈',
-    title: 'Long-Term Thinking',
-    desc: 'Technology requirements evolve as businesses grow. That\'s why we build solutions that can scale, adapt, and continue delivering value over time.'
+    icon: BarChart3,
+    title: "Long-Term Thinking",
+    desc: "Technology evolves as businesses grow. We build solutions that scale."
   },
   {
-    icon: '💬',
-    title: 'Clear Communication',
-    desc: 'Clients should never wonder what\'s happening, what\'s completed, or what\'s next. We provide regular updates and maintain complete transparency throughout the project lifecycle.'
+    icon: MessageSquare,
+    title: "Clear Communication",
+    desc: "Transparent updates and visibility throughout the project lifecycle."
   },
   {
-    icon: '🛠️',
-    title: 'Support Beyond Launch',
-    desc: 'Launching software is not the finish line. We continue supporting our clients through maintenance, improvements, optimization, and future enhancements.'
+    icon: Headphones,
+    title: "Support Beyond Launch",
+    desc: "Maintenance, optimization and continuous improvement after delivery."
   }
 ];
 
-const VALUES = [
-  'Business-first approach',
-  'Reliable project delivery',
-  'Practical problem solving',
-  'Transparent communication',
-  'Long-term support',
-  'Scalable technology solutions'
+const INDUSTRIES = [
+  {
+    icon: Building2,
+    title: "Hospitality & Restaurants",
+    image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4",
+    path: "/industries/hospitality"
+  },
+  {
+    icon: Factory,
+    title: "Manufacturing",
+    image: "https://images.unsplash.com/photo-1565793298595-6a879b1d9492",
+    path: "/industries/manufacturing"
+  },
+  {
+    icon: ShoppingBag,
+    title: "Retail",
+    image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8",
+    path: "/industries/retail"
+  },
+  {
+    icon: Truck,
+    title: "Distribution & Logistics",
+    image: "https://images.unsplash.com/photo-1519003722824-194d4455a60c",
+    path: "/industries/logistics"
+  },
+  {
+    icon: Briefcase,
+    title: "Professional Services",
+    image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d",
+    path: "/industries/professional-services"
+  }
 ];
 
-const INDUSTRIES = [
-  { icon: '🍽️', name: 'Hospitality & Restaurants', href: '/hospitality-restaurants' },
-  { icon: '🏭', name: 'Manufacturing', href: '/manufacturing' },
-  { icon: '🛒', name: 'Retail', href: '/retail' },
-  { icon: '🚚', name: 'Distribution & Logistics', href: '/logistics' },
-  { icon: '💼', name: 'Professional Services', href: '/professional-services' }
+const CLIENT_VALUES = [
+  "Business-first approach",
+  "Reliable project delivery",
+  "Practical problem solving",
+  "Transparent communication",
+  "Long-term support",
+  "Scalable technology solutions",
 ];
 
 export default function WhyGrassfrontPage() {
   return (
-    <main className="hr-page tp-page">
+    <main className="wg-page">
+      {/* ── Dark Hero ── */}
+      <section className="wg-hero">
+        {/* Gradient backdrop */}
+        <div className="wg-hero__bg-gradient" />
 
-      {/* ── Hero Banner ── */}
-      <section className="tp-hero">
-        <img src="/assets/why-grassfront-hero.png" alt="Why GrassFRONT" className="tp-hero__img" />
-        <div className="tp-hero__overlay">
-          <motion.div
-            className="tp-hero__content"
-            initial="hidden" animate="visible" variants={stagger}
-          >
+        <div className="wg-hero__inner">
+          <motion.div className="wg-hero__left" initial="hidden" animate="visible" variants={stagger}>
             <motion.div variants={fadeInUp}>
-              <span className="tp-hero__badge">Why GrassFRONT</span>
+              <span className="wg-hero__badge">Why GrassFront</span>
             </motion.div>
-            <motion.h1 variants={fadeInUp} className="tp-hero__title">
+            <motion.h1 variants={fadeInUp} className="wg-hero__title">
               Technology Built Around<br />
-              <span className="hr-hero-title-accent">Business Outcomes</span>
+              <span className="wg-hero__accent">Business Outcomes</span>
             </motion.h1>
-            <motion.p variants={fadeInUp} className="tp-hero__sub">
-              Choosing a technology partner is about more than software. You need a team that understands
-              your business, communicates clearly, and delivers solutions that create measurable impact.
+            <motion.p variants={fadeInUp} className="wg-hero__sub">
+              Choosing a technology partner is about more than software.
+              You need a team that understands your business and delivers
+              measurable impact.
             </motion.p>
-            <motion.div variants={fadeInUp} className="sp-hero__actions">
-              <a href="#contact" className="sp-btn sp-btn--white">Schedule a Free Consultation</a>
-              <Link to="/our-process" className="sp-btn sp-btn--outline-white">Our Process →</Link>
+            <motion.div variants={fadeInUp} className="wg-hero__actions">
+              <a href="#contact" className="wg-btn wg-btn--primary">
+                Schedule Consultation
+              </a>
+              <Link to="/our-process" className="wg-btn wg-btn--ghost">
+                Our Process
+              </Link>
             </motion.div>
+          </motion.div>
+
+          {/* Hero Image */}
+          <motion.div
+            className="wg-hero__right"
+            initial={{ opacity: 0, scale: 0.9, x: 40 }}
+            animate={{ opacity: 1, scale: 1, x: 0 }}
+            transition={{ duration: 0.9, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+          >
+            <img src="/assets/why-grassfront-hero.png" alt="Technology Built for Outcomes" className="wg-hero__img" />
           </motion.div>
         </div>
       </section>
 
       {/* ── What Makes Us Different ── */}
-      <section className="sp-section sp-section--white">
-        <motion.div className="sp-inner" initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={stagger}>
-          <motion.div variants={fadeInUp} className="section-tag"><span className="section-tag-line" /><span className="section-tag-label">Our Difference</span></motion.div>
-          <motion.div variants={fadeInUp} className="sp-section-header">
-            <h2>What Makes Us Different?</h2>
-            <p>At GrassFRONT, we focus on solving operational challenges through practical technology solutions that improve efficiency, visibility, and growth.</p>
-          </motion.div>
-          <motion.div variants={stagger} className="hr-challenges-grid hr-grid-5">
-            {DIFFERENTIATORS.map(d => (
-              <motion.div key={d.title} variants={fadeInUp} className="hr-bento-card tp-diff-card">
-                <div className="hr-icon-wrapper">{d.icon}</div>
-                <h3>{d.title}</h3>
-                <p>{d.desc}</p>
-              </motion.div>
-            ))}
-          </motion.div>
-        </motion.div>
+      <section className="wg-diff-section">
+        <div className="wg-diff-section__inner">
+          <div className="wg-section-header wg-section-header--split">
+            <div>
+              <span className="wg-section-badge">Our Difference</span>
+              <h2 className="wg-section-title">What Makes Us Different?</h2>
+            </div>
+            <p className="wg-section-desc">
+              At GrassFRONT, we focus on solving operational challenges
+              through practical technology solutions.
+            </p>
+          </div>
+
+          <div className="wg-diff-grid">
+            {DIFFERENCES.map((item, i) => {
+              const Icon = item.icon;
+              return (
+                <motion.div
+                  key={i}
+                  className="wg-diff-card"
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: '-40px' }}
+                  transition={{ duration: 0.5, delay: i * 0.1 }}
+                >
+                  <Icon className="wg-diff-card__icon" />
+                  <h3 className="wg-diff-card__title">{item.title}</h3>
+                  <p className="wg-diff-card__desc">{item.desc}</p>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
       </section>
 
-      {/* ── What Clients Value ── */}
-      <section className="sp-section sp-section--tint">
-        <motion.div className="sp-inner" initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={stagger}>
-          <div className="sp-split">
-            <motion.div variants={fadeInUp} className="sp-split__left">
-              <div className="section-tag"><span className="section-tag-line" /><span className="section-tag-label">Client Experience</span></div>
-              <h2>What Clients Value Most</h2>
-              <p className="sp-split__desc">
-                Our clients choose GrassFRONT because we prioritize their business outcomes above all else.
-                Here's what they consistently highlight about working with us.
-              </p>
-            </motion.div>
+      {/* ── Client Experience ── */}
+      <section className="wg-client-section">
+        <div className="wg-client-section__inner">
+          <motion.div
+            className="wg-client-left"
+            initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}
+          >
             <motion.div variants={fadeInUp}>
-              <ul className="sp-checklist" style={{ boxShadow: '0 24px 48px rgba(0,0,0,0.04)', borderRadius: '20px', border: 'none' }}>
-                {VALUES.map(v => (
-                  <li key={v} className="sp-checklist__item" style={{ padding: '20px 24px', fontSize: '15px' }}>
-                    <span className="sp-checklist__check">✓</span>{v}
-                  </li>
-                ))}
-              </ul>
+              <span className="wg-section-badge">Client Experience</span>
             </motion.div>
+            <motion.h2 variants={fadeInUp} className="wg-section-title">
+              What Clients Value Most
+            </motion.h2>
+            <motion.p variants={fadeInUp} className="wg-client-desc">
+              Here's what our clients consistently highlight about
+              working with us.
+            </motion.p>
+          </motion.div>
+
+          <motion.div
+            className="wg-client-right"
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+          >
+            <div className="wg-client-box">
+              {CLIENT_VALUES.map((val, i) => (
+                <div key={i} className="wg-client-item">
+                  <CheckCircle className="wg-client-item__icon" />
+                  <span>{val}</span>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ── Industries We Serve ── */}
+      <section className="wg-industry-section">
+        <div className="wg-industry-section__inner">
+          <div className="wg-section-header">
+            <span className="wg-section-badge">Industries We Serve</span>
+            <h2 className="wg-section-title">Industries We Serve</h2>
           </div>
-        </motion.div>
+
+          <div className="wg-industry-grid">
+            {INDUSTRIES.map((ind, i) => {
+              const Icon = ind.icon;
+              return (
+                <motion.div
+                  key={i}
+                  className="wg-industry-card"
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: '-40px' }}
+                  transition={{ duration: 0.5, delay: i * 0.1 }}
+                >
+                  <img src={ind.image} className="wg-industry-card__bg" alt={ind.title} />
+                  <div className="wg-industry-card__overlay" />
+                  <div className="wg-industry-card__content">
+                    <Icon className="wg-industry-card__icon" />
+                    <h3 className="wg-industry-card__title">{ind.title}</h3>
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
       </section>
 
-      {/* ── Industries ── */}
-      <section className="sp-section sp-section--white">
-        <motion.div className="sp-inner" initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={stagger}>
-          <motion.div variants={fadeInUp} className="section-tag"><span className="section-tag-line" /><span className="section-tag-label">Industries We Serve</span></motion.div>
-          <motion.div variants={fadeInUp} className="sp-section-header">
-            <h2>Industries We Serve</h2>
-          </motion.div>
-          <motion.div variants={stagger} className="hr-minimal-list">
-            {INDUSTRIES.map(ind => (
-              <motion.div key={ind.name} variants={fadeInUp}>
-                <Link to={ind.href} className="hr-minimal-item tp-industry-link">
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                    <span style={{ fontSize: '22px' }}>{ind.icon}</span>{ind.name}
-                  </h4>
-                  <span className="tp-arrow">→</span>
-                </Link>
-              </motion.div>
-            ))}
-          </motion.div>
-        </motion.div>
-      </section>
-
-      {/* ── CTA ── */}
-      <section className="sp-cta">
-        <motion.div className="sp-cta__inner" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
-          <h2>Let's Build Something Valuable</h2>
-          <p style={{ maxWidth: '640px', margin: '0 auto', color: 'rgba(255,255,255,0.85)', fontSize: '17px', lineHeight: '1.65' }}>
-            Whether you're looking to automate processes, improve reporting, streamline operations, or build
-            custom software — we're ready to help.
+      {/* ── Dark CTA Banner ── */}
+      <section className="wg-cta">
+        <motion.div
+          className="wg-cta__inner"
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <h2 className="wg-cta__title">Let's Build Something Valuable</h2>
+          <p className="wg-cta__desc">
+            Whether you're looking to automate processes, improve
+            reporting, streamline operations, or build custom software.
           </p>
-          <div className="sp-cta__actions" style={{ marginTop: '28px' }}>
-            <a href="#contact" className="sp-btn sp-btn--white" style={{ padding: '15px 36px', fontSize: '15px' }}>Book a Discovery Call</a>
-            <Link to="/our-process" className="sp-btn sp-btn--outline-white" style={{ padding: '15px 36px', fontSize: '15px' }}>See Our Process →</Link>
+          <div className="wg-cta__actions">
+            <a href="#contact" className="wg-btn wg-btn--white">
+              Book Discovery Call
+            </a>
+            <Link to="/our-process" className="wg-btn wg-btn--outline">
+              See Our Process
+            </Link>
           </div>
         </motion.div>
       </section>
+
     </main>
   );
 }
