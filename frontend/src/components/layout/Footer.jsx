@@ -1,4 +1,5 @@
 import "./Footer.css";
+import { Link } from "react-router-dom";
 
 const SERVICES = [
   { label: "ERP Development", href: "/erp" },
@@ -29,7 +30,7 @@ const QUICK_LINKS = [
   { label: "FAQ", href: "#faq" },
   { label: "Get Free Audit", href: "#audit" },
   { label: "Book a Call", href: "#contact" },
-  { label: "Privacy Policy", href: "#privacy" },
+  { label: "Privacy Policy", href: "/privacy-policy" },
   { label: "Terms of Service", href: "#terms" },
   { label: "Sitemap", href: "#sitemap" },
 ];
@@ -60,6 +61,13 @@ const SOCIALS = [
 ];
 
 export default function Footer() {
+  const renderLink = (href, label) => {
+    if (href.startsWith("/")) {
+      return <Link to={href}>{label}</Link>;
+    }
+    return <a href={href}>{label}</a>;
+  };
+
   return (
     <footer className="footer">
       <div className="footer-inner">
@@ -120,7 +128,7 @@ export default function Footer() {
               <ul className="footer-col-list">
                 {SERVICES.map((s) => (
                   <li key={s.label}>
-                    <a href={s.href}>{s.label}</a>
+                    {renderLink(s.href, s.label)}
                   </li>
                 ))}
               </ul>
@@ -130,7 +138,7 @@ export default function Footer() {
               <ul className="footer-col-list">
                 {INDUSTRIES.map((i) => (
                   <li key={i.label}>
-                    <a href={i.href}>{i.label}</a>
+                    {renderLink(i.href, i.label)}
                   </li>
                 ))}
               </ul>
@@ -140,7 +148,7 @@ export default function Footer() {
               <ul className="footer-col-list">
                 {COMPANY.map((c) => (
                   <li key={c.label}>
-                    <a href={c.href}>{c.label}</a>
+                    {renderLink(c.href, c.label)}
                   </li>
                 ))}
               </ul>
@@ -150,7 +158,7 @@ export default function Footer() {
               <ul className="footer-col-list">
                 {QUICK_LINKS.map((q) => (
                   <li key={q.label}>
-                    <a href={q.href}>{q.label}</a>
+                    {renderLink(q.href, q.label)}
                   </li>
                 ))}
               </ul>

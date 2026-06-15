@@ -2,6 +2,7 @@ import './index.css';
 import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
+import CookieConsent from './components/layout/CookieConsent';
 import Home from './pages/Home';
 import ERPPage from './pages/ERPPage';
 import CustomSoftwarePage from './pages/CustomSoftwarePage';
@@ -14,6 +15,7 @@ import ProfessionalServicesPage from './pages/ProfessionalServicesPage';
 import BIPage from './pages/BIPage';
 import ProcurementPage from './pages/ProcurementPage';
 import IntegrationPage from './pages/IntegrationPage';
+import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
 import './shared.css';
 
 export default function App() {
@@ -33,9 +35,11 @@ export default function App() {
         <Route path="/bi" element={<BIPage />} />
         <Route path="/procurement" element={<ProcurementPage />} />
         <Route path="/integration" element={<IntegrationPage />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
         <Route path="*" element={<Home />} />
       </Routes>
       <Footer />
+      <CookieConsent />
     </>
   );
 }
