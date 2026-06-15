@@ -24,7 +24,7 @@ const NAV_LINKS = [
       { label: 'Professional Services', href: '/professional-services' },
     ]
   },
-  { label: 'Case Studies', href: '#projects' },
+  { label: 'Case Studies', href: '/case-studies' },
   { label: 'Insights', href: '#insights' },
   { label: 'About Us', href: '/about' },
   { label: 'Contact', href: '/contact' },

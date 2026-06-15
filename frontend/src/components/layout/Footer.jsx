@@ -60,26 +60,20 @@ const SOCIALS = [
 ];
 
 export default function Footer() {
-  const renderLink = (href, label) => {
-    if (href.startsWith("/")) {
-      return <Link to={href}>{label}</Link>;
-    }
-    return <a href={href}>{label}</a>;
-  };
-
   return (
     <footer className="footer">
       <div className="footer-inner">
         <div className="footer-top">
-          {/* ── Brand Column ── */}
+          {/* Brand Column */}
           <div className="footer-brand">
-            <a href="#" className="footer-logo-wrap">
+            <Link to="/" className="footer-logo-wrap">
               <img
                 src="/assets/image.png"
                 alt="GrassFront"
                 className="footer-logo-image"
               />
-            </a>
+            </Link>
+
             <p className="footer-tagline">
               Scalable software, ERP systems, and AI-powered solutions that help
               organisations streamline operations and grow efficiently.
@@ -120,44 +114,47 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* ── Link Columns ── */}
+          {/* Link Columns */}
           <div className="footer-links">
             <div className="footer-col">
               <h4 className="footer-col-heading">Services</h4>
               <ul className="footer-col-list">
                 {SERVICES.map((s) => (
                   <li key={s.label}>
-                    {renderLink(s.href, s.label)}
+                    <a href={s.href}>{s.label}</a>
                   </li>
                 ))}
               </ul>
             </div>
+
             <div className="footer-col">
               <h4 className="footer-col-heading">Industries</h4>
               <ul className="footer-col-list">
                 {INDUSTRIES.map((i) => (
                   <li key={i.label}>
-                    {renderLink(i.href, i.label)}
+                    <a href={i.href}>{i.label}</a>
                   </li>
                 ))}
               </ul>
             </div>
+
             <div className="footer-col">
               <h4 className="footer-col-heading">Company</h4>
               <ul className="footer-col-list">
                 {COMPANY.map((c) => (
                   <li key={c.label}>
-                    {renderLink(c.href, c.label)}
+                    <a href={c.href}>{c.label}</a>
                   </li>
                 ))}
               </ul>
             </div>
+
             <div className="footer-col">
               <h4 className="footer-col-heading">Quick Links</h4>
               <ul className="footer-col-list">
                 {QUICK_LINKS.map((q) => (
                   <li key={q.label}>
-                    {renderLink(q.href, q.label)}
+                    <a href={q.href}>{q.label}</a>
                   </li>
                 ))}
               </ul>
@@ -165,7 +162,7 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* ── Bottom Bar ── */}
+        {/* Bottom Bar */}
         <div className="footer-bottom">
           <span className="footer-copy">
             © 2025 GrassFRONT Technologies Pvt. Ltd. All rights reserved.
