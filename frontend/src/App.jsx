@@ -7,6 +7,10 @@ import ERPPage from './pages/ERPPage';
 import CustomSoftwarePage from './pages/CustomSoftwarePage';
 import AIAutomationPage from './pages/AIAutomationPage';
 import HospitalityRestaurantsPage from './pages/HospitalityRestaurantsPage';
+import ManufacturingPage from './pages/ManufacturingPage';
+import RetailPage from './pages/RetailPage';
+import LogisticsPage from './pages/LogisticsPage';
+import ProfessionalServicesPage from './pages/ProfessionalServicesPage';
 import './shared.css';
 
 export default function App() {
@@ -19,6 +23,10 @@ export default function App() {
         <Route path="/custom-software" element={<CustomSoftwarePage />} />
         <Route path="/ai-automation" element={<AIAutomationPage />} />
         <Route path="/hospitality-restaurants" element={<HospitalityRestaurantsPage />} />
+        <Route path="/manufacturing" element={<ManufacturingPage />} />
+        <Route path="/retail" element={<RetailPage />} />
+        <Route path="/logistics" element={<LogisticsPage />} />
+        <Route path="/professional-services" element={<ProfessionalServicesPage />} />
         <Route path="*" element={<Home />} />
       </Routes>
       <Footer />

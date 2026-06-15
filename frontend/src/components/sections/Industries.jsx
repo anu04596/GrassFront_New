@@ -12,16 +12,19 @@ const INDUSTRIES = [
     title: 'Manufacturing',
     icon: <img src="/assets/ind-factory.png" alt="Manufacturing 3D Icon" className="ind-3d-icon" />,
     items: ['Production Tracking', 'Procurement', 'Inventory Control'],
+    link: '/manufacturing'
   },
   {
     title: 'Retail',
     icon: <img src="/assets/ind-cart.png" alt="Retail 3D Icon" className="ind-3d-icon" />,
     items: ['Inventory Visibility', 'Sales Analytics', 'CRM Integration'],
+    link: '/retail'
   },
   {
     title: 'Distribution',
     icon: <img src="/assets/ind-truck.png" alt="Distribution 3D Icon" className="ind-3d-icon" />,
     items: ['Warehouse Management', 'Logistics Reporting'],
+    link: '/logistics'
   },
 ];
 

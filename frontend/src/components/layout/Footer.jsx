@@ -10,11 +10,11 @@ const SERVICES = [
 ];
 
 const INDUSTRIES = [
-  { label: "Hospitality", href: "#hospitality" },
-  { label: "Manufacturing", href: "#manufacturing" },
-  { label: "Retail", href: "#retail" },
-  { label: "Logistics", href: "#logistics" },
-  { label: "Professional Services", href: "#professional-services" },
+  { label: "Hospitality", href: "/hospitality-restaurants" },
+  { label: "Manufacturing", href: "/manufacturing" },
+  { label: "Retail", href: "/retail" },
+  { label: "Logistics", href: "/logistics" },
+  { label: "Professional Services", href: "/professional-services" },
 ];
 
 const COMPANY = [
