@@ -19,17 +19,16 @@ const INDUSTRIES = [
 ];
 
 const COMPANY = [
-  { label: "About Us", href: "#about" },
+  { label: "About Us", href: "/about" },
   { label: "Why GrassFRONT", href: "/why-grassfront" },
   { label: "Our Process", href: "/our-process" },
   { label: "FAQs", href: "/faqs" },
-  { label: "Contact Us", href: "#contact" },
+  { label: "Contact Us", href: "/contact" },
 ];
 
 const QUICK_LINKS = [
-  { label: "FAQ", href: "#faq" },
-  { label: "Get Free Audit", href: "#audit" },
-  { label: "Book a Call", href: "#contact" },
+  { label: "Get Free Audit", href: "/contact" },
+  { label: "Book a Call", href: "tel:+917014626389" },
   { label: "Privacy Policy", href: "/privacy-policy" },
   { label: "Terms of Service", href: "/terms-conditions" },
   { label: "Sitemap", href: "#sitemap" },

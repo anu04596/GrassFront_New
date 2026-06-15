@@ -26,8 +26,8 @@ const NAV_LINKS = [
   },
   { label: 'Case Studies', href: '#projects' },
   { label: 'Insights', href: '#insights' },
-  { label: 'About Us', href: '#about' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'About Us', href: '/about' },
+  { label: 'Contact', href: '/contact' },
 ];
 
 export default function Navbar() {

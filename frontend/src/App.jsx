@@ -21,6 +21,9 @@ import TermsConditionsPage from './pages/TermsConditionsPage';
 import WhyGrassfrontPage from './pages/WhyGrassfrontPage';
 import OurProcessPage from './pages/OurProcessPage';
 import FAQsPage from './pages/FAQsPage';
+import CaseStudiesPage from './pages/CaseStudiesPage';
+import AboutPage from './pages/AboutPage';
+import ContactPage from './pages/ContactPage';
 import './shared.css';
 
 export default function App() {
@@ -46,6 +49,9 @@ export default function App() {
         <Route path="/why-grassfront" element={<WhyGrassfrontPage />} />
         <Route path="/our-process" element={<OurProcessPage />} />
         <Route path="/faqs" element={<FAQsPage />} />
+        <Route path="/case-studies" element={<CaseStudiesPage />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/contact" element={<ContactPage />} />
         <Route path="*" element={<Home />} />
       </Routes>
       <Footer />
