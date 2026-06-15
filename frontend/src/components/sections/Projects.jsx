@@ -237,7 +237,7 @@ export default function Projects() {
 
                 {/* Case study link */}
                 <div className="project-read-more">
-                  <a href={activeProject.pageUrl} className="read-more-link">
+                  <a href='/case-studies' className="read-more-link">
                     Read Full Case Study →
                   </a>
                 </div>

@@ -14,6 +14,11 @@ import ProfessionalServicesPage from './pages/ProfessionalServicesPage';
 import BIPage from './pages/BIPage';
 import ProcurementPage from './pages/ProcurementPage';
 import IntegrationPage from './pages/IntegrationPage';
+import CaseStudiesPage from './pages/CaseStudiesPage';
+import AboutPage from './pages/AboutPage';
+import ContactPage from './pages/ContactPage';
+
+
 import './shared.css';
 
 export default function App() {
@@ -33,6 +38,9 @@ export default function App() {
         <Route path="/bi" element={<BIPage />} />
         <Route path="/procurement" element={<ProcurementPage />} />
         <Route path="/integration" element={<IntegrationPage />} />
+        <Route path="/case-studies" element={<CaseStudiesPage />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/contact" element={<ContactPage />} />
         <Route path="*" element={<Home />} />
       </Routes>
       <Footer />
