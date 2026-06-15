@@ -16,6 +16,7 @@ import BIPage from './pages/BIPage';
 import ProcurementPage from './pages/ProcurementPage';
 import IntegrationPage from './pages/IntegrationPage';
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
+import TermsConditionsPage from './pages/TermsConditionsPage';
 import './shared.css';
 
 export default function App() {
@@ -36,6 +37,7 @@ export default function App() {
         <Route path="/procurement" element={<ProcurementPage />} />
         <Route path="/integration" element={<IntegrationPage />} />
         <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+        <Route path="/terms-conditions" element={<TermsConditionsPage />} />
         <Route path="*" element={<Home />} />
       </Routes>
       <Footer />
