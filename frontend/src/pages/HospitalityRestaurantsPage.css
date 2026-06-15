@@ -190,6 +190,19 @@
   margin-top: 48px;
 }
 
+.hr-challenges-grid.hr-grid-5 {
+  grid-template-columns: repeat(5, 1fr);
+  gap: 14px;
+}
+
+.hr-challenges-grid.hr-grid-5 .hr-bento-card {
+  padding: 18px 12px;
+}
+
+.hr-challenges-grid.hr-grid-5 .hr-bento-card p {
+  font-size: 12.5px;
+}
+
 .hr-challenges-grid .hr-bento-card {
   padding: 20px;
   border-radius: 16px;
@@ -368,13 +381,13 @@
 /* ─── Interactive Benefits Grid ─────────────────────────────────── */
 .hr-benefits-wrapper {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 16px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
   margin-top: 48px;
 }
 
 .hr-benefit-pill {
-  padding: 18px 14px;
+  padding: 24px 20px;
   background: var(--white);
   border-radius: 16px;
   border: 1px solid rgba(0, 0, 0, 0.04);
@@ -398,12 +411,12 @@
 
 .hr-benefit-pill .hr-icon-wrapper {
   background: var(--white-lilac);
-  margin-bottom: 14px;
+  margin-bottom: 16px;
   transition: all 0.4s ease;
-  width: 40px;
-  height: 40px;
-  font-size: 20px;
-  border-radius: 10px;
+  width: 48px;
+  height: 48px;
+  font-size: 24px;
+  border-radius: 14px;
 }
 
 .hr-benefit-pill:hover .hr-icon-wrapper {
@@ -414,18 +427,18 @@
 
 .hr-benefit-pill h4 {
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 15px;
+  font-size: 18px;
   font-weight: 700;
   color: var(--vulcan);
-  margin-bottom: 8px;
+  margin-bottom: 12px;
   transition: color 0.4s ease;
 }
 
 .hr-benefit-pill p {
   font-family: 'DM Sans', sans-serif;
-  font-size: 12.5px;
+  font-size: 14px;
   color: var(--storm-gray);
-  line-height: 1.4;
+  line-height: 1.5;
   margin: 0;
   transition: color 0.4s ease;
 }
@@ -458,13 +471,18 @@
   }
 
   .hr-benefits-wrapper {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 14px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
   }
 
   .hr-challenges-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;
+  }
+
+  .hr-challenges-grid.hr-grid-5 {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 14px;
   }
 
   .hr-solutions-grid {

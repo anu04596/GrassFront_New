@@ -217,7 +217,7 @@ export default function ProfessionalServicesPage() {
             <h2 style={{ maxWidth: '100%' }}>Common Challenges Professional Service Firms Face</h2>
           </motion.div>
 
-          <motion.div variants={staggerContainer} className="hr-bento-grid">
+          <motion.div variants={staggerContainer} className="hr-challenges-grid hr-grid-5">
             {CHALLENGES.map(c => (
               <motion.div variants={fadeInUp} className="hr-bento-card" key={c.title}>
                 <div className="hr-icon-wrapper">{c.icon}</div>
@@ -241,7 +241,7 @@ export default function ProfessionalServicesPage() {
             <h2>Solutions We Provide</h2>
           </motion.div>
 
-          <motion.div variants={staggerContainer} className="hr-bento-grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))' }}>
+          <motion.div variants={staggerContainer} className="hr-solutions-grid">
             {SOLUTIONS.map(s => (
               <motion.div variants={fadeInUp} className="hr-bento-card" key={s.title}>
                 <div className="hr-icon-wrapper">{s.icon}</div>
@@ -270,7 +270,7 @@ export default function ProfessionalServicesPage() {
             <h2 style={{ maxWidth: '100%' }}>Benefits for Professional Service Firms</h2>
           </motion.div>
 
-          <motion.div variants={staggerContainer} className="hr-benefits-wrapper">
+          <motion.div variants={staggerContainer} className="hr-benefits-wrapper hr-grid-6">
             {BENEFITS.map(b => (
               <motion.div variants={fadeInUp} className="hr-benefit-pill" key={b.title}>
                 <div className="hr-icon-wrapper">{b.icon}</div>
