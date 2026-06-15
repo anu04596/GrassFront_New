@@ -1,7 +1,7 @@
 /* ===== PROBLEMS ===== */
 .problems {
   background: var(--white);
-  padding: 70px 0;
+  padding: 80px 0;
   border-top: 1px solid var(--fog);
   border-bottom: 1px solid var(--fog);
 }
@@ -141,6 +141,10 @@
 }
 
 @media (max-width: 900px) {
+  .problems {
+    padding: 60px 0;
+  }
+
   .problems h2 {
     font-size: 38px;
     line-height: 48px;
@@ -162,7 +166,7 @@
 
 @media (max-width: 768px) {
   .problems {
-    padding: 64px 0;
+    padding: 40px 0;
   }
 
   .problems h2 {

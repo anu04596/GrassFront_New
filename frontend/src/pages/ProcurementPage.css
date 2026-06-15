@@ -1,0 +1,418 @@
+/* ===================================================================
+   ProcurementPage.css — page-specific styles for ProcurementPage.jsx
+   Hero matches the white-bg ERP reference pattern exactly.
+   =================================================================== */
+
+/* ─── Hero: white bg, same layout as ERP hero ───────────────────── */
+/* ─── Hero overrides removed to use ServicePage.css white theme ─── */
+
+/* ─── Procurement mock dashboard ────────────────────────────────── */
+.proc-mock {
+  background: var(--white);
+  border: 1px solid var(--fog);
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 16px 48px rgba(31, 0, 255, 0.09);
+}
+
+.proc-mock__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--fog);
+}
+
+.proc-mock__title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--vulcan);
+}
+
+.proc-mock__live {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  color: #10B981;
+  letter-spacing: 0.5px;
+}
+
+.proc-mock__items {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.proc-mock__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 12px;
+  background: var(--white-lilac);
+  border: 1px solid var(--fog);
+  border-radius: 8px;
+  gap: 10px;
+}
+
+.proc-mock__item-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.proc-mock__item-icon {
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.proc-mock__item-label {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11.5px;
+  color: var(--vulcan);
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.proc-mock__item-amt {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  color: var(--storm-gray);
+  letter-spacing: 0.3px;
+}
+
+.proc-mock__item-status {
+  font-family: 'DM Mono', monospace;
+  font-size: 9.5px;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  padding: 3px 9px;
+  border-radius: 100px;
+  flex-shrink: 0;
+  font-weight: 600;
+}
+
+.proc-mock__item-status.s-green {
+  color: #059669;
+  background: rgba(5, 150, 105, 0.08);
+  border: 1px solid rgba(5, 150, 105, 0.2);
+}
+
+.proc-mock__item-status.s-amber {
+  color: #D97706;
+  background: rgba(217, 119, 6, 0.08);
+  border: 1px solid rgba(217, 119, 6, 0.2);
+}
+
+.proc-mock__item-status.s-blue {
+  color: var(--blue);
+  background: rgba(31, 0, 255, 0.06);
+  border: 1px solid rgba(31, 0, 255, 0.18);
+}
+
+.proc-mock__footer {
+  display: flex;
+  border: 1px solid var(--fog);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--white-lilac);
+}
+
+.proc-mock__kpi {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 10px 14px;
+  border-right: 1px solid var(--fog);
+}
+
+.proc-mock__kpi:last-child {
+  border-right: none;
+}
+
+.proc-mock__kpi-num {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--blue);
+  line-height: 1;
+}
+
+.proc-mock__kpi-label {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 10px;
+  color: var(--storm-gray);
+}
+
+/* ─── Section tag overrides removed to use ServicePage.css ─── */
+
+/* ─── Bottleneck grid ────────────────────────────────────────────── */
+.proc-bottlenecks {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.proc-bottleneck-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  background: var(--white);
+  border: 1px solid var(--fog);
+  border-radius: 10px;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.proc-bottleneck-item:hover {
+  border-color: rgba(31, 0, 255, 0.18);
+  box-shadow: 0 4px 16px rgba(31, 0, 255, 0.06);
+}
+
+.proc-bottleneck-icon {
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+.proc-bottleneck-text {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13.5px;
+  color: var(--vulcan);
+  flex: 1;
+  line-height: 1.5;
+}
+
+.proc-bottleneck-arrow {
+  font-family: 'DM Mono', monospace;
+  font-size: 13px;
+  color: var(--blue);
+  opacity: 0.4;
+  flex-shrink: 0;
+}
+
+/* ─── Why section outcomes ───────────────────────────────────────── */
+.proc-outcomes {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--fog);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.proc-outcome-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 18px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  color: var(--vulcan);
+  border-bottom: 1px solid var(--fog);
+  transition: background 0.2s ease;
+}
+
+.proc-outcome-item:last-child {
+  border-bottom: none;
+}
+
+.proc-outcome-item:hover {
+  background: var(--selago);
+}
+
+.proc-outcome-check {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--blue);
+  width: 22px;
+  height: 22px;
+  background: rgba(31, 0, 255, 0.06);
+  border: 1px solid rgba(31, 0, 255, 0.15);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* ─── Split right column ─────────────────────────────────────────── */
+.sp-split__right {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.proc-info-card {
+  background: var(--white);
+  border: 1px solid var(--fog);
+  border-radius: 12px;
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.proc-info-card:hover {
+  box-shadow: 0 8px 28px rgba(31, 0, 255, 0.07);
+  border-color: rgba(31, 0, 255, 0.18);
+}
+
+.proc-info-card__head {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--blue);
+  letter-spacing: -0.2px;
+}
+
+.proc-info-card p {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13.5px;
+  line-height: 21px;
+  color: var(--charade);
+  margin: 0;
+}
+
+/* ─── Industry card icon ─────────────────────────────────────────── */
+.sp-industry-card__icon {
+  font-size: 22px;
+  width: 44px;
+  height: 44px;
+  background: var(--selago);
+  border: 1px solid var(--fog);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.25s ease;
+}
+
+.sp-industry-card:hover .sp-industry-card__icon {
+  background: var(--fog);
+}
+
+/* ─── FAQ two-column ─────────────────────────────────────────────── */
+.sp-faq-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  align-items: start;
+}
+
+/* ─── CTA extras ─────────────────────────────────────────────────── */
+.sp-cta__badge {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 5px 14px;
+  border-radius: 100px;
+}
+
+.sp-cta__btns {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.sp-cta__note {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.5);
+  margin-top: 4px;
+}
+
+.sp-cta__note span {
+  color: rgba(255, 255, 255, 0.78);
+  font-weight: 500;
+}
+
+/* ─── Reveal ─────────────────────────────────────────────────────── */
+.sp-reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.sp-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ─── Mobile responsive stats bar ───────────────────────────────── */
+@media (max-width: 900px) {
+  .proc-bottlenecks {
+    grid-template-columns: 1fr;
+  }
+
+  .sp-faq-cols {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+
+  /* stats bar stacks vertically on mobile */
+  .sp-page .sp-hero .sp-hero__stats {
+    flex-direction: column;
+    border-radius: 8px;
+  }
+
+  .sp-page .sp-hero .sp-hero__stats .sp-hero__stat {
+    border-right: none;
+    border-bottom: 1px solid var(--fog);
+    width: 100%;
+  }
+
+  .sp-page .sp-hero .sp-hero__stats .sp-hero__stat:last-child {
+    border-bottom: none;
+  }
+
+  /* pills variant: wrap */
+  .sp-page .sp-hero .sp-hero__stats.pills-mode {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 6px;
+    padding: 10px;
+    border-radius: 8px;
+    background: var(--white-lilac);
+  }
+
+  .proc-bottlenecks {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .sp-faq-cols {
+    grid-template-columns: 1fr;
+  }
+}
+.sp-module-icon,
+.sp-benefit-icon,
+.sp-industry-card__icon,
+.proc-bottleneck-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  color: #2563eb;
+}
+
+.sp-module-icon svg,
+.sp-benefit-icon svg,
+.sp-industry-card__icon svg,
+.proc-bottleneck-icon svg {
+  width: 32px;
+  height: 32px;
+}

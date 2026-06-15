@@ -11,6 +11,9 @@ import ManufacturingPage from './pages/ManufacturingPage';
 import RetailPage from './pages/RetailPage';
 import LogisticsPage from './pages/LogisticsPage';
 import ProfessionalServicesPage from './pages/ProfessionalServicesPage';
+import BIPage from './pages/BIPage';
+import ProcurementPage from './pages/ProcurementPage';
+import IntegrationPage from './pages/IntegrationPage';
 import './shared.css';
 
 export default function App() {
@@ -27,6 +30,9 @@ export default function App() {
         <Route path="/retail" element={<RetailPage />} />
         <Route path="/logistics" element={<LogisticsPage />} />
         <Route path="/professional-services" element={<ProfessionalServicesPage />} />
+        <Route path="/bi" element={<BIPage />} />
+        <Route path="/procurement" element={<ProcurementPage />} />
+        <Route path="/integration" element={<IntegrationPage />} />
         <Route path="*" element={<Home />} />
       </Routes>
       <Footer />

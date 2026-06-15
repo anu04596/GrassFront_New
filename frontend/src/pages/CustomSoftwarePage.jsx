@@ -1,20 +1,46 @@
 import './ServicePage.css';
+import {
+  FaCogs,
+  FaUserShield,
+  FaShoppingCart,
+  FaBoxes,
+  FaRobot,
+  FaCloud,
+  FaChartBar,
+
+  FaPuzzlePiece,
+  FaTasks,
+  FaEye,
+  FaLink,
+
+  FaBullseye,
+  FaBolt,
+  FaSmile,
+  FaChartLine,
+  FaExpandArrowsAlt,
+  FaMoneyBillWave,
+  FaUtensils,
+  FaIndustry,
+  FaStore,
+  FaTruck,
+  FaBriefcase
+} from 'react-icons/fa';
 
 const BUILDS = [
-  { icon: '⚙️', title: 'Business Management Systems', desc: 'Manage operations, approvals, workflows, reporting, and day-to-day business activities through a centralized platform.' },
-  { icon: '🧑‍💼', title: 'Customer Portals', desc: 'Provide customers with secure access to orders, invoices, documents, service requests, and account information.' },
-  { icon: '🏷️', title: 'Procurement Platforms', desc: 'Streamline purchasing, vendor management, approvals, quotations, and procurement workflows.' },
-  { icon: '📦', title: 'Inventory Management Systems', desc: 'Track inventory levels, stock movement, warehouse operations, and purchasing requirements.' },
-  { icon: '🤖', title: 'Workflow Automation Platforms', desc: 'Automate repetitive business tasks and approval processes to improve efficiency.' },
-  { icon: '☁️', title: 'SaaS Applications', desc: 'Build scalable cloud-based software products designed for customers, teams, or business operations.' },
-  { icon: '📊', title: 'Reporting & Analytics Platforms', desc: 'Access business insights through dashboards, reports, and real-time performance tracking.' },
+  { icon: <FaCogs />, title: 'Business Management Systems', desc: 'Manage operations, approvals, workflows, reporting, and day-to-day business activities through a centralized platform.' },
+  { icon: <FaUserShield />, title: 'Customer Portals', desc: 'Provide customers with secure access to orders, invoices, documents, service requests, and account information.' },
+  // { icon: <FaShoppingCart />, title: 'Procurement Platforms', desc: 'Streamline purchasing, vendor management, approvals, quotations, and procurement workflows.' },
+  { icon: <FaBoxes />, title: 'Inventory Management Systems', desc: 'Track inventory levels, stock movement, warehouse operations, and purchasing requirements.' },
+  { icon: <FaRobot />, title: 'Workflow Automation Platforms', desc: 'Automate repetitive business tasks and approval processes to improve efficiency.' },
+  { icon: <FaCloud />, title: 'SaaS Applications', desc: 'Build scalable cloud-based software products designed for customers, teams, or business operations.' },
+  { icon: <FaChartBar />, title: 'Reporting & Analytics Platforms', desc: 'Access business insights through dashboards, reports, and real-time performance tracking.' },
 ];
 
 const PROBLEMS = [
-  { icon: '🧩', title: 'Your Process Doesn\'t Fit Existing Software', desc: 'Many software products are designed for a broad audience. Custom software eliminates limitations by supporting your exact business process.' },
-  { icon: '🔁', title: 'Too Much Manual Work', desc: 'Businesses still rely on spreadsheets and manual updates, leading to human errors, delayed approvals, duplicate work, and productivity loss.' },
-  { icon: '📡', title: 'Lack of Visibility', desc: 'Without a centralized system, reporting becomes time-consuming and often inaccurate. Custom software provides real-time dashboards and complete visibility.' },
-  { icon: '🔗', title: 'Systems Don\'t Talk to Each Other', desc: 'When different departments use different tools, information becomes fragmented. We create unified systems where data flows seamlessly between teams.' },
+  { icon: <FaPuzzlePiece />, title: 'Your Process Doesn\'t Fit Existing Software', desc: 'Many software products are designed for a broad audience. Custom software eliminates limitations by supporting your exact business process.' },
+  { icon: <FaTasks />, title: 'Too Much Manual Work', desc: 'Businesses still rely on spreadsheets and manual updates, leading to human errors, delayed approvals, duplicate work, and productivity loss.' },
+  { icon: <FaEye />, title: 'Lack of Visibility', desc: 'Without a centralized system, reporting becomes time-consuming and often inaccurate. Custom software provides real-time dashboards and complete visibility.' },
+  { icon: <FaLink />, title: 'Systems Don\'t Talk to Each Other', desc: 'When different departments use different tools, information becomes fragmented. We create unified systems where data flows seamlessly between teams.' },
 ];
 
 const STEPS = [
@@ -27,20 +53,66 @@ const STEPS = [
 ];
 
 const BENEFITS = [
-  { icon: '🎯', title: 'Designed Around Your Business', desc: 'Your software should support your workflow, not force your team to adapt to unnecessary processes.' },
-  { icon: '⚡', title: 'Improved Efficiency', desc: 'Automating repetitive tasks helps teams complete work faster and with fewer errors.' },
-  { icon: '😊', title: 'Better User Experience', desc: 'Employees are more likely to use software that feels simple, intuitive, and relevant to their work.' },
-  { icon: '📈', title: 'Easier Reporting', desc: 'Get accurate information when you need it through centralized dashboards and automated reports.' },
-  { icon: '📐', title: 'Scalability', desc: 'As your business grows, your software can grow with it. New modules and workflows can be added as requirements evolve.' },
-  { icon: '💡', title: 'Reduced Long-Term Costs', desc: 'Custom software often reduces operational inefficiencies and eliminates the need for multiple software subscriptions.' },
+  { icon: <FaBullseye />, title: 'Designed Around Your Business', desc: 'Your software should support your workflow, not force your team to adapt to unnecessary processes.' },
+  { icon: <FaBolt />, title: 'Improved Efficiency', desc: 'Automating repetitive tasks helps teams complete work faster and with fewer errors.' },
+  { icon: <FaSmile />, title: 'Better User Experience', desc: 'Employees are more likely to use software that feels simple, intuitive, and relevant to their work.' },
+  { icon: <FaChartLine />, title: 'Easier Reporting', desc: 'Get accurate information when you need it through centralized dashboards and automated reports.' },
+  { icon: <FaExpandArrowsAlt />, title: 'Scalability', desc: 'As your business grows, your software can grow with it. New modules and workflows can be added as requirements evolve.' },
+  { icon: <FaMoneyBillWave />, title: 'Reduced Long-Term Costs', desc: 'Custom software often reduces operational inefficiencies and eliminates the need for multiple software subscriptions.' },
 ];
 
 const INDUSTRIES = [
-  { name: 'Hospitality & Restaurants', items: ['Procurement Systems','Inventory Management','Vendor Management','POS Integrations'] },
-  { name: 'Manufacturing', items: ['Production Tracking','Procurement Workflows','Inventory Control','Operational Dashboards'] },
-  { name: 'Retail', items: ['Inventory Visibility','Sales Reporting','Customer Management'] },
-  { name: 'Distribution & Logistics', items: ['Warehouse Operations','Order Management','Inventory Tracking'] },
-  { name: 'Professional Services', items: ['Workflow Automation','Client Portals','Business Reporting'] },
+  {
+    icon: <img src="/assets/ind-coffee.png" alt="Hospitality" />,
+    name: 'Hospitality & Restaurants',
+    items: [
+      'Sync POS order data with inventory and purchasing',
+      'Manage staff task lists for front- and back-of-house',
+    ],
+    outcome: 'Reduce manual handoffs between service, kitchen, and purchasing teams.',
+  },
+  {
+    icon: <img src="/assets/ind-factory.png" alt="Manufacturing" />,
+    name: 'Manufacturing',
+    items: [
+      
+      'Trigger supplier orders when production batches reach reorder points',
+      'Log maintenance and calibration activity against machines',
+    ],
+    outcome: 'Keep production tasks aligned and reduce costly line delays.',
+  },
+  {
+    icon: <img src="/assets/ind-cart.png" alt="Retail" />,
+
+    name: 'Retail',
+    items: [
+      'Drive replenishment workflows for inventory transfers and store restock',
+      'Automate return authorizations and reverse logistics',
+      
+    ],
+    outcome: 'Keep stores, warehouses, and service teams working from the same plan.',
+  },
+  {
+    icon: <img src="/assets/ind-truck.png" alt="Distribution & Logistics" />,
+    name: 'Distribution & Logistics',
+    items: [
+      'Book shipments, allocation, and dispatch in one workflow',
+      'Track order handoffs between warehouse, carrier, and customer service',
+      
+    ],
+    outcome: 'Reduce shipping errors and make order handoffs easier to manage.',
+  },
+  {
+    icon:  <img src="/assets/ind-services.jpg" alt="Professional Services" />,
+    name: 'Professional Services',
+    items: [
+     
+      'Capture time, expenses, and approvals against client engagements',
+      'Share documents and project updates through secure client portals',
+      
+    ],
+    outcome: 'Simplify project delivery so teams can focus on billable work.',
+  },
 ];
 
 const FAQS = [
@@ -199,8 +271,12 @@ export default function CustomSoftwarePage() {
           <div className="sp-industry-grid">
             {INDUSTRIES.map(ind=>(
               <div className="sp-industry-card" key={ind.name}>
-                <h3>{ind.name}</h3>
+                <div className="sp-industry-card__header">
+                  <div className="sp-industry-card__icon">{ind.icon}</div>
+                  <h3>{ind.name}</h3>
+                </div>
                 <ul>{ind.items.map(it=><li key={it}><span className="sp-industry-dot"/>  {it}</li>)}</ul>
+                {ind.outcome && <p className="sp-industry-card__outcome">{ind.outcome}</p>}
               </div>
             ))}
           </div>
@@ -223,8 +299,8 @@ export default function CustomSoftwarePage() {
           <h2>Let's Build Software That Works for Your Business.</h2>
           <p>If your team is struggling with spreadsheets, disconnected systems, or manual processes, custom software can create a more efficient and scalable way of working.</p>
           <div className="sp-cta__actions">
-            <a href="#contact" className="sp-btn sp-btn--white">Book a Discovery Call</a>
-            <a href="#contact" className="sp-btn sp-btn--outline-white">Contact Our Team →</a>
+            <a href="tel:+917014626389" className="sp-btn sp-btn--white">Book a Discovery Call</a>
+            <a href="mailto:Info@grassfront.com" className="sp-btn sp-btn--outline-white">Contact Our Team →</a>
           </div>
         </div>
       </section>

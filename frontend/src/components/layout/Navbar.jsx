@@ -10,9 +10,9 @@ const NAV_LINKS = [
       { label: 'ERP Development', href: '/erp' },
       { label: 'Custom Software Development', href: '/custom-software' },
       { label: 'AI Automation', href: '/ai-automation' },
-      { label: 'Business Intelligence', href: '#bi' },
-      { label: 'Procurement Management Software', href: '#procurement' },
-      { label: 'System Integration', href: '#integration' },
+      { label: 'Business Intelligence', href: '/bi' },
+      { label: 'Procurement Management Software', href: '/procurement' },
+      { label: 'System Integration', href: '/integration' },
     ]
   },
   {
@@ -24,7 +24,7 @@ const NAV_LINKS = [
       { label: 'Professional Services', href: '/professional-services' },
     ]
   },
-  { label: 'Case Studies', href: '#case-studies' },
+  { label: 'Case Studies', href: '#projects' },
   { label: 'Insights', href: '#insights' },
   { label: 'About Us', href: '#about' },
   { label: 'Contact', href: '#contact' },
@@ -173,7 +173,7 @@ export default function Navbar() {
                 </li>
               ))}
             </ul>
-            <a href="#contact" className="nav-cta-mobile" onClick={() => setOpen(false)}>
+            <a href="tel:+917014626389" className="nav-cta-mobile" onClick={() => setOpen(false)}>
               Book Discovery Call
             </a>
           </div>

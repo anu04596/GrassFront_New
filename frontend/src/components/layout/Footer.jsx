@@ -4,9 +4,9 @@ const SERVICES = [
   { label: "ERP Development", href: "/erp" },
   { label: "Custom Software Development", href: "/custom-software" },
   { label: "AI Automation", href: "/ai-automation" },
-  { label: "Business Intelligence", href: "#bi" },
-  { label: "System Integration", href: "#integration" },
-  { label: "Tech Consulting", href: "#consulting" },
+  { label: "Business Intelligence", href: "/bi" },
+  { label: "Procurement Management Software", href: "/procurement" },
+  { label: "System Integration", href: "/integration" },
 ];
 
 const INDUSTRIES = [
@@ -19,10 +19,10 @@ const INDUSTRIES = [
 
 const COMPANY = [
   { label: "About Us", href: "#about" },
-  { label: "Case Studies", href: "#case-studies" },
-  { label: "Insights", href: "#insights" },
-  { label: "Careers", href: "#careers" },
-  { label: "Contact", href: "#contact" },
+  { label: "Why GrassFRONT", href: "#why-grassfront" },
+  { label: "Our Process", href: "#our-process" },
+  { label: "FAQs", href: "#faqs" },
+  { label: "Contact Us", href: "#contact" },
 ];
 
 const QUICK_LINKS = [

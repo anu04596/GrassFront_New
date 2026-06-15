@@ -3,7 +3,7 @@
    ============================================= */
 
 .testimonials {
-  background: #f7f8ff;
+  background: var(--white);
   border-top: 1px solid rgba(31, 0, 255, 0.08);
   padding: 70px 0 6cqi;
   overflow: hidden;
