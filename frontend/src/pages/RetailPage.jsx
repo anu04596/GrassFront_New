@@ -3,20 +3,20 @@ import { motion } from 'framer-motion';
 import './HospitalityRestaurantsPage.css';
 
 const ThemeChevron = ({ open }) => (
-  <svg 
-    width="16" height="16" viewBox="0 0 16 16" fill="none" 
+  <svg
+    width="16" height="16" viewBox="0 0 16 16" fill="none"
     style={{
       transition: 'transform 0.3s ease',
       transform: open ? 'rotate(180deg)' : 'rotate(0deg)',
       flexShrink: 0
     }}
   >
-    <polyline 
-      points="3,6 8,11 13,6" 
-      stroke="#1F00FF" 
-      strokeWidth="1.5" 
-      strokeLinecap="round" 
-      strokeLinejoin="round" 
+    <polyline
+      points="3,6 8,11 13,6"
+      stroke="#1F00FF"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
   </svg>
 );
@@ -98,13 +98,13 @@ export default function RetailPage() {
           initial="hidden" animate="visible" variants={staggerContainer}
         >
           <motion.div variants={fadeInUp} style={{ marginBottom: '24px' }}>
-            <span style={{ 
+            <span style={{
               display: 'inline-block',
-              background: '#F0F5FF', 
-              color: '#1F00FF', 
-              padding: '8px 20px', 
-              borderRadius: '100px', 
-              fontSize: '15px', 
+              background: '#F0F5FF',
+              color: '#1F00FF',
+              padding: '8px 20px',
+              borderRadius: '100px',
+              fontSize: '15px',
               fontWeight: '500',
               fontFamily: 'inherit'
             }}>Retail</span>
@@ -113,8 +113,8 @@ export default function RetailPage() {
             <span className="hr-hero-title-accent">Retail</span> Industry Solutions
           </motion.h1>
           <motion.p variants={fadeInUp} className="hr-hero-subtitle">
-            Smarter Systems for Modern Retail Businesses.<br/><br/>
-            Running a retail business requires balancing inventory, sales, suppliers, customers, and operations every day. As the business grows, managing everything through spreadsheets and disconnected software becomes increasingly difficult. Inventory mismatches, stock shortages, delayed reporting, and lack of visibility can directly impact profitability and customer satisfaction.<br/><br/>
+            Smarter Systems for Modern Retail Businesses.<br /><br />
+            Running a retail business requires balancing inventory, sales, suppliers, customers, and operations every day. As the business grows, managing everything through spreadsheets and disconnected software becomes increasingly difficult. Inventory mismatches, stock shortages, delayed reporting, and lack of visibility can directly impact profitability and customer satisfaction.<br /><br />
             GrassFRONT helps retail businesses streamline operations through ERP systems, inventory management solutions, business intelligence dashboards, automation, and custom software development.
           </motion.p>
           <motion.div variants={fadeInUp} className="sp-hero__actions">

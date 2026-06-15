@@ -3,420 +3,527 @@
    Sleek, modern UI with elegant glassmorphism and bento grids
    =================================================================== */
 
-   @import './ServicePage.css';
+@import './ServicePage.css';
 
-   .hr-page {
-     background: radial-gradient(circle at 15% 50%, rgba(31,0,255,0.03), transparent 25%),
-                 radial-gradient(circle at 85% 30%, rgba(31,0,255,0.04), transparent 25%);
-     background-color: #fafbfc;
-     min-height: 100vh;
-   }
-   
-   /* ─── Hero Section ───────────────────────────────────────────────── */
-   .hr-hero-container {
-     position: relative;
-     padding: 120px 48px 80px;
-     max-width: 1280px;
-     margin: 0 auto;
-     display: grid;
-     grid-template-columns: 1fr 1fr;
-     gap: 64px;
-     align-items: center;
-     z-index: 1;
-   }
-   
-   .hr-hero-bg-orb {
-     position: absolute;
-     width: 600px;
-     height: 600px;
-     background: radial-gradient(circle, rgba(31,0,255,0.08) 0%, rgba(255,255,255,0) 70%);
-     border-radius: 50%;
-     filter: blur(40px);
-     z-index: -1;
-     top: -100px;
-     right: -100px;
-     animation: drift 15s ease-in-out infinite alternate;
-   }
-   
-   @keyframes drift {
-     0% { transform: translate(0, 0); }
-     100% { transform: translate(-50px, 50px); }
-   }
-   
-   .hr-hero-title {
-     font-family: 'Space Grotesk', sans-serif;
-     font-size: 64px;
-     font-weight: 800;
-     line-height: 1.05;
-     letter-spacing: -2px;
-     color: var(--vulcan);
-     margin-bottom: 24px;
-   }
-   
-   .hr-hero-title-accent {
-     background: linear-gradient(135deg, #1f00ff 0%, #00d2ff 100%);
-     -webkit-background-clip: text;
-     -webkit-text-fill-color: transparent;
-   }
-   
-   .hr-hero-subtitle {
-     font-family: 'DM Sans', sans-serif;
-     font-size: 18px;
-     line-height: 1.6;
-     color: var(--storm-gray);
-     margin-bottom: 40px;
-     max-width: 540px;
-   }
-   
-   /* Glass Dashboard */
-   .hr-glass-dash {
-     background: rgba(255, 255, 255, 0.6);
-     backdrop-filter: blur(20px);
-     border: 1px solid rgba(255, 255, 255, 0.8);
-     border-radius: 24px;
-     padding: 32px;
-     box-shadow: 0 24px 48px rgba(31,0,255,0.06), 
-                 inset 0 1px 0 rgba(255,255,255,1);
-     display: flex;
-     flex-direction: column;
-     gap: 24px;
-   }
-   
-   .hr-glass-dash-header {
-     display: flex;
-     justify-content: space-between;
-     align-items: center;
-     border-bottom: 1px solid rgba(0,0,0,0.05);
-     padding-bottom: 16px;
-   }
-   
-   .hr-dash-title {
-     font-family: 'Space Grotesk', sans-serif;
-     font-weight: 700;
-     font-size: 16px;
-     color: var(--vulcan);
-   }
-   
-   .hr-status-badge {
-     display: inline-flex;
-     align-items: center;
-     gap: 6px;
-     padding: 6px 12px;
-     background: rgba(16, 185, 129, 0.1);
-     color: #10B981;
-     border-radius: 20px;
-     font-size: 12px;
-     font-weight: 600;
-     font-family: 'DM Mono', monospace;
-   }
-   
-   .hr-status-dot {
-     width: 6px; height: 6px;
-     background: #10B981;
-     border-radius: 50%;
-     animation: pulse 2s infinite;
-   }
-   
-   @keyframes pulse {
-     0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4); }
-     70% { box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
-     100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
-   }
-   
-   .hr-metric-row {
-     display: grid;
-     grid-template-columns: 1fr 1fr;
-     gap: 16px;
-   }
-   
-   .hr-metric-box {
-     background: rgba(255, 255, 255, 0.8);
-     border: 1px solid rgba(255, 255, 255, 0.9);
-     padding: 20px;
-     border-radius: 16px;
-     box-shadow: 0 4px 12px rgba(0,0,0,0.02);
-     transition: transform 0.3s ease, box-shadow 0.3s ease;
-   }
-   
-   .hr-metric-box:hover {
-     transform: translateY(-4px);
-     box-shadow: 0 12px 24px rgba(31,0,255,0.06);
-   }
-   
-   .hr-metric-label {
-     font-family: 'DM Sans', sans-serif;
-     font-size: 13px;
-     color: var(--storm-gray);
-     margin-bottom: 8px;
-   }
-   
-   .hr-metric-val {
-     font-family: 'Space Grotesk', sans-serif;
-     font-size: 24px;
-     font-weight: 700;
-     color: var(--vulcan);
-   }
-   
-   .hr-metric-full {
-     grid-column: 1 / -1;
-   }
-   
-   /* ─── Bento Grid Sections ───────────────────────────────────────── */
-   .hr-bento-grid {
-     display: grid;
-     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-     gap: 24px;
-     margin-top: 48px;
-   }
-   
-   .hr-bento-card {
-     background: var(--white);
-     border: 1px solid rgba(0,0,0,0.04);
-     border-radius: 20px;
-     padding: 24px;
-     box-shadow: 0 8px 32px rgba(0,0,0,0.02);
-     transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-     display: flex;
-     flex-direction: column;
-     align-items: flex-start;
-   }
-   
-   .hr-bento-card:hover {
-     transform: translateY(-6px);
-     box-shadow: 0 20px 40px rgba(31,0,255,0.08);
-     border-color: rgba(31,0,255,0.1);
-   }
-   
-   .hr-icon-wrapper {
-     width: 48px; height: 48px;
-     background: linear-gradient(135deg, rgba(31,0,255,0.05) 0%, rgba(31,0,255,0.1) 100%);
-     color: var(--blue);
-     border-radius: 14px;
-     display: flex; align-items: center; justify-content: center;
-     font-size: 24px;
-     margin-bottom: 24px;
-   }
-   
-   .hr-bento-card h3 {
-     font-family: 'Space Grotesk', sans-serif;
-     font-size: 18px;
-     font-weight: 700;
-     color: var(--vulcan);
-     margin-bottom: 12px;
-     line-height: 1.3;
-   }
-   
-   .hr-bento-card p {
-     font-family: 'DM Sans', sans-serif;
-     font-size: 14px;
-     color: var(--charade);
-     line-height: 1.6;
-     margin: 0;
-   }
-   
-   .hr-feature-list {
-     margin-top: 20px;
-     list-style: none;
-     padding: 0;
-     display: flex;
-     flex-direction: column;
-     gap: 8px;
-   }
-   
-   .hr-feature-list li {
-     display: flex;
-     align-items: center;
-     gap: 10px;
-     font-family: 'DM Sans', sans-serif;
-     font-size: 14px;
-     color: var(--charade);
-   }
-   
-   .hr-check {
-     color: #10B981;
-     font-size: 16px;
-   }
-   
-   /* ─── Minimal List Section ──────────────────────────────────────── */
-   .hr-minimal-list {
-     display: flex;
-     flex-direction: column;
-     gap: 16px;
-   }
-   
-   .hr-minimal-item {
-     display: flex;
-     align-items: center;
-     justify-content: space-between;
-     padding: 24px 32px;
-     background: var(--white);
-     border: 1px solid rgba(0,0,0,0.04);
-     border-radius: 16px;
-     transition: all 0.3s ease;
-   }
-   
-   .hr-minimal-item:hover {
-     background: var(--white-lilac);
-     transform: scale(1.01);
-     border-color: rgba(31,0,255,0.1);
-   }
-   
-   .hr-minimal-item h4 {
-     font-family: 'Space Grotesk', sans-serif;
-     font-size: 18px;
-     font-weight: 600;
-     color: var(--vulcan);
-     margin: 0;
-     width: 30%;
-   }
-   
-   .hr-minimal-item p {
-     font-family: 'DM Sans', sans-serif;
-     font-size: 15px;
-     color: var(--charade);
-     margin: 0;
-     width: 65%;
-   }
-   
-   /* ─── Interactive Benefits Grid ─────────────────────────────────── */
-   .hr-benefits-wrapper {
-     display: grid;
-     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-     gap: 24px;
-     margin-top: 48px;
-   }
-   
-   .hr-benefit-pill {
-     padding: 24px;
-     background: var(--white);
-     border-radius: 24px;
-     border: 1px solid rgba(0,0,0,0.04);
-     text-align: center;
-     transition: all 0.4s ease;
-     display: flex;
-     flex-direction: column;
-     align-items: center;
-   }
-   
-   .hr-benefit-pill:hover {
-     transform: translateY(-8px);
-     box-shadow: 0 20px 40px rgba(31,0,255,0.08);
-     border-color: rgba(31,0,255,0.15);
-     background: #ffffff;
-   }
-   
-   .hr-benefit-pill:hover h4 {
-     color: var(--blue);
-   }
-   
-   .hr-benefit-pill .hr-icon-wrapper {
-     background: var(--white-lilac);
-     margin-bottom: 20px;
-     transition: all 0.4s ease;
-   }
-   
-   .hr-benefit-pill:hover .hr-icon-wrapper {
-     background: rgba(31,0,255,0.05);
-     color: var(--blue);
-     transform: scale(1.1);
-   }
-   
-   .hr-benefit-pill h4 {
-     font-family: 'Space Grotesk', sans-serif;
-     font-size: 18px;
-     font-weight: 700;
-     color: var(--vulcan);
-     margin-bottom: 12px;
-     transition: color 0.4s ease;
-   }
-   
-   .hr-benefit-pill p {
-     font-family: 'DM Sans', sans-serif;
-     font-size: 14px;
-     color: var(--storm-gray);
-     line-height: 1.5;
-     margin: 0;
-     transition: color 0.4s ease;
-   }
-   
-   /* Responsive */
-   @media (max-width: 1024px) {
-     .hr-hero-container {
-       grid-template-columns: 1fr;
-       padding-top: 100px;
-       text-align: center;
-     }
-     .hr-hero-subtitle {
-       margin: 0 auto 40px;
-     }
-     .sp-hero__actions {
-       justify-content: center;
-     }
-     .hr-minimal-item {
-       flex-direction: column;
-       align-items: flex-start;
-       gap: 12px;
-     }
-     .hr-minimal-item h4, .hr-minimal-item p {
-       width: 100%;
-     }
-     .hr-benefits-wrapper {
-       grid-template-columns: 1fr 1fr;
-     }
-   }
-   
-   @media (max-width: 768px) {
-     .hr-hero-title {
-       font-size: 44px;
-     }
-     .hr-bento-grid, .hr-benefits-wrapper {
-       grid-template-columns: 1fr;
-     }
-   }
-   
-   /* ─── FAQ Overrides for HospitalityRestaurantsPage ──────────────── */
-   .hr-faq-list {
-     display: flex;
-     flex-direction: column;
-     gap: 12px;
-     max-width: 800px;
-     margin: 0 auto;
-     width: 100%;
-   }
-   
-   .hr-faq-item {
-     background: #ffffff !important;
-     border: 1px solid rgba(0,0,0,0.04) !important;
-     border-radius: 4px !important;
-     padding: 20px 24px !important;
-     box-shadow: 0 4px 12px rgba(0,0,0,0.02) !important;
-     transition: all 0.3s ease !important;
-   }
-   
-   .hr-faq-item:hover {
-     box-shadow: 0 6px 16px rgba(0,0,0,0.04) !important;
-     transform: none !important;
-   }
-   
-   .hr-faq-item--open {
-     background: #ffffff !important;
-     border-color: rgba(31,0,255,0.2) !important;
-     box-shadow: 0 6px 16px rgba(0,0,0,0.04) !important;
-   }
-   
-   .hr-faq-list .hr-faq-item h3 {
-     font-family: 'DM Sans', sans-serif !important;
-     font-size: 15px !important;
-     font-weight: 400 !important;
-     color: var(--vulcan) !important;
-   }
-   
-   .hr-faq-list .hr-faq-item--open h3 {
-     color: var(--blue) !important;
-   }
-   
-   .hr-faq-icon-wrapper {
-     display: flex;
-     align-items: center;
-     justify-content: center;
-   }
+.hr-page {
+  background: radial-gradient(circle at 15% 50%, rgba(31, 0, 255, 0.03), transparent 25%),
+    radial-gradient(circle at 85% 30%, rgba(31, 0, 255, 0.04), transparent 25%);
+  background-color: #fafbfc;
+  min-height: 100vh;
+}
+
+/* ─── Hero Section ───────────────────────────────────────────────── */
+.hr-hero-container {
+  position: relative;
+  padding: 120px 48px 80px;
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+  z-index: 1;
+}
+
+.hr-hero-bg-orb {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(31, 0, 255, 0.08) 0%, rgba(255, 255, 255, 0) 70%);
+  border-radius: 50%;
+  filter: blur(40px);
+  z-index: -1;
+  top: -100px;
+  right: -100px;
+  animation: drift 15s ease-in-out infinite alternate;
+}
+
+@keyframes drift {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  100% {
+    transform: translate(-50px, 50px);
+  }
+}
+
+.hr-hero-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 64px;
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -2px;
+  color: var(--vulcan);
+  margin-bottom: 24px;
+}
+
+.hr-hero-title-accent {
+  background: linear-gradient(135deg, #1f00ff 0%, #00d2ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hr-hero-subtitle {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--storm-gray);
+  margin-bottom: 40px;
+  max-width: 540px;
+}
+
+/* Glass Dashboard */
+.hr-glass-dash {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 24px;
+  padding: 32px;
+  box-shadow: 0 24px 48px rgba(31, 0, 255, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 1);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.hr-glass-dash-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  padding-bottom: 16px;
+}
+
+.hr-dash-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--vulcan);
+}
+
+.hr-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: rgba(16, 185, 129, 0.1);
+  color: #10B981;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  font-family: 'DM Mono', monospace;
+}
+
+.hr-status-dot {
+  width: 6px;
+  height: 6px;
+  background: #10B981;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4);
+  }
+
+  70% {
+    box-shadow: 0 0 0 6px rgba(16, 185, 129, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+  }
+}
+
+.hr-metric-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.hr-metric-box {
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hr-metric-box:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(31, 0, 255, 0.06);
+}
+
+.hr-metric-label {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  color: var(--storm-gray);
+  margin-bottom: 8px;
+}
+
+.hr-metric-val {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--vulcan);
+}
+
+.hr-metric-full {
+  grid-column: 1 / -1;
+}
+
+/* ─── Bento Grid Sections ───────────────────────────────────────── */
+.hr-bento-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-top: 48px;
+}
+
+.hr-challenges-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-top: 48px;
+}
+
+.hr-challenges-grid .hr-bento-card {
+  padding: 20px;
+  border-radius: 16px;
+}
+
+.hr-challenges-grid .hr-bento-card .hr-icon-wrapper {
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  margin-bottom: 16px;
+  border-radius: 10px;
+}
+
+.hr-challenges-grid .hr-bento-card h3 {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.hr-challenges-grid .hr-bento-card p {
+  font-size: 13.5px;
+  line-height: 1.5;
+}
+
+.hr-solutions-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 14px;
+  margin-top: 48px;
+}
+
+.hr-solutions-grid .hr-bento-card {
+  padding: 18px 14px;
+  border-radius: 16px;
+}
+
+.hr-solutions-grid .hr-bento-card .hr-icon-wrapper {
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  margin-bottom: 14px;
+  border-radius: 10px;
+}
+
+.hr-solutions-grid .hr-bento-card h3 {
+  font-size: 15px;
+  margin-bottom: 8px;
+}
+
+.hr-solutions-grid .hr-bento-card p {
+  font-size: 12.5px;
+  line-height: 1.4;
+}
+
+.hr-solutions-grid .hr-bento-card .hr-feature-list {
+  margin-top: 12px;
+  gap: 6px;
+}
+
+.hr-solutions-grid .hr-bento-card .hr-feature-list li {
+  font-size: 12px;
+  gap: 6px;
+}
+
+.hr-bento-card {
+  background: var(--white);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.02);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.hr-bento-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(31, 0, 255, 0.08);
+  border-color: rgba(31, 0, 255, 0.1);
+}
+
+.hr-icon-wrapper {
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, rgba(31, 0, 255, 0.05) 0%, rgba(31, 0, 255, 0.1) 100%);
+  color: var(--blue);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  margin-bottom: 24px;
+}
+
+.hr-bento-card h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--vulcan);
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+
+.hr-bento-card p {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  color: var(--charade);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.hr-feature-list {
+  margin-top: 20px;
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.hr-feature-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  color: var(--charade);
+}
+
+.hr-check {
+  color: #10B981;
+  font-size: 16px;
+}
+
+/* ─── Minimal List Section ──────────────────────────────────────── */
+.hr-minimal-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.hr-minimal-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 32px;
+  background: var(--white);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  border-radius: 16px;
+  transition: all 0.3s ease;
+}
+
+.hr-minimal-item:hover {
+  background: var(--white-lilac);
+  transform: scale(1.01);
+  border-color: rgba(31, 0, 255, 0.1);
+}
+
+.hr-minimal-item h4 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--vulcan);
+  margin: 0;
+  width: 30%;
+}
+
+.hr-minimal-item p {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  color: var(--charade);
+  margin: 0;
+  width: 65%;
+}
+
+/* ─── Interactive Benefits Grid ─────────────────────────────────── */
+.hr-benefits-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  margin-top: 48px;
+}
+
+.hr-benefit-pill {
+  padding: 24px;
+  background: var(--white);
+  border-radius: 24px;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  text-align: center;
+  transition: all 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hr-benefit-pill:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(31, 0, 255, 0.08);
+  border-color: rgba(31, 0, 255, 0.15);
+  background: #ffffff;
+}
+
+.hr-benefit-pill:hover h4 {
+  color: var(--blue);
+}
+
+.hr-benefit-pill .hr-icon-wrapper {
+  background: var(--white-lilac);
+  margin-bottom: 20px;
+  transition: all 0.4s ease;
+}
+
+.hr-benefit-pill:hover .hr-icon-wrapper {
+  background: rgba(31, 0, 255, 0.05);
+  color: var(--blue);
+  transform: scale(1.1);
+}
+
+.hr-benefit-pill h4 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--vulcan);
+  margin-bottom: 12px;
+  transition: color 0.4s ease;
+}
+
+.hr-benefit-pill p {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  color: var(--storm-gray);
+  line-height: 1.5;
+  margin: 0;
+  transition: color 0.4s ease;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .hr-hero-container {
+    grid-template-columns: 1fr;
+    padding-top: 100px;
+    text-align: center;
+  }
+
+  .hr-hero-subtitle {
+    margin: 0 auto 40px;
+  }
+
+  .sp-hero__actions {
+    justify-content: center;
+  }
+
+  .hr-minimal-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .hr-minimal-item h4,
+  .hr-minimal-item p {
+    width: 100%;
+  }
+
+  .hr-benefits-wrapper {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .hr-challenges-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .hr-solutions-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hr-hero-title {
+    font-size: 44px;
+  }
+
+  .hr-bento-grid,
+  .hr-benefits-wrapper,
+  .hr-challenges-grid,
+  .hr-solutions-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ─── FAQ Overrides for HospitalityRestaurantsPage ──────────────── */
+.hr-faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 800px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.hr-faq-item {
+  background: #ffffff !important;
+  border: 1px solid rgba(0, 0, 0, 0.04) !important;
+  border-radius: 4px !important;
+  padding: 20px 24px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02) !important;
+  transition: all 0.3s ease !important;
+}
+
+.hr-faq-item:hover {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.04) !important;
+  transform: none !important;
+}
+
+.hr-faq-item--open {
+  background: #ffffff !important;
+  border-color: rgba(31, 0, 255, 0.2) !important;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.04) !important;
+}
+
+.hr-faq-list .hr-faq-item h3 {
+  font-family: 'DM Sans', sans-serif !important;
+  font-size: 15px !important;
+  font-weight: 400 !important;
+  color: var(--vulcan) !important;
+}
+
+.hr-faq-list .hr-faq-item--open h3 {
+  color: var(--blue) !important;
+}
+
+.hr-faq-icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

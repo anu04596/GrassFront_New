@@ -3,20 +3,20 @@ import { motion } from 'framer-motion';
 import './HospitalityRestaurantsPage.css';
 
 const ThemeChevron = ({ open }) => (
-  <svg 
-    width="16" height="16" viewBox="0 0 16 16" fill="none" 
+  <svg
+    width="16" height="16" viewBox="0 0 16 16" fill="none"
     style={{
       transition: 'transform 0.3s ease',
       transform: open ? 'rotate(180deg)' : 'rotate(0deg)',
       flexShrink: 0
     }}
   >
-    <polyline 
-      points="3,6 8,11 13,6" 
-      stroke="#1F00FF" 
-      strokeWidth="1.5" 
-      strokeLinecap="round" 
-      strokeLinejoin="round" 
+    <polyline
+      points="3,6 8,11 13,6"
+      stroke="#1F00FF"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
   </svg>
 );
@@ -160,7 +160,7 @@ export default function HospitalityRestaurantsPage() {
             <h2 style={{ maxWidth: '100%' }}>Common Challenges Hospitality Businesses Face</h2>
           </motion.div>
 
-          <motion.div variants={staggerContainer} className="hr-bento-grid">
+          <motion.div variants={staggerContainer} className="hr-challenges-grid">
             {CHALLENGES.map(c => (
               <motion.div variants={fadeInUp} className="hr-bento-card" key={c.title}>
                 <div className="hr-icon-wrapper">{c.icon}</div>
@@ -184,7 +184,7 @@ export default function HospitalityRestaurantsPage() {
             <h2>Solutions We Provide</h2>
           </motion.div>
 
-          <motion.div variants={staggerContainer} className="hr-bento-grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))' }}>
+          <motion.div variants={staggerContainer} className="hr-solutions-grid">
             {SOLUTIONS.map(s => (
               <motion.div variants={fadeInUp} className="hr-bento-card" key={s.title}>
                 <div className="hr-icon-wrapper">{s.icon}</div>

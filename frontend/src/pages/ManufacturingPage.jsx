@@ -3,20 +3,20 @@ import { motion } from 'framer-motion';
 import './HospitalityRestaurantsPage.css';
 
 const ThemeChevron = ({ open }) => (
-  <svg 
-    width="16" height="16" viewBox="0 0 16 16" fill="none" 
+  <svg
+    width="16" height="16" viewBox="0 0 16 16" fill="none"
     style={{
       transition: 'transform 0.3s ease',
       transform: open ? 'rotate(180deg)' : 'rotate(0deg)',
       flexShrink: 0
     }}
   >
-    <polyline 
-      points="3,6 8,11 13,6" 
-      stroke="#1F00FF" 
-      strokeWidth="1.5" 
-      strokeLinecap="round" 
-      strokeLinejoin="round" 
+    <polyline
+      points="3,6 8,11 13,6"
+      stroke="#1F00FF"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
   </svg>
 );
@@ -99,13 +99,13 @@ export default function ManufacturingPage() {
           initial="hidden" animate="visible" variants={staggerContainer}
         >
           <motion.div variants={fadeInUp} style={{ marginBottom: '24px' }}>
-            <span style={{ 
+            <span style={{
               display: 'inline-block',
-              background: '#F0F5FF', 
-              color: '#1F00FF', 
-              padding: '8px 20px', 
-              borderRadius: '100px', 
-              fontSize: '15px', 
+              background: '#F0F5FF',
+              color: '#1F00FF',
+              padding: '8px 20px',
+              borderRadius: '100px',
+              fontSize: '15px',
               fontWeight: '500',
               fontFamily: 'inherit'
             }}>Manufacturing</span>
@@ -114,8 +114,8 @@ export default function ManufacturingPage() {
             <span className="hr-hero-title-accent">Manufacturing</span> Industry Solutions
           </motion.h1>
           <motion.p variants={fadeInUp} className="hr-hero-subtitle">
-            Improve Production Visibility, Inventory Control, and Operational Efficiency.<br/><br/>
-            Manufacturing businesses manage a large number of moving parts every day. Raw material procurement, inventory tracking, production planning, supplier management, quality control, and reporting all need to work together efficiently. When these processes are managed through spreadsheets, disconnected software, and manual workflows, delays and inefficiencies become unavoidable.<br/><br/>
+            Improve Production Visibility, Inventory Control, and Operational Efficiency.<br /><br />
+            Manufacturing businesses manage a large number of moving parts every day. Raw material procurement, inventory tracking, production planning, supplier management, quality control, and reporting all need to work together efficiently. When these processes are managed through spreadsheets, disconnected software, and manual workflows, delays and inefficiencies become unavoidable.<br /><br />
             GrassFRONT helps manufacturing companies streamline operations through ERP systems, procurement automation, inventory management solutions, business intelligence dashboards, and custom software development.
           </motion.p>
           <motion.div variants={fadeInUp} className="sp-hero__actions">

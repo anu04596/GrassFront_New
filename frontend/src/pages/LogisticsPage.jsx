@@ -3,20 +3,20 @@ import { motion } from 'framer-motion';
 import './HospitalityRestaurantsPage.css';
 
 const ThemeChevron = ({ open }) => (
-  <svg 
-    width="16" height="16" viewBox="0 0 16 16" fill="none" 
+  <svg
+    width="16" height="16" viewBox="0 0 16 16" fill="none"
     style={{
       transition: 'transform 0.3s ease',
       transform: open ? 'rotate(180deg)' : 'rotate(0deg)',
       flexShrink: 0
     }}
   >
-    <polyline 
-      points="3,6 8,11 13,6" 
-      stroke="#1F00FF" 
-      strokeWidth="1.5" 
-      strokeLinecap="round" 
-      strokeLinejoin="round" 
+    <polyline
+      points="3,6 8,11 13,6"
+      stroke="#1F00FF"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
   </svg>
 );
@@ -99,13 +99,13 @@ export default function LogisticsPage() {
           initial="hidden" animate="visible" variants={staggerContainer}
         >
           <motion.div variants={fadeInUp} style={{ marginBottom: '24px' }}>
-            <span style={{ 
+            <span style={{
               display: 'inline-block',
-              background: '#F0F5FF', 
-              color: '#1F00FF', 
-              padding: '8px 20px', 
-              borderRadius: '100px', 
-              fontSize: '15px', 
+              background: '#F0F5FF',
+              color: '#1F00FF',
+              padding: '8px 20px',
+              borderRadius: '100px',
+              fontSize: '15px',
               fontWeight: '500',
               fontFamily: 'inherit'
             }}>Distribution & Logistics</span>
@@ -114,8 +114,8 @@ export default function LogisticsPage() {
             <span className="hr-hero-title-accent">Distribution & Logistics</span> Solutions
           </motion.h1>
           <motion.p variants={fadeInUp} className="hr-hero-subtitle">
-            Improve Inventory Visibility, Warehouse Operations, and Order Management.<br/><br/>
-            Distribution and logistics businesses depend on speed, accuracy, and visibility. When inventory records, warehouse operations, procurement activities, and order tracking are managed across spreadsheets and disconnected systems, delays become common and operational costs increase.<br/><br/>
+            Improve Inventory Visibility, Warehouse Operations, and Order Management.<br /><br />
+            Distribution and logistics businesses depend on speed, accuracy, and visibility. When inventory records, warehouse operations, procurement activities, and order tracking are managed across spreadsheets and disconnected systems, delays become common and operational costs increase.<br /><br />
             As businesses grow, managing inventory across multiple warehouses, coordinating suppliers, and tracking order fulfillment becomes increasingly complex. GrassFRONT helps distribution and logistics companies streamline operations through ERP systems, inventory management software, automation solutions, and business intelligence dashboards.
           </motion.p>
           <motion.div variants={fadeInUp} className="sp-hero__actions">

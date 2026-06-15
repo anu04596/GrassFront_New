@@ -3,82 +3,82 @@ import { motion } from 'framer-motion';
 import './HospitalityRestaurantsPage.css';
 
 const ThemeChevron = ({ open }) => (
-  <svg 
-    width="16" height="16" viewBox="0 0 16 16" fill="none" 
+  <svg
+    width="16" height="16" viewBox="0 0 16 16" fill="none"
     style={{
       transition: 'transform 0.3s ease',
       transform: open ? 'rotate(180deg)' : 'rotate(0deg)',
       flexShrink: 0
     }}
   >
-    <polyline 
-      points="3,6 8,11 13,6" 
-      stroke="#1F00FF" 
-      strokeWidth="1.5" 
-      strokeLinecap="round" 
-      strokeLinejoin="round" 
+    <polyline
+      points="3,6 8,11 13,6"
+      stroke="#1F00FF"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
   </svg>
 );
 
 const CHALLENGES = [
-  { 
-    icon: '⏳', 
-    title: 'Too Much Manual Work', 
-    desc: 'Many teams spend hours every week updating spreadsheets, creating reports, following up on approvals, and managing project information. This reduces productivity and creates unnecessary administrative work.' 
+  {
+    icon: '⏳',
+    title: 'Too Much Manual Work',
+    desc: 'Many teams spend hours every week updating spreadsheets, creating reports, following up on approvals, and managing project information. This reduces productivity and creates unnecessary administrative work.'
   },
-  { 
-    icon: '👁️', 
-    title: 'Limited Project Visibility', 
-    desc: 'Business leaders often struggle to see which projects are on track, which clients are most profitable, how teams are performing, and where operational bottlenecks are. Without centralized visibility, decision-making becomes difficult.' 
+  {
+    icon: '👁️',
+    title: 'Limited Project Visibility',
+    desc: 'Business leaders often struggle to see which projects are on track, which clients are most profitable, how teams are performing, and where operational bottlenecks are. Without centralized visibility, decision-making becomes difficult.'
   },
-  { 
-    icon: '🗂️', 
-    title: 'Client Information Is Scattered', 
-    desc: 'Customer data often exists across emails, spreadsheets, CRMs, and project management tools. This creates inefficiencies and makes collaboration harder.' 
+  {
+    icon: '🗂️',
+    title: 'Client Information Is Scattered',
+    desc: 'Customer data often exists across emails, spreadsheets, CRMs, and project management tools. This creates inefficiencies and makes collaboration harder.'
   },
-  { 
-    icon: '📊', 
-    title: 'Reporting Takes Too Long', 
-    desc: 'Many businesses still prepare management reports manually, leading to delays and inconsistent information.' 
+  {
+    icon: '📊',
+    title: 'Reporting Takes Too Long',
+    desc: 'Many businesses still prepare management reports manually, leading to delays and inconsistent information.'
   },
-  { 
-    icon: '📈', 
-    title: 'Scaling Operations Becomes Difficult', 
-    desc: 'As the business grows, processes that once worked become difficult to manage efficiently.' 
+  {
+    icon: '📈',
+    title: 'Scaling Operations Becomes Difficult',
+    desc: 'As the business grows, processes that once worked become difficult to manage efficiently.'
   }
 ];
 
 const SOLUTIONS = [
-  { 
-    icon: '💼', 
-    title: 'Business Management Systems', 
-    desc: 'Centralize operations through a single platform.', 
-    features: ['Client Management', 'Project Tracking', 'Team Collaboration', 'Task Management', 'Workflow Tracking', 'Reporting Dashboards'] 
+  {
+    icon: '💼',
+    title: 'Business Management Systems',
+    desc: 'Centralize operations through a single platform.',
+    features: ['Client Management', 'Project Tracking', 'Team Collaboration', 'Task Management', 'Workflow Tracking', 'Reporting Dashboards']
   },
-  { 
-    icon: '⚙️', 
-    title: 'Workflow Automation', 
-    desc: 'Automate repetitive administrative activities.', 
-    features: ['Client onboarding', 'Approval workflows', 'Task assignments', 'Report generation', 'Document management'] 
+  {
+    icon: '⚙️',
+    title: 'Workflow Automation',
+    desc: 'Automate repetitive administrative activities.',
+    features: ['Client onboarding', 'Approval workflows', 'Task assignments', 'Report generation', 'Document management']
   },
-  { 
-    icon: '📈', 
-    title: 'Business Intelligence Dashboards', 
-    desc: 'Get a real-time view of business performance.', 
-    features: ['Project Status', 'Team Productivity', 'Revenue Trends', 'Client Performance', 'Business KPIs'] 
+  {
+    icon: '📈',
+    title: 'Business Intelligence Dashboards',
+    desc: 'Get a real-time view of business performance.',
+    features: ['Project Status', 'Team Productivity', 'Revenue Trends', 'Client Performance', 'Business KPIs']
   },
-  { 
-    icon: '💻', 
-    title: 'Custom Software Development', 
-    desc: "Build software designed around your firm's unique processes and service delivery model.", 
-    features: ['Tailored workflow design', 'Custom modules', 'Scalable architecture', 'IP ownership', 'Direct team alignment'] 
+  {
+    icon: '💻',
+    title: 'Custom Software Development',
+    desc: "Build software designed around your firm's unique processes and service delivery model.",
+    features: ['Tailored workflow design', 'Custom modules', 'Scalable architecture', 'IP ownership', 'Direct team alignment']
   },
-  { 
-    icon: '🔌', 
-    title: 'System Integration Services', 
-    desc: 'Connect CRM systems, accounting software, project management platforms, and reporting tools into one connected workflow.', 
-    features: ['CRM connectivity', 'Accounting sync', 'Project tool integration', 'Data consistency', 'Reduced double-entry'] 
+  {
+    icon: '🔌',
+    title: 'System Integration Services',
+    desc: 'Connect CRM systems, accounting software, project management platforms, and reporting tools into one connected workflow.',
+    features: ['CRM connectivity', 'Accounting sync', 'Project tool integration', 'Data consistency', 'Reduced double-entry']
   }
 ];
 
@@ -145,13 +145,13 @@ export default function ProfessionalServicesPage() {
           initial="hidden" animate="visible" variants={staggerContainer}
         >
           <motion.div variants={fadeInUp} style={{ marginBottom: '24px' }}>
-            <span style={{ 
+            <span style={{
               display: 'inline-block',
-              background: '#F0F5FF', 
-              color: '#1F00FF', 
-              padding: '8px 20px', 
-              borderRadius: '100px', 
-              fontSize: '15px', 
+              background: '#F0F5FF',
+              color: '#1F00FF',
+              padding: '8px 20px',
+              borderRadius: '100px',
+              fontSize: '15px',
               fontWeight: '500',
               fontFamily: 'inherit'
             }}>Professional Services</span>
@@ -160,9 +160,9 @@ export default function ProfessionalServicesPage() {
             <span className="hr-hero-title-accent">Professional Services</span> Solutions
           </motion.h1>
           <motion.p variants={fadeInUp} className="hr-hero-subtitle">
-            Streamline Operations, Improve Visibility, and Focus More on Client Delivery.<br/><br/>
-            Professional service businesses grow through expertise, client relationships, and efficient execution. However, as teams expand and projects increase, managing operations through spreadsheets, emails, and disconnected tools becomes difficult.<br/><br/>
-            Project tracking, client communication, approvals, reporting, and resource management often consume valuable time that could be spent serving clients.<br/><br/>
+            Streamline Operations, Improve Visibility, and Focus More on Client Delivery.<br /><br />
+            Professional service businesses grow through expertise, client relationships, and efficient execution. However, as teams expand and projects increase, managing operations through spreadsheets, emails, and disconnected tools becomes difficult.<br /><br />
+            Project tracking, client communication, approvals, reporting, and resource management often consume valuable time that could be spent serving clients.<br /><br />
             GrassFRONT helps professional service firms simplify operations through custom software, workflow automation, business intelligence dashboards, and integrated business management systems.
           </motion.p>
           <motion.div variants={fadeInUp} className="sp-hero__actions">
