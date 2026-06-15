@@ -2,6 +2,25 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import './HospitalityRestaurantsPage.css';
 
+const ThemeChevron = ({ open }) => (
+  <svg 
+    width="16" height="16" viewBox="0 0 16 16" fill="none" 
+    style={{
+      transition: 'transform 0.3s ease',
+      transform: open ? 'rotate(180deg)' : 'rotate(0deg)',
+      flexShrink: 0
+    }}
+  >
+    <polyline 
+      points="3,6 8,11 13,6" 
+      stroke="#1F00FF" 
+      strokeWidth="1.5" 
+      strokeLinecap="round" 
+      strokeLinejoin="round" 
+    />
+  </svg>
+);
+
 const CHALLENGES = [
   { icon: '📦', title: 'Inventory Is Difficult to Track', desc: 'Many restaurants struggle with stock shortages, excess inventory, wastage, and manual stock tracking. Without real-time visibility, controlling inventory becomes challenging.' },
   { icon: '⏳', title: 'Procurement Takes Too Much Time', desc: 'Managing multiple vendors, quotations, approvals, and purchase orders manually often results in delays and inefficiencies. Teams spend valuable time following up instead of focusing on operations.' },
@@ -130,7 +149,7 @@ export default function HospitalityRestaurantsPage() {
       </section>
 
       {/* ─── Challenges Section ─── */}
-      <section className="sp-section">
+      <section className="sp-section sp-section--white">
         <motion.div
           className="sp-inner"
           initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }}
@@ -183,7 +202,7 @@ export default function HospitalityRestaurantsPage() {
       </section>
 
       {/* ─── Benefits Section ─── */}
-      <section className="sp-section">
+      <section className="sp-section sp-section--white">
         <motion.div
           className="sp-inner"
           initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }}
@@ -191,7 +210,7 @@ export default function HospitalityRestaurantsPage() {
         >
           <motion.div variants={fadeInUp} className="section-tag"><span className="section-tag-line" /><span className="section-tag-label">The Impact</span></motion.div>
           <motion.div variants={fadeInUp} className="sp-section-header">
-            <h2>Benefits for Hospitality Businesses</h2>
+            <h2 style={{ maxWidth: '100%' }}>Benefits for Hospitality Businesses</h2>
           </motion.div>
 
           <motion.div variants={staggerContainer} className="hr-benefits-wrapper">
@@ -230,7 +249,7 @@ export default function HospitalityRestaurantsPage() {
       </section>
 
       {/* ─── Why Choose Us Split Section ─── */}
-      <section className="sp-section">
+      <section className="sp-section sp-section--white">
         <motion.div
           className="sp-inner"
           initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }}
@@ -267,54 +286,31 @@ export default function HospitalityRestaurantsPage() {
         >
           <motion.div variants={fadeInUp} className="section-tag"><span className="section-tag-line" /><span className="section-tag-label">FAQ</span></motion.div>
           <motion.div variants={fadeInUp} className="sp-section-header">
-            <h2>Frequently Asked Questions</h2>
+            <h2 style={{ maxWidth: '100%' }}>Frequently Asked Questions</h2>
           </motion.div>
-          <motion.div variants={fadeInUp} className="sp-faq-columns">
-            <div className="sp-faq-col">
-              {FAQS.slice(0, 3).map((faq, i) => {
-                const isOpen = openFaq === i;
-                return (
-                  <div
-                    key={i}
-                    className={`sp-faq-item hr-faq-item ${isOpen ? 'sp-faq-item--open hr-faq-item--open' : ''}`}
-                    onClick={() => setOpenFaq(isOpen ? -1 : i)}
-                  >
-                    <div className="sp-faq-header">
-                      <h3 style={{ fontSize: '15px' }}>{faq.q}</h3>
-                      <div className="sp-faq-icon">{isOpen ? '−' : '+'}</div>
-                    </div>
-                    <div className={`sp-faq-expand ${isOpen ? 'sp-faq-expand--open' : ''}`}>
-                      <div className="sp-faq-expand-inner">
-                        <p>{faq.a}</p>
-                      </div>
+          <motion.div variants={fadeInUp} className="hr-faq-list">
+            {FAQS.map((faq, i) => {
+              const isOpen = openFaq === i;
+              return (
+                <div
+                  key={i}
+                  className={`sp-faq-item hr-faq-item ${isOpen ? 'hr-faq-item--open' : ''}`}
+                  onClick={() => setOpenFaq(isOpen ? -1 : i)}
+                >
+                  <div className="sp-faq-header hr-faq-header">
+                    <h3>{faq.q}</h3>
+                    <div className="hr-faq-icon-wrapper">
+                      <ThemeChevron open={isOpen} />
                     </div>
                   </div>
-                );
-              })}
-            </div>
-            <div className="sp-faq-col">
-              {FAQS.slice(3).map((faq, i) => {
-                const idx = i + 3;
-                const isOpen = openFaq === idx;
-                return (
-                  <div
-                    key={idx}
-                    className={`sp-faq-item hr-faq-item ${isOpen ? 'sp-faq-item--open hr-faq-item--open' : ''}`}
-                    onClick={() => setOpenFaq(isOpen ? -1 : idx)}
-                  >
-                    <div className="sp-faq-header">
-                      <h3 style={{ fontSize: '15px' }}>{faq.q}</h3>
-                      <div className="sp-faq-icon">{isOpen ? '−' : '+'}</div>
-                    </div>
-                    <div className={`sp-faq-expand ${isOpen ? 'sp-faq-expand--open' : ''}`}>
-                      <div className="sp-faq-expand-inner">
-                        <p>{faq.a}</p>
-                      </div>
+                  <div className={`sp-faq-expand ${isOpen ? 'sp-faq-expand--open' : ''}`}>
+                    <div className="sp-faq-expand-inner">
+                      <p>{faq.a}</p>
                     </div>
                   </div>
-                );
-              })}
-            </div>
+                </div>
+              );
+            })}
           </motion.div>
         </motion.div>
       </section>
