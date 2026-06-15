@@ -4,6 +4,7 @@ import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
 import CookieConsent from './components/layout/CookieConsent';
 import Home from './pages/Home';
+import ScrollToTop from './components/ScrollToTop';
 import ERPPage from './pages/ERPPage';
 import CustomSoftwarePage from './pages/CustomSoftwarePage';
 import AIAutomationPage from './pages/AIAutomationPage';
@@ -25,6 +26,7 @@ import './shared.css';
 export default function App() {
   return (
     <>
+      <ScrollToTop />
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
