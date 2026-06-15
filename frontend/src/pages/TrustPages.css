@@ -1,0 +1,310 @@
+/* ===================================================================
+   TrustPages.css
+   Shared styles for WhyGrassfrontPage, OurProcessPage, FAQsPage
+   Extends HospitalityRestaurantsPage.css + ServicePage.css
+   =================================================================== */
+
+.tp-page {
+  padding-top: 64px;
+}
+
+/* ── Landscape Hero Banner ── */
+.tp-hero {
+  position: relative;
+  width: 100%;
+  height: 420px;
+  overflow: hidden;
+}
+
+.tp-hero__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+}
+
+.tp-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(10, 10, 30, 0.82) 0%, rgba(10, 10, 30, 0.5) 55%, transparent 100%);
+  display: flex;
+  align-items: center;
+  padding: 0 80px;
+}
+
+.tp-hero__content {
+  max-width: 640px;
+}
+
+.tp-hero__badge {
+  display: inline-block;
+  background: rgba(31, 0, 255, 0.25);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 6px 18px;
+  border-radius: 100px;
+  font-size: 12px;
+  font-family: 'DM Mono', monospace;
+  font-weight: 500;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.tp-hero__title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(32px, 4.5vw, 56px);
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.1;
+  letter-spacing: -1.8px;
+  margin: 0 0 20px;
+}
+
+.tp-hero__sub {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.82);
+  margin-bottom: 32px;
+  font-weight: 300;
+}
+
+/* ── Differentiator cards override ── */
+.tp-diff-card {
+  border-radius: 16px !important;
+}
+
+/* ── Industry links ── */
+.tp-industry-link {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.tp-arrow {
+  font-size: 18px;
+  color: var(--blue);
+  transition: transform 0.2s ease;
+}
+
+.tp-industry-link:hover .tp-arrow {
+  transform: translateX(6px);
+}
+
+/* ── Process Steps (vertical timeline) ── */
+.tp-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-top: 8px;
+}
+
+.tp-step {
+  display: flex;
+  gap: 0;
+  align-items: stretch;
+}
+
+.tp-step__left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  width: 64px;
+}
+
+.tp-step__num {
+  font-family: 'DM Mono', monospace;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--blue);
+  background: rgba(31, 0, 255, 0.08);
+  border: 1px solid rgba(31, 0, 255, 0.18);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  letter-spacing: 0.5px;
+}
+
+.tp-step__line {
+  flex: 1;
+  width: 1px;
+  background: var(--fog);
+  margin: 6px 0;
+}
+
+.tp-step:last-child .tp-step__line {
+  display: none;
+}
+
+.tp-step__right {
+  padding: 0 0 48px 28px;
+  flex: 1;
+}
+
+.tp-step__icon {
+  font-size: 28px;
+  margin-bottom: 12px;
+}
+
+.tp-step__title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--vulcan);
+  margin: 0 0 10px;
+  letter-spacing: -0.3px;
+}
+
+.tp-step__desc {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--charade);
+  margin-bottom: 14px;
+}
+
+.tp-step__points {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.tp-step__points li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  color: var(--charade);
+}
+
+.tp-step__note {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13.5px;
+  color: var(--storm-gray);
+  font-style: italic;
+  margin: 0;
+}
+
+/* ── FAQ Accordion ── */
+.tp-faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 820px;
+  width: 100%;
+}
+
+.tp-faq-item {
+  background: #ffffff;
+  border: 1px solid var(--fog);
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: border-color 0.25s, box-shadow 0.25s;
+}
+
+.tp-faq-item:hover {
+  border-color: rgba(31, 0, 255, 0.18);
+  box-shadow: 0 4px 16px rgba(31, 0, 255, 0.05);
+}
+
+.tp-faq-item--open {
+  border-color: rgba(31, 0, 255, 0.25);
+  box-shadow: 0 6px 24px rgba(31, 0, 255, 0.07);
+}
+
+.tp-faq-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 24px;
+}
+
+.tp-faq-num {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--blue);
+  opacity: 0.6;
+  letter-spacing: 0.8px;
+  flex-shrink: 0;
+  width: 24px;
+}
+
+.tp-faq-header h3 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--vulcan);
+  margin: 0;
+  flex: 1;
+  line-height: 1.4;
+  transition: color 0.2s;
+}
+
+.tp-faq-item--open .tp-faq-header h3 {
+  color: var(--blue);
+  font-weight: 600;
+}
+
+.tp-faq-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.tp-faq-body--open {
+  max-height: 300px;
+}
+
+.tp-faq-body-inner {
+  padding: 0 24px 20px 64px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14.5px;
+  line-height: 1.7;
+  color: var(--charade);
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .tp-hero {
+    height: 340px;
+  }
+  .tp-hero__overlay {
+    padding: 0 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .tp-hero {
+    height: 280px;
+  }
+  .tp-hero__overlay {
+    padding: 0 24px;
+  }
+  .tp-hero__title {
+    font-size: 28px;
+    letter-spacing: -1px;
+  }
+  .tp-hero__sub {
+    font-size: 14px;
+  }
+  .tp-step__right {
+    padding-left: 18px;
+  }
+  .tp-faq-body-inner {
+    padding-left: 24px;
+  }
+}

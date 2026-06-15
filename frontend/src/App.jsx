@@ -17,6 +17,9 @@ import ProcurementPage from './pages/ProcurementPage';
 import IntegrationPage from './pages/IntegrationPage';
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
 import TermsConditionsPage from './pages/TermsConditionsPage';
+import WhyGrassfrontPage from './pages/WhyGrassfrontPage';
+import OurProcessPage from './pages/OurProcessPage';
+import FAQsPage from './pages/FAQsPage';
 import './shared.css';
 
 export default function App() {
@@ -38,6 +41,9 @@ export default function App() {
         <Route path="/integration" element={<IntegrationPage />} />
         <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
         <Route path="/terms-conditions" element={<TermsConditionsPage />} />
+        <Route path="/why-grassfront" element={<WhyGrassfrontPage />} />
+        <Route path="/our-process" element={<OurProcessPage />} />
+        <Route path="/faqs" element={<FAQsPage />} />
         <Route path="*" element={<Home />} />
       </Routes>
       <Footer />

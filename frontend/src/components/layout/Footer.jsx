@@ -20,9 +20,9 @@ const INDUSTRIES = [
 
 const COMPANY = [
   { label: "About Us", href: "#about" },
-  { label: "Why GrassFRONT", href: "#why-grassfront" },
-  { label: "Our Process", href: "#our-process" },
-  { label: "FAQs", href: "#faqs" },
+  { label: "Why GrassFRONT", href: "/why-grassfront" },
+  { label: "Our Process", href: "/our-process" },
+  { label: "FAQs", href: "/faqs" },
   { label: "Contact Us", href: "#contact" },
 ];
 
