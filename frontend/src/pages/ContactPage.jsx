@@ -1,6 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import "./ContactPage.css";
 import { Link } from "react-router-dom";
+import { db } from "../firebase";
+import { collection, addDoc, serverTimestamp } from "firebase/firestore";
+
 /* ─── Data ─────────────────────────────────────────────────────────── */
 const SERVICES = [
   { icon: "⬡", label: "Custom Software Development" },
@@ -130,6 +133,8 @@ function Faq({ item, idx }) {
 /* ─── Contact form ──────────────────────────────────────────────────── */
 function ContactForm() {
   const [sent, setSent] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -137,11 +142,28 @@ function ContactForm() {
     service: "",
     message: "",
   });
+
   const onChange = (e) =>
     setForm((p) => ({ ...p, [e.target.name]: e.target.value }));
-  const onSubmit = (e) => {
+
+  const onSubmit = async (e) => {
     e.preventDefault();
-    setSent(true);
+    setLoading(true);
+    setError("");
+    try {
+      await addDoc(collection(db, "contact_submissions"), {
+        ...form,
+        submittedAt: serverTimestamp(),
+      });
+      setSent(true);
+    } catch (err) {
+      console.error("Firebase error:", err);
+      setError(
+        "Something went wrong. Please try again or email us directly at info@grassfront.com"
+      );
+    } finally {
+      setLoading(false);
+    }
   };
 
   if (sent) {
@@ -269,16 +291,28 @@ function ContactForm() {
           required
         />
       </div>
+
+      {error && (
+        <p
+          style={{
+            color: "#ef4444",
+            fontSize: "14px",
+            marginBottom: "12px",
+            lineHeight: "1.5",
+          }}
+        >
+          {error}
+        </p>
+      )}
+
       <div className="cp-form__actions">
         <button
           className="cp-btn cp-btn--primary"
-          onClick={() =>
-            document
-              .getElementById("cp-contact")
-              ?.scrollIntoView({ behavior: "smooth" })
-          }
+          type="submit"
+          disabled={loading}
+          style={{ opacity: loading ? 0.7 : 1, cursor: loading ? "not-allowed" : "pointer" }}
         >
-          Send message
+          {loading ? "Sending…" : "Send message"}
         </button>
         <span className="cp-form__note">Response within 4 business hours</span>
       </div>
@@ -400,7 +434,6 @@ export default function ContactPage() {
               <ContactForm />
             </div>
 
-            
             {/* Right — offices + info */}
             <div className="cp-contact-info-col" id="cp-offices">
               {/* Offices */}
@@ -433,7 +466,6 @@ export default function ContactPage() {
 
                     <div>
                       <p className="cp-office__name">{office.city} Office</p>
-
                       <p className="cp-office__detail">{office.address}</p>
                     </div>
                   </a>
@@ -465,7 +497,6 @@ export default function ContactPage() {
 
                   <div>
                     <p className="cp-office__name">Email</p>
-
                     <a
                       href="mailto:info@grassfront.com"
                       className="cp-office__detail"

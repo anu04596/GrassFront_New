@@ -42,7 +42,7 @@
 /* ---- LEFT ---- */
 .hero-left {
   position: absolute;
-  left: 48px;
+  left: 30px;
   right: 620px;
   top: 64px;
   display: flex;
@@ -270,6 +270,10 @@
     font-size: 44px;
     line-height: 54px;
   }
+  .btn-primary {
+  background: var(--blue);
+  color: var(--white);
+  }
 }
 
 /* ─── Tablet portrait (≤900px) ────────────────────────────────────── */
@@ -278,6 +282,11 @@
     font-size: 38px;
     line-height: 48px;
   }
+  .btn-primary {
+  background: var(--blue);
+  color: var(--white);
+  }
+  
 }
 
 /* ─── Mobile (≤768px) ──────────────────────────────────────────────── */
@@ -308,7 +317,10 @@
     flex-direction: column;
     gap: 12px;
   }
-
+  .btn-primary {
+  background: var(--blue);
+  color: var(--white);
+  }
   .btn-primary,
   .btn-outline {
     width: 100%;
@@ -330,5 +342,9 @@
   .hero-heading {
     font-size: 24px;
     line-height: 32px;
+  }
+  .btn-primary {
+  background: var(--blue);
+  color: var(--white);
   }
 }
