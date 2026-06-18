@@ -18,7 +18,7 @@ const TESTIMONIALS = [
     quote: 'Their support after launch was exceptional. Fast responses and real ownership.',
     name: 'Sameer Kapoor',
     role: 'Director, Platter Technologies',
-    image: 'https://i.pravatar.cc/80?img=15',
+    image: 'https://randomuser.me/api/portraits/men/32.jpg',
   },
   {
     quote: 'The ERP platform simplified processes across departments and improved visibility.',
