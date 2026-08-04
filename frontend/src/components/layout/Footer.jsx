@@ -1,5 +1,6 @@
 import "./Footer.css";
 import { Link } from "react-router-dom";
+import { useContactModal } from "../ContactModalContext";
 
 const SERVICES = [
   { label: "ERP Development", href: "/erp" },
@@ -23,12 +24,12 @@ const COMPANY = [
   { label: "Why GrassFRONT", href: "/why-grassfront" },
   { label: "Our Process", href: "/our-process" },
   { label: "FAQs", href: "/faqs" },
-  { label: "Contact Us", href: "/contact" },
+  { label: "Contact Us", href: "/contact#cp-contact", isRedirect: true },
 ];
 
 const QUICK_LINKS = [
-  { label: "Get Free Audit", href: "/contact" },
-  { label: "Book a Call", href: "tel:+917014626389" },
+  { label: "Get Free Audit", isPopup: true },
+  { label: "Request a Consultation", isPopup: true },
   { label: "Privacy Policy", href: "/privacy-policy" },
   { label: "Terms of Service", href: "/terms-conditions" },
   { label: "Sitemap", href: "#sitemap" },
@@ -60,6 +61,8 @@ const SOCIALS = [
 ];
 
 export default function Footer() {
+  const { openContactModal, redirectToContact } = useContactModal();
+
   return (
     <footer className="footer">
       <div className="footer-inner">
@@ -69,6 +72,7 @@ export default function Footer() {
             <Link to="/" className="footer-logo-wrap">
               <img
                 src="/assets/Grassfront.svg"
+
                 alt="GrassFront"
                 className="footer-logo-image"
               />
@@ -121,11 +125,7 @@ export default function Footer() {
               <ul className="footer-col-list">
                 {SERVICES.map((s) => (
                   <li key={s.label}>
-                    {s.href.startsWith("/") ? (
-                      <Link to={s.href}>{s.label}</Link>
-                    ) : (
-                      <a href={s.href}>{s.label}</a>
-                    )}
+                    <a href={s.href}>{s.label}</a>
                   </li>
                 ))}
               </ul>
@@ -136,11 +136,7 @@ export default function Footer() {
               <ul className="footer-col-list">
                 {INDUSTRIES.map((i) => (
                   <li key={i.label}>
-                    {i.href.startsWith("/") ? (
-                      <Link to={i.href}>{i.label}</Link>
-                    ) : (
-                      <a href={i.href}>{i.label}</a>
-                    )}
+                    <a href={i.href}>{i.label}</a>
                   </li>
                 ))}
               </ul>
@@ -151,8 +147,16 @@ export default function Footer() {
               <ul className="footer-col-list">
                 {COMPANY.map((c) => (
                   <li key={c.label}>
-                    {c.href.startsWith("/") ? (
-                      <Link to={c.href}>{c.label}</Link>
+                    {c.isRedirect ? (
+                      <a
+                        href="/contact#cp-contact"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          redirectToContact();
+                        }}
+                      >
+                        {c.label}
+                      </a>
                     ) : (
                       <a href={c.href}>{c.label}</a>
                     )}
@@ -166,8 +170,22 @@ export default function Footer() {
               <ul className="footer-col-list">
                 {QUICK_LINKS.map((q) => (
                   <li key={q.label}>
-                    {q.href.startsWith("/") ? (
-                      <Link to={q.href}>{q.label}</Link>
+                    {q.isPopup ? (
+                      <button
+                        type="button"
+                        style={{
+                          background: "none",
+                          border: "none",
+                          padding: 0,
+                          color: "rgba(255, 255, 255, 0.55)",
+                          font: "inherit",
+                          cursor: "pointer",
+                          textAlign: "left",
+                        }}
+                        onClick={() => openContactModal()}
+                      >
+                        {q.label}
+                      </button>
                     ) : (
                       <a href={q.href}>{q.label}</a>
                     )}
@@ -181,7 +199,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="footer-bottom">
           <span className="footer-copy">
-            ©GrassFRONT Bizzeazy Pvt. Ltd. All rights reserved.
+            © GrassFRONT Bizzeazy Pvt. Ltd. All rights reserved.
           </span>
           <span className="footer-copy">🇮🇳</span>
         </div>

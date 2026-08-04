@@ -51,9 +51,7 @@ export function ContactFormModal({ open, onClose, initialService = "" }) {
           key={initialService}
           initialService={initialService}
           onClose={onClose}
-          onSuccess={() => {
-            setTimeout(onClose, 1600);
-          }}
+          onSuccess={() => {}}
         />
       </div>
     </div>

@@ -1,3 +1,19 @@
+.cp-form__success-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #0F2B46 !important; 
+}
+.cp-form__success-sub {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    color: #64748B !important;
+    line-height: 1.5;
+}
+
+
+
 .cf-modal__backdrop {
   position: fixed;
   inset: 0;
@@ -136,4 +152,3 @@
     right: 12px;
   }
 }
-

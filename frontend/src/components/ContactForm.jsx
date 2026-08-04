@@ -36,7 +36,7 @@ export function ContactForm({ initialService = "", onClose, onSuccess }) {
     } catch (err) {
       console.error("Firebase error:", err);
       setError(
-        "Something went wrong. Please try again or email us directly at info@grassfront.com"
+        "Something went wrong. Please try again or email us directly at info@grassfront.com",
       );
     } finally {
       setLoading(false);
@@ -47,7 +47,13 @@ export function ContactForm({ initialService = "", onClose, onSuccess }) {
     return (
       <div className="cp-form__success">
         <div className="cp-form__success-icon">
-          <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+          <svg
+            width="22"
+            height="22"
+            viewBox="0 0 22 22"
+            fill="none"
+            aria-hidden="true"
+          >
             <path
               d="M4 11l5 5 9-9"
               stroke="#10B981"
@@ -57,16 +63,18 @@ export function ContactForm({ initialService = "", onClose, onSuccess }) {
             />
           </svg>
         </div>
+
         <p className="cp-form__success-title">Message sent.</p>
+
         <p className="cp-form__success-sub">
           We'll get back to you within 4 business hours.
         </p>
+
         {onClose && (
           <button
             type="button"
-            className="cp-btn cp-btn--primary"
+            className="cp-btn cp-btn--primary cp-form__success-close"
             onClick={onClose}
-            style={{ marginTop: "16px" }}
           >
             Close
           </button>
@@ -199,7 +207,10 @@ export function ContactForm({ initialService = "", onClose, onSuccess }) {
           className="cp-btn cp-btn--primary"
           type="submit"
           disabled={loading}
-          style={{ opacity: loading ? 0.7 : 1, cursor: loading ? "not-allowed" : "pointer" }}
+          style={{
+            opacity: loading ? 0.7 : 1,
+            cursor: loading ? "not-allowed" : "pointer",
+          }}
         >
           {loading ? "Sending…" : "Send message"}
         </button>
