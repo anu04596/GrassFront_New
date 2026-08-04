@@ -1,6 +1,8 @@
-import { useState, useRef, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { motion, useScroll, useMotionValueEvent } from 'framer-motion';
+import { useState, useRef, useEffect } from 'react'; 
+
+import { Link } from 'react-router-dom'; 
+import { motion, useScroll, useMotionValueEvent } from 'framer-motion'; 
+import { useContactModal } from '../ContactModalContext'; 
 import './Navbar.css';
 
 const NAV_LINKS = [
@@ -25,7 +27,6 @@ const NAV_LINKS = [
     ]
   },
   { label: 'Case Studies', href: '/case-studies' },
-  { label: 'Insights', href: '#insights' },
   { label: 'About Us', href: '/about' },
   { label: 'Contact', href: '/contact' },
 ];
@@ -37,6 +38,7 @@ export default function Navbar() {
   const [hidden, setHidden] = useState(false);
   const timeoutRef = useRef(null);
   const dropdownRef = useRef(null);
+  const { redirectToContact } = useContactModal();
 
   const cancelAutoHideTimer = () => {
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
@@ -48,7 +50,7 @@ export default function Navbar() {
       if (window.scrollY >= 50) setHidden(true);
     }, 2000);
   };
-
+const handleLinkClick = (e, href, originalOnClick) => { if (originalOnClick) originalOnClick(e); if (href === '/contact#cp-contact' || href === '#cp-contact') { e.preventDefault(); redirectToContact(); } };
   const renderLink = (href, children, props = {}) => (
     href.startsWith('/') ? (
       <Link to={href} {...props}>{children}</Link>
@@ -140,17 +142,7 @@ export default function Navbar() {
             </div>
 
             {/* CTA + Burger */}
-            <div className="nav-right">
-              <a href="#contact" className="nav-cta desktop-only">
-                <span className="nav-cta-text">Book Discovery Call</span>
-                <span className="nav-cta-pulse" />
-              </a>
-              <button className="nav-burger" onClick={() => setOpen(!open)} aria-label="Menu">
-                <span /><span /><span />
-              </button>
-            </div>
-          </div>
-        </div>
+            <div className="nav-right"> <a href="/contact#cp-contact" className="nav-cta desktop-only" onClick={(e) => { e.preventDefault(); redirectToContact(); }} > <span className="nav-cta-text">Request a Consultation</span> <span className="nav-cta-pulse" /> </a> <button className="nav-burger" onClick={() => setOpen(!open)} aria-label="Menu"> <span /><span /><span /> </button> </div> </div> </div>
 
         {/* Mobile Drawer */}
         {open && (
@@ -173,9 +165,7 @@ export default function Navbar() {
                 </li>
               ))}
             </ul>
-            <a href="tel:+917014626389" className="nav-cta-mobile" onClick={() => setOpen(false)}>
-              Book Discovery Call
-            </a>
+          <a href="/contact#cp-contact" className="nav-cta-mobile" onClick={(e) => { e.preventDefault(); setOpen(false); redirectToContact(); }} >Request a Consultation </a>
           </div>
         )}
       </motion.header>
