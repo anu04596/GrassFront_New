@@ -1,6 +1,6 @@
 import './Trusted.css';
 
-const LOGOS = ['Horeca Mall', 'Bizz Studio', 'Platter'];
+const LOGOS = ['Horeca Mall', 'Bizz Studio', 'Platter', 'Ignite', 'liftU '];
 
 export default function Trusted() {
   return (

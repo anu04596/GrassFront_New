@@ -181,7 +181,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="footer-bottom">
           <span className="footer-copy">
-            © 2025 GrassFRONT Technologies Pvt. Ltd. All rights reserved.
+            ©GrassFRONT Bizzeazy Pvt. Ltd. All rights reserved.
           </span>
           <span className="footer-copy">🇮🇳</span>
         </div>
