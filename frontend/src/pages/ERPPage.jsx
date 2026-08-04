@@ -1,4 +1,5 @@
 import './ServicePage.css';
+import { Link } from 'react-router-dom';
 import {
   FaShoppingCart,
   FaBoxes,
@@ -110,7 +111,7 @@ export default function ERPPage() {
           <h1>ERP Software Built Around <span className="sp-hero__accent">Your Business</span>,<br />Not the Other Way Around.</h1>
           <p>Many growing businesses start with Excel sheets, WhatsApp messages, emails, and multiple tools. As operations grow, information scatters, approvals get delayed, and decisions are made without visibility.</p>
           <div className="sp-hero__actions">
-            <a href="/contact" className="sp-btn sp-btn--primary">Talk to an ERP Expert</a>
+            <Link to="/contact" className="sp-btn sp-btn--primary">Talk to an ERP Expert</Link>
             <a href="#erp-modules" className="sp-btn sp-btn--ghost">See What We Build →</a>
           </div>
           <div className="sp-hero__stats">

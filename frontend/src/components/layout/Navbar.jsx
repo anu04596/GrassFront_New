@@ -107,7 +107,7 @@ export default function Navbar() {
             {/* Logo */}
             <div className="nav-left">
               <a href="#" className="nav-logo">
-                <img src="/assets/image.png" alt="GrassFront Logo" className="logo-image" />
+                <img src="/assets/Grassfront.svg" alt="GrassFront Logo" className="logo-image" />
               </a>
             </div>
 

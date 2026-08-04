@@ -68,7 +68,7 @@ export default function Footer() {
           <div className="footer-brand">
             <Link to="/" className="footer-logo-wrap">
               <img
-                src="/assets/image.png"
+                src="/assets/Grassfront.svg"
                 alt="GrassFront"
                 className="footer-logo-image"
               />
@@ -121,7 +121,11 @@ export default function Footer() {
               <ul className="footer-col-list">
                 {SERVICES.map((s) => (
                   <li key={s.label}>
-                    <a href={s.href}>{s.label}</a>
+                    {s.href.startsWith("/") ? (
+                      <Link to={s.href}>{s.label}</Link>
+                    ) : (
+                      <a href={s.href}>{s.label}</a>
+                    )}
                   </li>
                 ))}
               </ul>
@@ -132,7 +136,11 @@ export default function Footer() {
               <ul className="footer-col-list">
                 {INDUSTRIES.map((i) => (
                   <li key={i.label}>
-                    <a href={i.href}>{i.label}</a>
+                    {i.href.startsWith("/") ? (
+                      <Link to={i.href}>{i.label}</Link>
+                    ) : (
+                      <a href={i.href}>{i.label}</a>
+                    )}
                   </li>
                 ))}
               </ul>
@@ -143,7 +151,11 @@ export default function Footer() {
               <ul className="footer-col-list">
                 {COMPANY.map((c) => (
                   <li key={c.label}>
-                    <a href={c.href}>{c.label}</a>
+                    {c.href.startsWith("/") ? (
+                      <Link to={c.href}>{c.label}</Link>
+                    ) : (
+                      <a href={c.href}>{c.label}</a>
+                    )}
                   </li>
                 ))}
               </ul>
@@ -154,7 +166,11 @@ export default function Footer() {
               <ul className="footer-col-list">
                 {QUICK_LINKS.map((q) => (
                   <li key={q.label}>
-                    <a href={q.href}>{q.label}</a>
+                    {q.href.startsWith("/") ? (
+                      <Link to={q.href}>{q.label}</Link>
+                    ) : (
+                      <a href={q.href}>{q.label}</a>
+                    )}
                   </li>
                 ))}
               </ul>
