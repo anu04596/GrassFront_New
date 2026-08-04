@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import './ServicePage.css';
 import './IntegrationPage.css';
+import { useContactModal } from '../components/ContactModalContext';
 import {
   FaBuilding,
   FaHandshake,
@@ -169,6 +170,7 @@ function useReveal() {
 export default function IntegrationPage() {
   useReveal();
   const [open, setOpen] = useState(null);
+  const { openContactModal, redirectToContact } = useContactModal();
   const col1 = FAQS.filter((_, i) => i % 2 === 0);
   const col2 = FAQS.filter((_, i) => i % 2 !== 0);
 
@@ -203,7 +205,13 @@ export default function IntegrationPage() {
           <h1>Connect Your Business Systems, <span className="sp-hero__accent">Eliminate Manual Work.</span></h1>
           <p>Many businesses use multiple software tools that don't talk to each other. Sales in one system, finance in another, inventory elsewhere. The result is duplicate work, data inconsistencies, and delayed reporting.</p>
           <div className="sp-hero__actions">
-            <a href="#contact" className="sp-btn sp-btn--primary">Talk to an Integration Expert</a>
+            <button
+              type="button"
+              className="sp-btn sp-btn--primary"
+              onClick={() => openContactModal("System Integration")}
+            >
+              Request a Consultation
+            </button>
             <a href="#int-integrates" className="sp-btn sp-btn--ghost">See What We Integrate →</a>
           </div>
           <div className="sp-hero__stats">
@@ -441,8 +449,14 @@ export default function IntegrationPage() {
           <h2>Make Your Software Work Together.</h2>
           <p>Disconnected systems create unnecessary work, delays, and reporting challenges. GrassFRONT helps businesses connect their applications, automate data flow, and create smoother operations.</p>
           <div className="sp-cta__actions">
-            <a href="mailto:Info@grassfront.com" className="sp-btn sp-btn--white">Book a Free Consultation</a>
-            <a href="tel:+917014626389" className="sp-btn sp-btn--outline-white">Talk to Our Team →</a>
+            <button
+              type="button"
+              className="sp-btn sp-btn--white"
+              onClick={() => openContactModal("System Integration")}
+            >
+              Request a Consultation
+            </button>
+            
           </div>
           <div className="int-cta-note">Free 30-min discovery call · <span>100+ businesses already served</span> · Response within 4 hours</div>
         </div>

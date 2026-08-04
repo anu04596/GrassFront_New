@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import { useContactModal } from '../components/ContactModalContext';
 import './HospitalityRestaurantsPage.css';
 
 const ThemeChevron = ({ open }) => (
@@ -132,6 +133,7 @@ const staggerContainer = {
 
 export default function ProfessionalServicesPage() {
   const [openFaq, setOpenFaq] = useState(0);
+  const { openContactModal } = useContactModal();
 
   return (
     <main className="hr-page">
@@ -166,7 +168,7 @@ export default function ProfessionalServicesPage() {
             GrassFRONT helps professional service firms simplify operations through custom software, workflow automation, business intelligence dashboards, and integrated business management systems.
           </motion.p>
           <motion.div variants={fadeInUp} className="sp-hero__actions">
-            <a href="#contact" className="sp-btn sp-btn--primary">Schedule a Free Consultation</a>
+            <button type="button" className="sp-btn sp-btn--primary" onClick={() => openContactModal()}>Request a Consultation</button>
             <a href="#solutions" className="sp-btn sp-btn--ghost">Explore Solutions →</a>
           </motion.div>
         </motion.div>
@@ -386,7 +388,7 @@ export default function ProfessionalServicesPage() {
             Professional service firms thrive when their people can focus on clients, projects, and business growth—not administrative work. GrassFRONT helps organizations improve visibility, automate workflows, streamline operations, and create systems that support long-term success.
           </p>
           <div className="sp-cta__actions" style={{ marginTop: '32px' }}>
-            <a href="#contact" className="sp-btn sp-btn--white" style={{ padding: '16px 36px', fontSize: '15px', borderRadius: '12px' }}>Book a Discovery Call</a>
+            <button type="button" className="sp-btn sp-btn--white" style={{ padding: '16px 36px', fontSize: '15px', borderRadius: '12px' }} onClick={() => openContactModal()}>Request a Consultation</button>
           </div>
         </motion.div>
       </section>

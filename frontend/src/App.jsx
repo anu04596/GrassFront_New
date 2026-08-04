@@ -24,11 +24,12 @@ import FAQsPage from './pages/FAQsPage';
 import CaseStudiesPage from './pages/CaseStudiesPage';
 import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
+import { ContactModalProvider } from './components/ContactModalContext';
 import './shared.css';
 
 export default function App() {
   return (
-    <>
+    <ContactModalProvider>
       <ScrollToTop />
       <Navbar />
       <Routes>
@@ -56,6 +57,6 @@ export default function App() {
       </Routes>
       <Footer />
       <CookieConsent />
-    </>
+    </ContactModalProvider>
   );
-}
+}

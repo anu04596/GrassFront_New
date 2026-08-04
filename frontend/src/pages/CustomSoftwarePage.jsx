@@ -1,4 +1,5 @@
 import './ServicePage.css';
+import { useContactModal } from '../components/ContactModalContext';
 import {
   FaCogs,
   FaUserShield,
@@ -137,6 +138,7 @@ export default function CustomSoftwarePage() {
   const [openFaq, setOpenFaq] = useState(null);
   const col1 = FAQS.filter((_,i)=>i%2===0);
   const col2 = FAQS.filter((_,i)=>i%2!==0);
+  const { openContactModal, redirectToContact } = useContactModal();
 
   const FaqItem = ({ item, idx }) => {
     const isOpen = openFaq === idx;
@@ -160,11 +162,16 @@ export default function CustomSoftwarePage() {
     <main className="sp-page">
       <section className="sp-hero">
         <div className="sp-hero__inner">
-          {/* <div className="sp-hero__label"><span className="sp-hero__dot"/>Custom Software Development Company</div> */}
           <h1>Software That Fits <span className="sp-hero__accent">Your Business</span><br/>Not the Other Way Around.</h1>
           <p>Most businesses use multiple tools — one for sales, another for inventory, spreadsheets for reporting. Over time, this creates confusion, duplicate work, and inefficiencies that slow growth. We fix that.</p>
           <div className="sp-hero__actions">
-            <a href="#contact" className="sp-btn sp-btn--primary">Schedule a Free Consultation</a>
+            <button
+              type="button"
+              className="sp-btn sp-btn--primary"
+              onClick={() => openContactModal("Custom Software Development")}
+            >
+              Request a Consultation
+            </button>
             <a href="#cs-builds" className="sp-btn sp-btn--ghost">See What We Build →</a>
           </div>
           <div className="sp-hero__stats">
@@ -299,8 +306,14 @@ export default function CustomSoftwarePage() {
           <h2>Let's Build Software That Works for Your Business.</h2>
           <p>If your team is struggling with spreadsheets, disconnected systems, or manual processes, custom software can create a more efficient and scalable way of working.</p>
           <div className="sp-cta__actions">
-            <a href="tel:+917014626389" className="sp-btn sp-btn--white">Book a Discovery Call</a>
-            <a href="mailto:Info@grassfront.com" className="sp-btn sp-btn--outline-white">Contact Our Team →</a>
+            <button
+              type="button"
+              className="sp-btn sp-btn--white"
+              onClick={() => openContactModal("Custom Software Development")}
+            >
+              Request a Consultation
+            </button>
+            
           </div>
         </div>
       </section>

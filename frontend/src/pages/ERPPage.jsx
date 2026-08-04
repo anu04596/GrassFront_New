@@ -1,4 +1,5 @@
 import './ServicePage.css';
+import { useContactModal } from '../components/ContactModalContext';
 import {
   FaShoppingCart,
   FaBoxes,
@@ -102,6 +103,8 @@ const WHY = [
 ];
 
 export default function ERPPage() {
+  const { openContactModal, redirectToContact } = useContactModal();
+
   return (
     <main className="sp-page">
       <section className="sp-hero">
@@ -110,7 +113,16 @@ export default function ERPPage() {
           <h1>ERP Software Built Around <span className="sp-hero__accent">Your Business</span>,<br />Not the Other Way Around.</h1>
           <p>Many growing businesses start with Excel sheets, WhatsApp messages, emails, and multiple tools. As operations grow, information scatters, approvals get delayed, and decisions are made without visibility.</p>
           <div className="sp-hero__actions">
-            <a href="/contact" className="sp-btn sp-btn--primary">Talk to an ERP Expert</a>
+            <a
+              href="/contact#cp-contact"
+              className="sp-btn sp-btn--primary"
+              onClick={(e) => {
+                e.preventDefault();
+                redirectToContact();
+              }}
+            >
+              Talk to an ERP Expert
+            </a>
             <a href="#erp-modules" className="sp-btn sp-btn--ghost">See What We Build →</a>
           </div>
           <div className="sp-hero__stats">
@@ -237,8 +249,14 @@ export default function ERPPage() {
           <h2>Ready to Simplify Your Operations?</h2>
           <p>If your team is spending too much time on manual processes, disconnected software, or spreadsheet management, it may be time to move to a system built for growth.</p>
           <div className="sp-cta__actions">
-            <a href="mailto:Info@grassfront.com" className="sp-btn sp-btn--white">Book a Free Consultation</a>
-            <a href="tel:+917014626389" className="sp-btn sp-btn--outline-white">Talk to an Expert →</a>
+            <button
+              type="button"
+              className="sp-btn sp-btn--white"
+              onClick={() => openContactModal("ERP Development")}
+            >
+              Request a Consultation
+            </button>
+            
           </div>
         </div>
       </section>

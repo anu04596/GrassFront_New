@@ -2,6 +2,7 @@
 import { useState, useEffect, useRef } from 'react';
 import './ServicePage.css';
 import './BIPage.css';
+import { useContactModal } from '../components/ContactModalContext';
 import {
   FaChartLine,
   FaBoxes,
@@ -133,6 +134,7 @@ function useReveal() {
 export default function BIPage() {
   useReveal();
   const [open, setOpen] = useState(null);
+  const { openContactModal, redirectToContact } = useContactModal();
   const col1 = FAQS.filter((_, i) => i % 2 === 0);
   const col2 = FAQS.filter((_, i) => i % 2 !== 0);
 
@@ -168,7 +170,13 @@ export default function BIPage() {
           <h1>Turn Business Data Into <span className="sp-hero__accent">Better Decisions.</span></h1>
           <p>Most businesses have plenty of data but very little visibility. Sales in one system, expenses in another, inventory in spreadsheets. By the time information reaches decision-makers, the opportunity to act has often passed.</p>
           <div className="sp-hero__actions">
-            <a href="#contact" className="sp-btn sp-btn--primary">Get a Free BI Consultation</a>
+            <button
+              type="button"
+              className="sp-btn sp-btn--primary"
+              onClick={() => openContactModal("Business Intelligence & Dashboards")}
+            >
+              Request a Consultation
+            </button>
             <a href="#bi-solutions" className="sp-btn sp-btn--ghost">See Our Solutions →</a>
           </div>
           <div className="sp-hero__stats">
@@ -364,8 +372,14 @@ export default function BIPage() {
           <h2>Make Better Decisions With Better Visibility.</h2>
           <p>The right data, presented the right way, can transform how a business operates. GrassFRONT helps organizations build reporting and analytics systems that provide clarity, improve efficiency, and support growth.</p>
           <div className="sp-cta__btns">
-            <a href="mailto:Info@grassfront.com" className="sp-btn sp-btn--white">Schedule a Free Consultation</a>
-            <a href="tel:+917014626389" className="sp-btn sp-btn--outline-white">Talk to Our Team →</a>
+            <button
+              type="button"
+              className="sp-btn sp-btn--white"
+              onClick={() => openContactModal("Business Intelligence & Dashboards")}
+            >
+              Request a Consultation
+            </button>
+            
           </div>
           <div className="sp-cta__note">Free 30-min discovery call · <span>100+ businesses already served</span> · Response within 4 hours</div>
         </div>

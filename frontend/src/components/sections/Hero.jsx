@@ -1,9 +1,11 @@
 import { useRef, useCallback } from 'react';
+import { useContactModal } from '../ContactModalContext';
 import './Hero.css';
 
 export default function Hero() {
   const heroRef = useRef(null);
   const spotRef = useRef(null);
+  const { redirectToContact } = useContactModal();
 
   const handleMouseMove = useCallback((e) => {
     const rect = heroRef.current.getBoundingClientRect();
@@ -46,8 +48,8 @@ export default function Hero() {
             </p>
 
             <div className="hero-btns">
-                <a href="#contact" className="btn-primary">Get Free Business Process Audit</a>
-              <a href="#contact" className="btn-outline">Book Discovery Call</a>
+                <button type="button" className="btn-primary" onClick={() => redirectToContact()}>Get Free Business Process Audit</button>
+              <button type="button" className="btn-outline" onClick={() => redirectToContact()}>Request a Consultation</button>
             </div>
 
               <div className="hero-stats">

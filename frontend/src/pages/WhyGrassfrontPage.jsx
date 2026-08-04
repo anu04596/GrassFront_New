@@ -117,8 +117,8 @@ export default function WhyGrassfrontPage() {
               measurable impact.
             </motion.p>
             <motion.div variants={fadeInUp} className="wg-hero__actions">
-              <a href="#contact" className="wg-btn wg-btn--primary">
-                Schedule Consultation
+              <a href="#cp-contact" className="wg-btn wg-btn--primary">
+                Request a Consultation
               </a>
               <Link to="/our-process" className="wg-btn wg-btn--ghost">
                 Our Process
@@ -260,8 +260,8 @@ export default function WhyGrassfrontPage() {
             reporting, streamline operations, or build custom software.
           </p>
           <div className="wg-cta__actions">
-            <a href="#contact" className="wg-btn wg-btn--white">
-              Book Discovery Call
+            <a href="#cp-contact" className="wg-btn wg-btn--white">
+              Request a Consultation
             </a>
             <Link to="/our-process" className="wg-btn wg-btn--outline">
               See Our Process

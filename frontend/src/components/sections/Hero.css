@@ -129,14 +129,13 @@
   font-size: 14px;
   letter-spacing: 0.56px;
   text-transform: uppercase;
-  color: var(--vulcan);
+  color: var(--white);
   transition: border-color 0.22s ease, background 0.22s ease, transform 0.18s ease, box-shadow 0.22s ease;
   white-space: nowrap;
+  background: var(--blue);
 }
 
 .btn-primary:hover {
-  background: var(--blue);
-  color: var(--white);
   transform: translateY(-2px);
   box-shadow: 0 8px 28px rgba(0, 0, 0, 0.12);
 }
@@ -164,8 +163,6 @@
 
 .btn-outline:hover {
   border-color: var(--vulcan);
-  background: var(--blue);
-  color: var(--white);
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
 }
