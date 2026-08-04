@@ -92,8 +92,8 @@ export default function OurProcessPage() {
               and successful outcomes from day one.
             </motion.p>
             <motion.div variants={fadeInUp} className="op-hero__actions">
-              <a href="#contact" className="op-btn op-btn--primary">
-                Schedule a Free Consultation <span>→</span>
+              <a href="#cp-contact" className="op-btn op-btn--primary">
+                Request a Consultation <span>→</span>
               </a>
               <Link to="/faqs" className="op-btn op-btn--ghost">
                 View FAQ <span>→</span>
@@ -211,8 +211,8 @@ export default function OurProcessPage() {
             </div>
           </div>
           <div className="op-cta__actions">
-            <a href="#contact" className="op-cta__btn op-cta__btn--white">
-              Schedule a Free Consultation →
+            <a href="#cp-contact" className="op-cta__btn op-cta__btn--white">
+              Request a Consultation →
             </a>
             <Link to="/case-studies" className="op-cta__btn op-cta__btn--outline">
               View Case Studies →

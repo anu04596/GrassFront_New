@@ -357,8 +357,8 @@ export default function AboutPage() {
             build a custom platform, we're ready to help.
           </p>
           <div className="about-cta__btns">
-            <a href="tel:+917014626389" className="about-btn about-btn--white">
-              Book a Discovery Call
+            <a href="#cp-contact" className="about-btn about-btn--white">
+              Request a Consultation
             </a>
             <Link to="/services" className="about-btn about-btn--ghost-w">
               View Our Services →

@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import { useContactModal } from '../components/ContactModalContext';
 import './HospitalityRestaurantsPage.css';
 
 const ThemeChevron = ({ open }) => (
@@ -84,6 +85,7 @@ const staggerContainer = {
 };
 
 export default function RetailPage() {
+  const { openContactModal } = useContactModal();
   const [openFaq, setOpenFaq] = useState(0);
 
   return (
@@ -118,7 +120,13 @@ export default function RetailPage() {
             GrassFRONT helps retail businesses streamline operations through ERP systems, inventory management solutions, business intelligence dashboards, automation, and custom software development.
           </motion.p>
           <motion.div variants={fadeInUp} className="sp-hero__actions">
-            <a href="#contact" className="sp-btn sp-btn--primary">Schedule a Free Consultation</a>
+            <button
+              type="button"
+              className="sp-btn sp-btn--primary"
+              onClick={() => openContactModal()}
+            >
+              Request a Consultation
+            </button>
             <a href="#solutions" className="sp-btn sp-btn--ghost">Explore Solutions →</a>
           </motion.div>
         </motion.div>
@@ -340,7 +348,14 @@ export default function RetailPage() {
             The right technology can help retail businesses improve inventory control, increase visibility, reduce manual work, and make smarter business decisions. GrassFRONT helps retailers create systems that support growth and improve operational efficiency.
           </p>
           <div className="sp-cta__actions" style={{ marginTop: '32px' }}>
-            <a href="#contact" className="sp-btn sp-btn--white" style={{ padding: '16px 36px', fontSize: '15px', borderRadius: '12px' }}>Book a Discovery Call</a>
+            <button
+              type="button"
+              className="sp-btn sp-btn--white"
+              style={{ padding: '16px 36px', fontSize: '15px', borderRadius: '12px' }}
+              onClick={() => openContactModal()}
+            >
+              Request a Consultation
+            </button>
           </div>
         </motion.div>
       </section>

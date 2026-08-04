@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import { useContactModal } from '../components/ContactModalContext';
 import './HospitalityRestaurantsPage.css';
 
 const ThemeChevron = ({ open }) => (
@@ -86,6 +87,7 @@ const staggerContainer = {
 
 export default function LogisticsPage() {
   const [openFaq, setOpenFaq] = useState(0);
+  const { openContactModal } = useContactModal();
 
   return (
     <main className="hr-page">
@@ -119,7 +121,7 @@ export default function LogisticsPage() {
             As businesses grow, managing inventory across multiple warehouses, coordinating suppliers, and tracking order fulfillment becomes increasingly complex. GrassFRONT helps distribution and logistics companies streamline operations through ERP systems, inventory management software, automation solutions, and business intelligence dashboards.
           </motion.p>
           <motion.div variants={fadeInUp} className="sp-hero__actions">
-            <a href="#contact" className="sp-btn sp-btn--primary">Schedule a Free Consultation</a>
+            <button type="button" className="sp-btn sp-btn--primary" onClick={() => openContactModal()}>Request a Consultation</button>
             <a href="#solutions" className="sp-btn sp-btn--ghost">Explore Solutions →</a>
           </motion.div>
         </motion.div>
@@ -341,7 +343,7 @@ export default function LogisticsPage() {
             Modern distribution businesses require accurate inventory visibility, streamlined workflows, and better reporting. GrassFRONT helps organizations improve warehouse operations, inventory management, procurement processes, and business visibility through practical technology solutions.
           </p>
           <div className="sp-cta__actions" style={{ marginTop: '32px' }}>
-            <a href="#contact" className="sp-btn sp-btn--white" style={{ padding: '16px 36px', fontSize: '15px', borderRadius: '12px' }}>Book a Discovery Call</a>
+            <button type="button" className="sp-btn sp-btn--white" style={{ padding: '16px 36px', fontSize: '15px', borderRadius: '12px' }} onClick={() => openContactModal()}>Request a Consultation</button>
           </div>
         </motion.div>
       </section>

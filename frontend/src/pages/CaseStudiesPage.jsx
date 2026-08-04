@@ -447,7 +447,7 @@ export default function CaseStudiesPage() {
             Whether you need procurement software, ERP systems, dashboards, automation, or custom business platforms, we build solutions that eliminate bottlenecks and help businesses scale faster.
           </p>
           <div className="cs2-cta__btns">
-            <a href="tel:+917014626389" className="cs2-btn cs2-btn--white">Book Strategy Call</a>
+            <a href="#cp-contact" className="cs2-btn cs2-btn--white">Request a Consultation</a>
             <a href="#" className="cs2-btn cs2-btn--ghost-w">Explore Services →</a>
           </div>
           <span className="cs2-cta__note">

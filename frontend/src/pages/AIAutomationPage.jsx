@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import './ServicePage.css';
 import './AIAutomationPage.css';
+import { useContactModal } from '../components/ContactModalContext';
 import {
   FaCogs,
   FaRobot,
@@ -188,6 +189,7 @@ const ChevronIcon = ({ open }) => (
 export default function AIAutomationPage() {
   const [openFaq, setOpenFaq] = useState(null);
   const [activeCase, setActiveCase] = useState(0);
+  const { openContactModal, redirectToContact } = useContactModal();
   const col1 = FAQS.filter((_, i) => i % 2 === 0);
   const col2 = FAQS.filter((_, i) => i % 2 !== 0);
 
@@ -219,7 +221,13 @@ export default function AIAutomationPage() {
           <h1>Stop Repeating Work.<br /><span className="sp-hero__accent">Let Automation Handle It.</span></h1>
           <p>Every business has tasks that consume hours every week but add very little value. Approvals move through emails. Reports are prepared manually. Teams copy data between systems. We fix that.</p>
           <div className="sp-hero__actions">
-            <a href="#contact" className="sp-btn sp-btn--primary">Schedule a Free Consultation</a>
+            <button
+              type="button"
+              className="sp-btn sp-btn--primary"
+              onClick={() => openContactModal("AI & Business Automation")}
+            >
+              Request a Consultation
+            </button>
             <a href="#ai-solutions" className="sp-btn sp-btn--ghost">See Solutions →</a>
           </div>
           <div className="sp-hero__stats">
@@ -465,8 +473,14 @@ export default function AIAutomationPage() {
           <h2>Ready to Automate Your Business Processes?</h2>
           <p>If your team spends too much time on repetitive tasks, manual reporting, approvals, or customer support, automation can help create a faster and more efficient way of working.</p>
           <div className="sp-cta__actions">
-            <a href="mailto:Info@grassfront.com" className="sp-btn sp-btn--white">Book a Free Automation Consultation</a>
-            <a href="tel:+917014626389" className="sp-btn sp-btn--outline-white">Talk to Our Team →</a>
+            <button
+              type="button"
+              className="sp-btn sp-btn--white"
+              onClick={() => openContactModal("AI & Business Automation")}
+            >
+              Request a Consultation
+            </button>
+            
           </div>
         </div>
       </section>

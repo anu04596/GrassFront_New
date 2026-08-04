@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import './HospitalityRestaurantsPage.css';
+import { useContactModal } from '../components/ContactModalContext';
 
 const ThemeChevron = ({ open }) => (
   <svg
@@ -84,6 +85,7 @@ const staggerContainer = {
 };
 
 export default function HospitalityRestaurantsPage() {
+  const { openContactModal } = useContactModal();
   const [openFaq, setOpenFaq] = useState(0);
 
   return (
@@ -109,7 +111,13 @@ export default function HospitalityRestaurantsPage() {
             We help you move away from spreadsheets to streamline procurement, inventory, and operations.
           </motion.p>
           <motion.div variants={fadeInUp} className="sp-hero__actions">
-            <a href="#contact" className="sp-btn sp-btn--primary">Schedule a Free Consultation</a>
+            <button
+              type="button"
+              className="sp-btn sp-btn--primary"
+              onClick={() => openContactModal()}
+            >
+              Request a Consultation
+            </button>
             <a href="#solutions" className="sp-btn sp-btn--ghost">Explore Solutions →</a>
           </motion.div>
         </motion.div>
@@ -329,7 +337,14 @@ export default function HospitalityRestaurantsPage() {
             Technology should make operations easier, not more complicated. GrassFRONT helps hospitality businesses improve procurement, inventory management, reporting, and operational efficiency through practical technology solutions designed around real business needs.
           </p>
           <div className="sp-cta__actions" style={{ marginTop: '32px' }}>
-            <a href="#contact" className="sp-btn sp-btn--white" style={{ padding: '16px 36px', fontSize: '15px', borderRadius: '12px' }}>Book a Discovery Call</a>
+            <button
+              type="button"
+              className="sp-btn sp-btn--white"
+              style={{ padding: '16px 36px', fontSize: '15px', borderRadius: '12px' }}
+              onClick={() => openContactModal()}
+            >
+              Request a Consultation
+            </button>
           </div>
         </motion.div>
       </section>

@@ -1,0 +1,139 @@
+.cf-modal__backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(5, 10, 22, 0.64);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  z-index: 99999;
+  animation: cfFadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cf-modal__panel {
+  position: relative;
+  width: min(760px, 100%);
+  max-height: 90vh;
+  overflow-y: auto;
+  background: #ffffff;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  border-radius: 24px;
+  box-shadow: 0 30px 80px rgba(15, 23, 42, 0.28);
+  padding: 28px 28px 20px;
+  animation: cfScaleUp 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes cfFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes cfScaleUp {
+  from { opacity: 0; transform: scale(0.95) translateY(10px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.cf-modal__header {
+  margin-bottom: 18px;
+}
+
+.cf-modal__title {
+  margin: 10px 0 0;
+  font-size: clamp(2rem, 3vw, 2.5rem);
+  line-height: 1.1;
+  letter-spacing: -0.06em;
+  color: #0f172a;
+}
+
+.cf-modal__close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.3);
+  background: #f8fafc;
+  color: #0f172a;
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.cf-modal__close:hover {
+  background: #eef2ff;
+  color: #1f00ff;
+  border-color: rgba(31, 0, 255, 0.3);
+}
+
+.cf-modal__panel .cp-form__input,
+.cf-modal__panel .cp-form__select,
+.cf-modal__panel .cp-form__textarea {
+  width: 100%;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #0f172a;
+  background-color: #ffffff;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 12px;
+  padding: 10px 13px;
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  box-shadow: none;
+  caret-color: #1f00ff;
+  transition: border-color 0.16s ease, box-shadow 0.16s ease, background-color 0.16s ease;
+}
+
+.cf-modal__panel .cp-form__input::placeholder,
+.cf-modal__panel .cp-form__textarea::placeholder {
+  color: #64748b;
+  opacity: 1;
+}
+
+.cf-modal__panel .cp-form__input:focus,
+.cf-modal__panel .cp-form__select:focus,
+.cf-modal__panel .cp-form__textarea:focus,
+.cf-modal__panel .cp-form__input:focus-visible,
+.cf-modal__panel .cp-form__select:focus-visible,
+.cf-modal__panel .cp-form__textarea:focus-visible {
+  border-color: #1f00ff;
+  box-shadow: 0 0 0 3px rgba(31, 0, 255, 0.12);
+  background-color: #ffffff;
+}
+
+.cf-modal__panel .cp-form__select {
+  color: #0f172a;
+  -webkit-text-fill-color: #0f172a;
+}
+
+.cf-modal__panel .cp-form__select option {
+  color: #0f172a;
+  background: #ffffff;
+}
+
+.cf-modal__panel .cp-form__textarea {
+  resize: vertical;
+  min-height: 116px;
+  line-height: 1.65;
+}
+
+@media (max-width: 640px) {
+  .cf-modal__panel {
+    padding: 22px 18px 18px;
+    border-radius: 18px;
+  }
+
+  .cf-modal__close {
+    top: 12px;
+    right: 12px;
+  }
+}
+

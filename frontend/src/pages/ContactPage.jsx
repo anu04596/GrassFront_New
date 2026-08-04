@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import "./ContactPage.css";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import { ContactForm } from "../components/ContactForm";
+
 /* ─── Data ─────────────────────────────────────────────────────────── */
 const SERVICES = [
   { icon: "⬡", label: "Custom Software Development" },
@@ -127,168 +129,22 @@ function Faq({ item, idx }) {
   );
 }
 
-/* ─── Contact form ──────────────────────────────────────────────────── */
-function ContactForm() {
-  const [sent, setSent] = useState(false);
-  const [form, setForm] = useState({
-    name: "",
-    email: "",
-    company: "",
-    service: "",
-    message: "",
-  });
-  const onChange = (e) =>
-    setForm((p) => ({ ...p, [e.target.name]: e.target.value }));
-  const onSubmit = (e) => {
-    e.preventDefault();
-    setSent(true);
-  };
-
-  if (sent) {
-    return (
-      <div className="cp-form__success">
-        <div className="cp-form__success-icon">
-          <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
-            <path
-              d="M4 11l5 5 9-9"
-              stroke="#10B981"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-        </div>
-        <p className="cp-form__success-title">Message sent.</p>
-        <p className="cp-form__success-sub">
-          We'll get back to you within 4 business hours.
-        </p>
-      </div>
-    );
-  }
-
-  return (
-    <form className="cp-form" onSubmit={onSubmit} noValidate>
-      <div className="cp-form__row">
-        <div className="cp-form__field">
-          <label className="cp-form__label" htmlFor="cf-name">
-            Full name
-          </label>
-          <input
-            id="cf-name"
-            name="name"
-            type="text"
-            className="cp-form__input"
-            placeholder="Your name"
-            value={form.name}
-            onChange={onChange}
-            required
-          />
-        </div>
-        <div className="cp-form__field">
-          <label className="cp-form__label" htmlFor="cf-email">
-            Business email
-          </label>
-          <input
-            id="cf-email"
-            name="email"
-            type="email"
-            className="cp-form__input"
-            placeholder="you@company.com"
-            value={form.email}
-            onChange={onChange}
-            required
-          />
-        </div>
-      </div>
-      <div className="cp-form__row">
-        <div className="cp-form__field">
-          <label className="cp-form__label" htmlFor="cf-company">
-            Company
-          </label>
-          <input
-            id="cf-company"
-            name="company"
-            type="text"
-            className="cp-form__input"
-            placeholder="Company name"
-            value={form.company}
-            onChange={onChange}
-          />
-        </div>
-        <div className="cp-form__field">
-          <label className="cp-form__label" htmlFor="cf-service">
-            Area of interest
-          </label>
-          <div className="cp-form__select-wrap">
-            <select
-              id="cf-service"
-              name="service"
-              className="cp-form__input cp-form__select"
-              value={form.service}
-              onChange={onChange}
-            >
-              <option value="">Select a service</option>
-              <option>Custom Software Development</option>
-              <option>ERP Development</option>
-              <option>AI &amp; Business Automation</option>
-              <option>Business Intelligence &amp; Dashboards</option>
-              <option>Procurement Management</option>
-              <option>System Integration</option>
-              <option>Other</option>
-            </select>
-            <svg
-              className="cp-form__select-icon"
-              width="12"
-              height="12"
-              viewBox="0 0 12 12"
-              fill="none"
-            >
-              <path
-                d="M2 4.5l4 4 4-4"
-                stroke="currentColor"
-                strokeWidth="1.4"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </div>
-        </div>
-      </div>
-      <div className="cp-form__field">
-        <label className="cp-form__label" htmlFor="cf-message">
-          Project details
-        </label>
-        <textarea
-          id="cf-message"
-          name="message"
-          className="cp-form__input cp-form__textarea"
-          placeholder="Describe the challenge you're trying to solve, or the system you need built."
-          rows={5}
-          value={form.message}
-          onChange={onChange}
-          required
-        />
-      </div>
-      <div className="cp-form__actions">
-        <button
-          className="cp-btn cp-btn--primary"
-          onClick={() =>
-            document
-              .getElementById("cp-contact")
-              ?.scrollIntoView({ behavior: "smooth" })
-          }
-        >
-          Send message
-        </button>
-        <span className="cp-form__note">Response within 4 business hours</span>
-      </div>
-    </form>
-  );
-}
-
 /* ─── Page ──────────────────────────────────────────────────────────── */
 export default function ContactPage() {
+  const location = useLocation();
+
   useReveal();
+
+  useEffect(() => {
+    if (location.hash === "#cp-contact") {
+      const target = document.getElementById("cp-contact");
+      if (target) {
+        window.requestAnimationFrame(() => {
+          target.scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+      }
+    }
+  }, [location.hash]);
 
   return (
     <main className="cp-page">
@@ -400,7 +256,6 @@ export default function ContactPage() {
               <ContactForm />
             </div>
 
-            
             {/* Right — offices + info */}
             <div className="cp-contact-info-col" id="cp-offices">
               {/* Offices */}
@@ -433,7 +288,6 @@ export default function ContactPage() {
 
                     <div>
                       <p className="cp-office__name">{office.city} Office</p>
-
                       <p className="cp-office__detail">{office.address}</p>
                     </div>
                   </a>
@@ -465,7 +319,6 @@ export default function ContactPage() {
 
                   <div>
                     <p className="cp-office__name">Email</p>
-
                     <a
                       href="mailto:info@grassfront.com"
                       className="cp-office__detail"
@@ -641,7 +494,7 @@ export default function ContactPage() {
             </p>
             <div className="cp-cta__actions">
               <a href="#cp-contact" className="cp-btn cp-btn--white">
-                Book a strategy call
+                Request a Consultation
               </a>
               <Link to="/services" className="cp-btn cp-btn--ghost-inv">
                 Explore services →

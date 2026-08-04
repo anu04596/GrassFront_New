@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import './ServicePage.css';
 
 import './ProcurementPage.css';
+import { useContactModal } from '../components/ContactModalContext';
 import {
   FaClipboardList,
   FaCheckCircle,
@@ -113,6 +114,7 @@ function useReveal() {
 export default function ProcurementPage() {
   useReveal();
   const [open, setOpen] = useState(null);
+  const { openContactModal, redirectToContact } = useContactModal();
   const col1 = FAQS.filter((_, i) => i % 2 === 0);
   const col2 = FAQS.filter((_, i) => i % 2 !== 0);
 
@@ -144,7 +146,13 @@ export default function ProcurementPage() {
           <h1>Simplify Purchasing, Vendor Management, <span className="sp-hero__accent">and Approvals.</span></h1>
           <p>Managing procurement through spreadsheets and emails works when operations are small. But as your business grows, tracking vendors, purchase requests, approvals, and orders becomes increasingly difficult — and costly.</p>
           <div className="sp-hero__actions">
-            <a href="#contact" className="sp-btn sp-btn--primary">Book a Free Consultation</a>
+            <button
+              type="button"
+              className="sp-btn sp-btn--primary"
+              onClick={() => openContactModal("Procurement Management")}
+            >
+              Request a Consultation
+            </button>
             <a href="#proc-manages" className="sp-btn sp-btn--ghost">See What We Build →</a>
           </div>
           <div className="sp-hero__stats">
@@ -320,8 +328,14 @@ export default function ProcurementPage() {
           <h2>Gain Better Control Over Procurement Operations.</h2>
           <p>Procurement plays a critical role in business performance. The right system can help reduce delays, improve visibility, strengthen supplier management, and optimize purchasing decisions.</p>
           <div className="sp-cta__btns">
-            <a href="mailto:Info@grassfront.com" className="sp-btn sp-btn--white">Schedule a Free Consultation</a>
-            <a href="tel:+917014626389" className="sp-btn sp-btn--outline-white">Talk to Our Team →</a>
+            <button
+              type="button"
+              className="sp-btn sp-btn--white"
+              onClick={() => openContactModal("Procurement Management")}
+            >
+              Request a Consultation
+            </button>
+            
           </div>
           <div className="sp-cta__note">Free 30-min discovery call · <span>100+ businesses already served</span> · Response within 4 hours</div>
         </div>

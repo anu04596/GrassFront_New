@@ -4,22 +4,21 @@
   background: var(--white);
   border-top: 0.8px solid var(--blue-12);
   border-bottom: 0.8px solid var(--blue-12);
-  padding: 80px 0;
+  padding: 70px 0;
 }
 
 .faq-frame {
   display: flex;
   flex-direction: column;
-  gap: 48px;
+  gap: 10px;
 }
 
 /* ─── Header ─────────────────────────────────────────────────────── */
 
 .faq-header {
   display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 40px;
+  flex-direction: column;
+  gap: 18px;
 }
 
 .faq .faq-frame h2 {
@@ -30,8 +29,6 @@
   letter-spacing: -1.008px;
   color: var(--vulcan);
   margin: 0;
-  max-width: 520px;
-  flex-shrink: 0;
 }
 
 .faq-intro {
@@ -39,23 +36,16 @@
   font-size: 14.5px;
   line-height: 1.75;
   color: var(--storm-gray);
-  max-width: 300px;
-  padding-bottom: 6px;
+  max-width: 480px;
 }
 
-/* ─── Two-column layout ──────────────────────────────────────────── */
+/* ─── Two-column grid ────────────────────────────────────────────── */
 
-.faq-columns {
+.faq-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 14px;
-  align-items: start;
-}
-
-.faq-col {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+  grid-auto-rows: 1fr;
+  gap: 12px;
 }
 
 /* ─── Item ───────────────────────────────────────────────────────── */
@@ -64,10 +54,13 @@
   background: var(--white);
   border: 1px solid var(--fog);
   border-radius: 12px;
-  padding: 20px 20px;
+  padding: 20px;
   cursor: pointer;
   user-select: none;
   outline: none;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
   transition:
     box-shadow 0.3s cubic-bezier(0.22, 1, 0.36, 1),
     border-color 0.3s ease,
@@ -107,6 +100,7 @@
   color: var(--vulcan);
   margin: 0;
   flex: 1;
+  min-width: 0;
   transition: color 0.3s ease;
 }
 
@@ -166,7 +160,7 @@
   padding-top: 14px;
 }
 
-/* ─── Tablet landscape (≤1180px) ──────────────────────────────────── */
+/* ─── Tablet landscape (≤1180px) ─────────────────────────────────── */
 
 @media (max-width: 1180px) {
   .faq .section-inner {
@@ -177,13 +171,9 @@
     font-size: 44px;
     line-height: 54px;
   }
-
-  .faq-columns {
-    gap: 12px;
-  }
 }
 
-/* ─── Tablet portrait (≤900px) ────────────────────────────────────── */
+/* ─── Tablet portrait (≤900px) ───────────────────────────────────── */
 
 @media (max-width: 900px) {
   .faq {
@@ -197,17 +187,6 @@
   .faq .faq-frame h2 {
     font-size: 38px;
     line-height: 48px;
-    max-width: 100%;
-  }
-
-  .faq-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
-  }
-
-  .faq-intro {
-    max-width: 100%;
   }
 
   .faq-item:hover {
@@ -231,7 +210,7 @@
   }
 }
 
-/* ─── Mobile (≤768px) ──────────────────────────────────────────────── */
+/* ─── Mobile (≤768px) ────────────────────────────────────────────── */
 
 @media (max-width: 768px) {
   .faq {
@@ -240,7 +219,6 @@
 
   .faq .section-inner {
     padding: 0 20px;
-    gap: 16px;
   }
 
   .faq .faq-frame h2 {
@@ -252,9 +230,9 @@
     gap: 32px;
   }
 
-  .faq-columns {
+  .faq-grid {
     grid-template-columns: 1fr;
-    gap: 10px;
+    grid-auto-rows: auto;
   }
 
   .faq-item {
@@ -262,7 +240,7 @@
   }
 }
 
-/* ─── Very small (≤380px) ──────────────────────────────────────────── */
+/* ─── Very small (≤380px) ────────────────────────────────────────── */
 
 @media (max-width: 380px) {
   .faq .section-inner {
