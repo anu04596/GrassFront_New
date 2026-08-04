@@ -262,11 +262,6 @@
 }
 
 @media (max-width: 1024px) {
-  .nav-links-container { padding: 16px 32px; gap: 32px; }
-  .nav-links { gap: 32px; }
-}
-
-@media (max-width: 768px) {
   .desktop-only { display: none; }
   .nav-burger { display: flex; }
 }
