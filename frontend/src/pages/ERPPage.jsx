@@ -116,7 +116,7 @@ export default function ERPPage() {
             <button
               type="button"
               className="sp-btn sp-btn--primary"
-              onClick={() => openContactModal("Custom Software Development")}
+              onClick={() => openContactModal("ERP Development")}
             >
               Request a Consultation
             </button>
