@@ -3,40 +3,40 @@ import './Testimonials.css';
 
 const TESTIMONIALS = [
   {
-    quote: 'GrassFRONT transformed our procurement workflow and significantly reduced operational overhead.',
-    name: 'Rohan Mehta',
-    role: 'Founder, Horeca Mall',
-    image: 'https://i.pravatar.cc/80?img=12',
+    quote: 'Grassfront delivered our website and field team tracking system exactly to our business requirements. Their communication was clear, their execution was reliable, and they stayed open to feedback throughout the project. The final solution has improved our daily operations and strengthened our field productivity.',
+    name: 'Ujjawal Dubey',
+    role: 'Founder, NKB',
+    image: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"%3E%3C/svg%3E',
   },
   {
-    quote: 'Excellent communication, strong technical expertise, and reliable delivery every time.',
-    name: 'Priya Agarwal',
-    role: 'COO, Bizz Studio',
-    image: 'https://i.pravatar.cc/80?img=47',
+    quote: 'Working with Grassfront on our HoReCa Mall e-commerce platform was a great experience. They understood our business needs quickly, suggested practical improvements, and delivered a scalable, user-friendly platform that has helped us grow. Their team was proactive, responsive, and focused on quality.',
+    name: 'Mayank Sharma',
+    role: 'Founder, HoReCa Mall',
+    image: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"%3E%3C/svg%3E',
   },
   {
-    quote: 'Their support after launch was exceptional. Fast responses and real ownership.',
-    name: 'Sameer Kapoor',
-    role: 'Director, Platter Technologies',
-    image: 'https://i.pravatar.cc/80?img=68',
+    quote: 'Grassfront developed our Unity application with a high level of technical precision and professionalism. They were easy to work with, kept us informed throughout the process, and handled every challenge with thoughtful problem solving. We are pleased with the final product and confident in continuing the partnership.',
+    name: 'Sherman',
+    role: 'Client',
+    image: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"%3E%3C/svg%3E',
   },
   {
-    quote: 'The ERP platform simplified processes across departments and improved visibility.',
-    name: 'Vikas Sharma',
-    role: 'Operations Head',
-    image: 'https://i.pravatar.cc/80?img=57',
+    quote: 'Working with Grassfront has been a very positive experience. They are professional, dependable, and focused on practical business outcomes. Their communication was clear, their delivery was consistent, and the entire process felt structured and transparent. I would confidently recommend them as a dependable technology partner.',
+    name: 'Vlado',
+    role: 'Founder, Axcel',
+    image: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"%3E%3C/svg%3E',
   },
   {
-    quote: 'A highly professional team that focuses on business outcomes, not just code.',
-    name: 'Anjali Gupta',
-    role: 'Managing Director',
-    image: 'https://i.pravatar.cc/80?img=44',
+    quote: 'Grassfront has been a reliable partner for our community platform project. They took the time to understand our vision, offered valuable recommendations, and kept communication clear throughout the engagement. Their technical depth and commitment to quality have made a real difference in the project.',
+    name: 'Wilko',
+    role: 'Founder, High Touch Global',
+    image: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"%3E%3C/svg%3E',
   },
   {
-    quote: 'The final product exceeded expectations and was delivered ahead of schedule.',
-    name: 'Rahul Verma',
-    role: 'CEO',
-    image: 'https://i.pravatar.cc/80?img=68',
+    quote: 'Grassfront built our website and continues to support us with IT consulting and development work. Their team is responsive, knowledgeable, and genuinely invested in our success. It is reassuring to have a technology partner that we can rely on for ongoing guidance and execution.',
+    name: 'Chef Michael',
+    role: 'Founder, YCM',
+    image: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"%3E%3C/svg%3E',
   },
 ];
 
@@ -58,15 +58,6 @@ function TestiCard({ t }) {
       <Stars />
       <p className="testi-quote">"{t.quote}"</p>
       <div className="testi-author">
-        <img
-          src={t.image}
-          alt={t.name}
-          className="testi-avatar"
-          onError={(e) => {
-            e.target.onerror = null;
-            e.target.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(t.name)}&size=80&background=e8edff&color=1f00ff&bold=true`;
-          }}
-        />
         <div>
           <div className="testi-name">{t.name}</div>
           <div className="testi-role">{t.role}</div>

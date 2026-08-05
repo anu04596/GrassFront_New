@@ -4,7 +4,7 @@ import './Stats.css';
 const STATS = [
   {
     value: 88,
-    suffix: 'L+',
+    suffix: '+',
     label: 'Business Processes Digitized',
     sub: 'Verified data from multi-industry process audits.',
   },
