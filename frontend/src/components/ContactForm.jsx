@@ -88,14 +88,14 @@ export function ContactForm({ initialService = "", onClose, onSuccess }) {
       <div className="cp-form__row">
         <div className="cp-form__field">
           <label className="cp-form__label" htmlFor="cf-name">
-            Full name
+            Full Name
           </label>
           <input
             id="cf-name"
             name="name"
             type="text"
             className="cp-form__input"
-            placeholder="Your name"
+            placeholder="Your Name"
             value={form.name}
             onChange={onChange}
             required
@@ -103,7 +103,7 @@ export function ContactForm({ initialService = "", onClose, onSuccess }) {
         </div>
         <div className="cp-form__field">
           <label className="cp-form__label" htmlFor="cf-email">
-            Business email
+            Business Email
           </label>
           <input
             id="cf-email"
@@ -128,14 +128,14 @@ export function ContactForm({ initialService = "", onClose, onSuccess }) {
             name="company"
             type="text"
             className="cp-form__input"
-            placeholder="Company name"
+            placeholder="Company Name"
             value={form.company}
             onChange={onChange}
           />
         </div>
         <div className="cp-form__field">
           <label className="cp-form__label" htmlFor="cf-service">
-            Area of interest
+            Area of Interest
           </label>
           <div className="cp-form__select-wrap">
             <select
@@ -175,7 +175,7 @@ export function ContactForm({ initialService = "", onClose, onSuccess }) {
 
       <div className="cp-form__field">
         <label className="cp-form__label" htmlFor="cf-message">
-          Project details
+          Project Details
         </label>
         <textarea
           id="cf-message"

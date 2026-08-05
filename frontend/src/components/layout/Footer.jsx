@@ -170,26 +170,33 @@ export default function Footer() {
               <ul className="footer-col-list">
                 {QUICK_LINKS.map((q) => (
                   <li key={q.label}>
-                    {q.isPopup ? (
-                      <button
-                        type="button"
-                        style={{
-                          background: "none",
-                          border: "none",
-                          padding: 0,
-                          color: "rgba(255, 255, 255, 0.55)",
-                          font: "inherit",
-                          cursor: "pointer",
-                          textAlign: "left",
-                        }}
-                        onClick={() => openContactModal()}
-                      >
-                        {q.label}
-                      </button>
-                    ) : (
-                      <a href={q.href}>{q.label}</a>
-                    )}
-                  </li>
+  {q.isPopup ? (
+    <button
+      type="button"
+      style={{
+        background: "none",
+        border: "none",
+        padding: 0,
+        color: "rgba(255, 255, 255, 0.55)",
+        font: "inherit",
+        cursor: "pointer",
+        textAlign: "left",
+        transition: "color 0.3s ease",
+      }}
+      onMouseEnter={(e) => {
+        e.target.style.color = "#ffffff";
+      }}
+      onMouseLeave={(e) => {
+        e.target.style.color = "rgba(255, 255, 255, 0.55)";
+      }}
+      onClick={() => openContactModal()}
+    >
+      {q.label}
+    </button>
+  ) : (
+    <a href={q.href}>{q.label}</a>
+  )}
+</li>
                 ))}
               </ul>
             </div>
